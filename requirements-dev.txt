@@ -1,0 +1,7 @@
+# Development-only tooling, installed on top of requirements.txt
+# Usage: pip install -r requirements.txt -r requirements-dev.txt
+
+pre-commit==3.8.0
+ipython==8.26.0
+jupyter==1.0.0
+faker==26.3.0

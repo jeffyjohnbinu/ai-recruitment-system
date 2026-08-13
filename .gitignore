@@ -1,0 +1,39 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# --- Virtual environment ---
+.venv/
+venv/
+env/
+
+# --- Environment / secrets ---
+.env
+
+# --- Logs ---
+logs/*.log
+
+# --- Data (keep folder, ignore contents) ---
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# --- Testing / coverage ---
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+
+# --- IDE ---
+.vscode/
+.idea/
+*.swp
+
+# --- OS ---
+.DS_Store
+Thumbs.db
