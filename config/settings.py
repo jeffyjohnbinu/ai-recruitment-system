@@ -20,7 +20,7 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-@dataclass(frozen=True)
+@dataclass
 class Settings:
     # --- App ---
     app_env: str = os.getenv("APP_ENV", "development")
