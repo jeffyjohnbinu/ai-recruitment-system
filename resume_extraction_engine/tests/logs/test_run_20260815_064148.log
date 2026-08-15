@@ -1,0 +1,178 @@
+Resume Text Extraction Engine — Automated Test Run
+Timestamp (UTC): 20260815_064148
+Command: C:\Users\jeffy\AppData\Local\Programs\Python\Python310\python.exe -m pytest C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\resume_extraction_engine\tests\test_extraction.py -v --tb=short
+======================================================================
+
+============================= test session starts =============================
+platform win32 -- Python 3.10.11, pytest-9.1.1, pluggy-1.6.0 -- C:\Users\jeffy\AppData\Local\Programs\Python\Python310\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system
+configfile: pytest.ini (WARNING: ignoring pytest config in pyproject.toml!)
+plugins: anyio-4.14.2
+collecting ... collected 16 items
+
+resume_extraction_engine/tests/test_extraction.py::test_docx_extracts_text FAILED [  6%]
+resume_extraction_engine/tests/test_extraction.py::test_docx_detects_sections FAILED [ 12%]
+resume_extraction_engine/tests/test_extraction.py::test_docx_extracts_table_content FAILED [ 18%]
+resume_extraction_engine/tests/test_extraction.py::test_docx_normalizes_bullets FAILED [ 25%]
+resume_extraction_engine/tests/test_extraction.py::test_docx_shouting_summary_gets_title_cased FAILED [ 31%]
+resume_extraction_engine/tests/test_extraction.py::test_pdf_twocolumn_extracts_both_columns FAILED [ 37%]
+resume_extraction_engine/tests/test_extraction.py::test_pdf_twocolumn_does_not_interleave_lines PASSED [ 43%]
+resume_extraction_engine/tests/test_extraction.py::test_pdf_noisy_dehyphenates FAILED [ 50%]
+resume_extraction_engine/tests/test_extraction.py::test_pdf_noisy_drops_page_number_lines PASSED [ 56%]
+resume_extraction_engine/tests/test_extraction.py::test_pdf_noisy_normalizes_bullet FAILED [ 62%]
+resume_extraction_engine/tests/test_extraction.py::test_unsupported_extension_raises PASSED [ 68%]
+resume_extraction_engine/tests/test_extraction.py::test_missing_file_raises PASSED [ 75%]
+resume_extraction_engine/tests/test_extraction.py::test_cleaner_collapses_blank_lines PASSED [ 81%]
+resume_extraction_engine/tests/test_extraction.py::test_cleaner_unifies_bullet_styles PASSED [ 87%]
+resume_extraction_engine/tests/test_extraction.py::test_cleaner_normalizes_heading_variants PASSED [ 93%]
+resume_extraction_engine/tests/test_extraction.py::test_normalizer_preserves_short_acronyms PASSED [100%]
+
+================================== FAILURES ===================================
+___________________________ test_docx_extracts_text ___________________________
+resume_extraction_engine\tests\test_extraction.py:35: in test_docx_extracts_text
+    assert record.status in ("success", "partial")
+E   AssertionError: assert 'failed' in ('success', 'partial')
+E    +  where 'failed' = ExtractionRecord(source_file='C:\\Users\\jeffy\\Desktop\\ai-recruitment-system\\ai-recruitment-system\\resume_extraction_engine\\tests\\sample_resumes\\sample_resume_1.docx', file_type='docx', engine_used='none', extracted_at='2026-08-15T06:41:49.750932+00:00', raw_char_count=0, cleaned_char_count=0, sections_detected=[], tables_found=0, images_found=0, warnings=[], cleaning_stats={}, cleaned_text='', status='failed', error='python-docx is not installed.').status
+------------------------------ Captured log call ------------------------------
+ERROR    resume_engine:extractor.py:60 Failed to process C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\resume_extraction_engine\tests\sample_resumes\sample_resume_1.docx
+Traceback (most recent call last):
+  File "C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\resume_extraction_engine\extractor.py", line 58, in process_file
+    record = self._process_docx(path)
+  File "C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\resume_extraction_engine\extractor.py", line 104, in _process_docx
+    result = self.docx_reader.read(path)
+  File "C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\resume_extraction_engine\readers\docx_reader.py", line 55, in read
+    raise RuntimeError("python-docx is not installed.")
+RuntimeError: python-docx is not installed.
+_________________________ test_docx_detects_sections __________________________
+resume_extraction_engine\tests\test_extraction.py:43: in test_docx_detects_sections
+    assert expected in record.sections_detected, f"missing section: {expected}"
+E   AssertionError: missing section: Summary
+E   assert 'Summary' in []
+E    +  where [] = ExtractionRecord(source_file='C:\\Users\\jeffy\\Desktop\\ai-recruitment-system\\ai-recruitment-system\\resume_extraction_engine\\tests\\sample_resumes\\sample_resume_1.docx', file_type='docx', engine_used='none', extracted_at='2026-08-15T06:41:49.778811+00:00', raw_char_count=0, cleaned_char_count=0, sections_detected=[], tables_found=0, images_found=0, warnings=[], cleaning_stats={}, cleaned_text='', status='failed', error='python-docx is not installed.').sections_detected
+------------------------------ Captured log call ------------------------------
+ERROR    resume_engine:extractor.py:60 Failed to process C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\resume_extraction_engine\tests\sample_resumes\sample_resume_1.docx
+Traceback (most recent call last):
+  File "C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\resume_extraction_engine\extractor.py", line 58, in process_file
+    record = self._process_docx(path)
+  File "C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\resume_extraction_engine\extractor.py", line 104, in _process_docx
+    result = self.docx_reader.read(path)
+  File "C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\resume_extraction_engine\readers\docx_reader.py", line 55, in read
+    raise RuntimeError("python-docx is not installed.")
+RuntimeError: python-docx is not installed.
+______________________ test_docx_extracts_table_content _______________________
+resume_extraction_engine\tests\test_extraction.py:48: in test_docx_extracts_table_content
+    assert record.tables_found >= 1
+E   AssertionError: assert 0 >= 1
+E    +  where 0 = ExtractionRecord(source_file='C:\\Users\\jeffy\\Desktop\\ai-recruitment-system\\ai-recruitment-system\\resume_extraction_engine\\tests\\sample_resumes\\sample_resume_1.docx', file_type='docx', engine_used='none', extracted_at='2026-08-15T06:41:49.794120+00:00', raw_char_count=0, cleaned_char_count=0, sections_detected=[], tables_found=0, images_found=0, warnings=[], cleaning_stats={}, cleaned_text='', status='failed', error='python-docx is not installed.').tables_found
+------------------------------ Captured log call ------------------------------
+ERROR    resume_engine:extractor.py:60 Failed to process C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\resume_extraction_engine\tests\sample_resumes\sample_resume_1.docx
+Traceback (most recent call last):
+  File "C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\resume_extraction_engine\extractor.py", line 58, in process_file
+    record = self._process_docx(path)
+  File "C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\resume_extraction_engine\extractor.py", line 104, in _process_docx
+    result = self.docx_reader.read(path)
+  File "C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\resume_extraction_engine\readers\docx_reader.py", line 55, in read
+    raise RuntimeError("python-docx is not installed.")
+RuntimeError: python-docx is not installed.
+________________________ test_docx_normalizes_bullets _________________________
+resume_extraction_engine\tests\test_extraction.py:56: in test_docx_normalizes_bullets
+    assert lines_with_content, "expected bullet line not found"
+E   AssertionError: expected bullet line not found
+E   assert []
+------------------------------ Captured log call ------------------------------
+ERROR    resume_engine:extractor.py:60 Failed to process C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\resume_extraction_engine\tests\sample_resumes\sample_resume_1.docx
+Traceback (most recent call last):
+  File "C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\resume_extraction_engine\extractor.py", line 58, in process_file
+    record = self._process_docx(path)
+  File "C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\resume_extraction_engine\extractor.py", line 104, in _process_docx
+    result = self.docx_reader.read(path)
+  File "C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\resume_extraction_engine\readers\docx_reader.py", line 55, in read
+    raise RuntimeError("python-docx is not installed.")
+RuntimeError: python-docx is not installed.
+_________________ test_docx_shouting_summary_gets_title_cased _________________
+resume_extraction_engine\tests\test_extraction.py:63: in test_docx_shouting_summary_gets_title_cased
+    assert "Results-driven" in record.cleaned_text or "Results-Driven" in record.cleaned_text
+E   AssertionError: assert ('Results-driven' in '' or 'Results-Driven' in '')
+E    +  where '' = ExtractionRecord(source_file='C:\\Users\\jeffy\\Desktop\\ai-recruitment-system\\ai-recruitment-system\\resume_extraction_engine\\tests\\sample_resumes\\sample_resume_1.docx', file_type='docx', engine_used='none', extracted_at='2026-08-15T06:41:49.794120+00:00', raw_char_count=0, cleaned_char_count=0, sections_detected=[], tables_found=0, images_found=0, warnings=[], cleaning_stats={}, cleaned_text='', status='failed', error='python-docx is not installed.').cleaned_text
+E    +  and   '' = ExtractionRecord(source_file='C:\\Users\\jeffy\\Desktop\\ai-recruitment-system\\ai-recruitment-system\\resume_extraction_engine\\tests\\sample_resumes\\sample_resume_1.docx', file_type='docx', engine_used='none', extracted_at='2026-08-15T06:41:49.794120+00:00', raw_char_count=0, cleaned_char_count=0, sections_detected=[], tables_found=0, images_found=0, warnings=[], cleaning_stats={}, cleaned_text='', status='failed', error='python-docx is not installed.').cleaned_text
+------------------------------ Captured log call ------------------------------
+ERROR    resume_engine:extractor.py:60 Failed to process C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\resume_extraction_engine\tests\sample_resumes\sample_resume_1.docx
+Traceback (most recent call last):
+  File "C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\resume_extraction_engine\extractor.py", line 58, in process_file
+    record = self._process_docx(path)
+  File "C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\resume_extraction_engine\extractor.py", line 104, in _process_docx
+    result = self.docx_reader.read(path)
+  File "C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\resume_extraction_engine\readers\docx_reader.py", line 55, in read
+    raise RuntimeError("python-docx is not installed.")
+RuntimeError: python-docx is not installed.
+__________________ test_pdf_twocolumn_extracts_both_columns ___________________
+resume_extraction_engine\tests\test_extraction.py:71: in test_pdf_twocolumn_extracts_both_columns
+    assert record.status in ("success", "partial")
+E   AssertionError: assert 'failed' in ('success', 'partial')
+E    +  where 'failed' = ExtractionRecord(source_file='C:\\Users\\jeffy\\Desktop\\ai-recruitment-system\\ai-recruitment-system\\resume_extraction_engine\\tests\\sample_resumes\\sample_resume_2_twocolumn.pdf', file_type='pdf', engine_used='none', extracted_at='2026-08-15T06:41:49.810315+00:00', raw_char_count=0, cleaned_char_count=0, sections_detected=[], tables_found=0, images_found=0, warnings=[], cleaning_stats={}, cleaned_text='', status='failed', error='No usable PDF backend available. Install pdfplumber or PyPDF2.').status
+------------------------------ Captured log call ------------------------------
+ERROR    resume_engine:extractor.py:60 Failed to process C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\resume_extraction_engine\tests\sample_resumes\sample_resume_2_twocolumn.pdf
+Traceback (most recent call last):
+  File "C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\resume_extraction_engine\extractor.py", line 56, in process_file
+    record = self._process_pdf(path)
+  File "C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\resume_extraction_engine\extractor.py", line 91, in _process_pdf
+    result = self.pdf_reader.read(path)
+  File "C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\resume_extraction_engine\readers\pdf_reader.py", line 91, in read
+    raise RuntimeError(
+RuntimeError: No usable PDF backend available. Install pdfplumber or PyPDF2.
+_________________________ test_pdf_noisy_dehyphenates _________________________
+resume_extraction_engine\tests\test_extraction.py:95: in test_pdf_noisy_dehyphenates
+    assert "Machine Learning" in record.cleaned_text or "MACHINE LEARNING" in record.cleaned_text.upper()
+E   AssertionError: assert ('Machine Learning' in '' or 'MACHINE LEARNING' in '')
+E    +  where '' = ExtractionRecord(source_file='C:\\Users\\jeffy\\Desktop\\ai-recruitment-system\\ai-recruitment-system\\resume_extraction_engine\\tests\\sample_resumes\\sample_resume_3_noisy.pdf', file_type='pdf', engine_used='none', extracted_at='2026-08-15T06:41:49.810315+00:00', raw_char_count=0, cleaned_char_count=0, sections_detected=[], tables_found=0, images_found=0, warnings=[], cleaning_stats={}, cleaned_text='', status='failed', error='No usable PDF backend available. Install pdfplumber or PyPDF2.').cleaned_text
+E    +  and   '' = <built-in method upper of str object at 0x0000024FEF4B8030>()
+E    +    where <built-in method upper of str object at 0x0000024FEF4B8030> = ''.upper
+E    +      where '' = ExtractionRecord(source_file='C:\\Users\\jeffy\\Desktop\\ai-recruitment-system\\ai-recruitment-system\\resume_extraction_engine\\tests\\sample_resumes\\sample_resume_3_noisy.pdf', file_type='pdf', engine_used='none', extracted_at='2026-08-15T06:41:49.810315+00:00', raw_char_count=0, cleaned_char_count=0, sections_detected=[], tables_found=0, images_found=0, warnings=[], cleaning_stats={}, cleaned_text='', status='failed', error='No usable PDF backend available. Install pdfplumber or PyPDF2.').cleaned_text
+------------------------------ Captured log call ------------------------------
+ERROR    resume_engine:extractor.py:60 Failed to process C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\resume_extraction_engine\tests\sample_resumes\sample_resume_3_noisy.pdf
+Traceback (most recent call last):
+  File "C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\resume_extraction_engine\extractor.py", line 56, in process_file
+    record = self._process_pdf(path)
+  File "C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\resume_extraction_engine\extractor.py", line 91, in _process_pdf
+    result = self.pdf_reader.read(path)
+  File "C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\resume_extraction_engine\readers\pdf_reader.py", line 91, in read
+    raise RuntimeError(
+RuntimeError: No usable PDF backend available. Install pdfplumber or PyPDF2.
+______________________ test_pdf_noisy_normalizes_bullet _______________________
+resume_extraction_engine\tests\test_extraction.py:109: in test_pdf_noisy_normalizes_bullet
+    assert fraud_lines
+E   assert []
+------------------------------ Captured log call ------------------------------
+ERROR    resume_engine:extractor.py:60 Failed to process C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\resume_extraction_engine\tests\sample_resumes\sample_resume_3_noisy.pdf
+Traceback (most recent call last):
+  File "C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\resume_extraction_engine\extractor.py", line 56, in process_file
+    record = self._process_pdf(path)
+  File "C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\resume_extraction_engine\extractor.py", line 91, in _process_pdf
+    result = self.pdf_reader.read(path)
+  File "C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\resume_extraction_engine\readers\pdf_reader.py", line 91, in read
+    raise RuntimeError(
+RuntimeError: No usable PDF backend available. Install pdfplumber or PyPDF2.
+=========================== short test summary info ===========================
+FAILED resume_extraction_engine/tests/test_extraction.py::test_docx_extracts_text - AssertionError: assert 'failed' in ('success', 'partial')
+ +  where 'failed' = ExtractionRecord(source_file='C:\\Users\\jeffy\\Desktop\\ai-recruitment-system\\ai-recruitment-system\\resume_extraction_engine\\tests\\sample_resumes\\sample_resume_1.docx', file_type='docx', engine_used='none', extracted_at='2026-08-15T06:41:49.750932+00:00', raw_char_count=0, cleaned_char_count=0, sections_detected=[], tables_found=0, images_found=0, warnings=[], cleaning_stats={}, cleaned_text='', status='failed', error='python-docx is not installed.').status
+FAILED resume_extraction_engine/tests/test_extraction.py::test_docx_detects_sections - AssertionError: missing section: Summary
+assert 'Summary' in []
+ +  where [] = ExtractionRecord(source_file='C:\\Users\\jeffy\\Desktop\\ai-recruitment-system\\ai-recruitment-system\\resume_extraction_engine\\tests\\sample_resumes\\sample_resume_1.docx', file_type='docx', engine_used='none', extracted_at='2026-08-15T06:41:49.778811+00:00', raw_char_count=0, cleaned_char_count=0, sections_detected=[], tables_found=0, images_found=0, warnings=[], cleaning_stats={}, cleaned_text='', status='failed', error='python-docx is not installed.').sections_detected
+FAILED resume_extraction_engine/tests/test_extraction.py::test_docx_extracts_table_content - AssertionError: assert 0 >= 1
+ +  where 0 = ExtractionRecord(source_file='C:\\Users\\jeffy\\Desktop\\ai-recruitment-system\\ai-recruitment-system\\resume_extraction_engine\\tests\\sample_resumes\\sample_resume_1.docx', file_type='docx', engine_used='none', extracted_at='2026-08-15T06:41:49.794120+00:00', raw_char_count=0, cleaned_char_count=0, sections_detected=[], tables_found=0, images_found=0, warnings=[], cleaning_stats={}, cleaned_text='', status='failed', error='python-docx is not installed.').tables_found
+FAILED resume_extraction_engine/tests/test_extraction.py::test_docx_normalizes_bullets - AssertionError: expected bullet line not found
+assert []
+FAILED resume_extraction_engine/tests/test_extraction.py::test_docx_shouting_summary_gets_title_cased - AssertionError: assert ('Results-driven' in '' or 'Results-Driven' in '')
+ +  where '' = ExtractionRecord(source_file='C:\\Users\\jeffy\\Desktop\\ai-recruitment-system\\ai-recruitment-system\\resume_extraction_engine\\tests\\sample_resumes\\sample_resume_1.docx', file_type='docx', engine_used='none', extracted_at='2026-08-15T06:41:49.794120+00:00', raw_char_count=0, cleaned_char_count=0, sections_detected=[], tables_found=0, images_found=0, warnings=[], cleaning_stats={}, cleaned_text='', status='failed', error='python-docx is not installed.').cleaned_text
+ +  and   '' = ExtractionRecord(source_file='C:\\Users\\jeffy\\Desktop\\ai-recruitment-system\\ai-recruitment-system\\resume_extraction_engine\\tests\\sample_resumes\\sample_resume_1.docx', file_type='docx', engine_used='none', extracted_at='2026-08-15T06:41:49.794120+00:00', raw_char_count=0, cleaned_char_count=0, sections_detected=[], tables_found=0, images_found=0, warnings=[], cleaning_stats={}, cleaned_text='', status='failed', error='python-docx is not installed.').cleaned_text
+FAILED resume_extraction_engine/tests/test_extraction.py::test_pdf_twocolumn_extracts_both_columns - AssertionError: assert 'failed' in ('success', 'partial')
+ +  where 'failed' = ExtractionRecord(source_file='C:\\Users\\jeffy\\Desktop\\ai-recruitment-system\\ai-recruitment-system\\resume_extraction_engine\\tests\\sample_resumes\\sample_resume_2_twocolumn.pdf', file_type='pdf', engine_used='none', extracted_at='2026-08-15T06:41:49.810315+00:00', raw_char_count=0, cleaned_char_count=0, sections_detected=[], tables_found=0, images_found=0, warnings=[], cleaning_stats={}, cleaned_text='', status='failed', error='No usable PDF backend available. Install pdfplumber or PyPDF2.').status
+FAILED resume_extraction_engine/tests/test_extraction.py::test_pdf_noisy_dehyphenates - AssertionError: assert ('Machine Learning' in '' or 'MACHINE LEARNING' in '')
+ +  where '' = ExtractionRecord(source_file='C:\\Users\\jeffy\\Desktop\\ai-recruitment-system\\ai-recruitment-system\\resume_extraction_engine\\tests\\sample_resumes\\sample_resume_3_noisy.pdf', file_type='pdf', engine_used='none', extracted_at='2026-08-15T06:41:49.810315+00:00', raw_char_count=0, cleaned_char_count=0, sections_detected=[], tables_found=0, images_found=0, warnings=[], cleaning_stats={}, cleaned_text='', status='failed', error='No usable PDF backend available. Install pdfplumber or PyPDF2.').cleaned_text
+ +  and   '' = <built-in method upper of str object at 0x0000024FEF4B8030>()
+ +    where <built-in method upper of str object at 0x0000024FEF4B8030> = ''.upper
+ +      where '' = ExtractionRecord(source_file='C:\\Users\\jeffy\\Desktop\\ai-recruitment-system\\ai-recruitment-system\\resume_extraction_engine\\tests\\sample_resumes\\sample_resume_3_noisy.pdf', file_type='pdf', engine_used='none', extracted_at='2026-08-15T06:41:49.810315+00:00', raw_char_count=0, cleaned_char_count=0, sections_detected=[], tables_found=0, images_found=0, warnings=[], cleaning_stats={}, cleaned_text='', status='failed', error='No usable PDF backend available. Install pdfplumber or PyPDF2.').cleaned_text
+FAILED resume_extraction_engine/tests/test_extraction.py::test_pdf_noisy_normalizes_bullet - assert []
+========================= 8 failed, 8 passed in 0.26s =========================
+

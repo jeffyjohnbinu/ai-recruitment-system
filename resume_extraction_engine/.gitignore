@@ -5,7 +5,15 @@ __pycache__/
 .venv/
 venv/
 
-# generated outputs (keep the sample fixtures, ignore generated results)
+# Generated test outputs
 tests/test_outputs/
-tests/logs/*.log
 outputs/
+
+# Keep Day 5 deliverables
+!tests/logs/
+!tests/logs/*.log
+!tests/outputs/
+!tests/outputs/cleaned_text/
+!tests/outputs/structured/
+!tests/outputs/cleaned_text/*.txt
+!tests/outputs/structured/*.json

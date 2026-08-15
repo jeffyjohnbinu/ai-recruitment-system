@@ -1,0 +1,7 @@
+Resume Text Extraction Engine — Automated Test Run
+Timestamp (UTC): 20260815_064030
+Command: C:\Users\jeffy\AppData\Local\Programs\Python\Python310\python.exe -m pytest C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\resume_extraction_engine\tests\test_extraction.py -v --tb=short
+======================================================================
+
+
+C:\Users\jeffy\AppData\Local\Programs\Python\Python310\python.exe: No module named pytest

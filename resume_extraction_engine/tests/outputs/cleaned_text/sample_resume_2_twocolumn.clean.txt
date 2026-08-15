@@ -1,0 +1,17 @@
+JANE M. SMITH
+jane.smith@email.com | +1-555-0199 | San Francisco, CA
+Experience
+Product Manager -- Globex (2020-Present)
+- Owned roadmap for payments platform
+- Shipped 12 features across 3 quarters
+- Partnered with eng and design teams
+Associate PM -- Initech (2017-2020)
+- Ran user research for onboarding flow
+- Increased activation rate by 18%
+Skills
+- Roadmapping
+- SQL, Excel, Amplitude
+- A/B testing
+Education
+MBA - Stanford GSB, 2017
+B.A. Economics - UCLA, 2013

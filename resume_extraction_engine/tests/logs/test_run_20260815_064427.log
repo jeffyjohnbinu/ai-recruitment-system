@@ -1,0 +1,38 @@
+Resume Text Extraction Engine — Automated Test Run
+Timestamp (UTC): 20260815_064427
+Command: C:\Users\jeffy\AppData\Local\Programs\Python\Python310\python.exe -m pytest C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\resume_extraction_engine\tests\test_extraction.py -v --tb=short
+======================================================================
+
+============================= test session starts =============================
+platform win32 -- Python 3.10.11, pytest-9.1.1, pluggy-1.6.0 -- C:\Users\jeffy\AppData\Local\Programs\Python\Python310\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system
+configfile: pytest.ini (WARNING: ignoring pytest config in pyproject.toml!)
+plugins: anyio-4.14.2
+collecting ... collected 16 items
+
+resume_extraction_engine/tests/test_extraction.py::test_docx_extracts_text PASSED [  6%]
+resume_extraction_engine/tests/test_extraction.py::test_docx_detects_sections PASSED [ 12%]
+resume_extraction_engine/tests/test_extraction.py::test_docx_extracts_table_content PASSED [ 18%]
+resume_extraction_engine/tests/test_extraction.py::test_docx_normalizes_bullets PASSED [ 25%]
+resume_extraction_engine/tests/test_extraction.py::test_docx_shouting_summary_gets_title_cased PASSED [ 31%]
+resume_extraction_engine/tests/test_extraction.py::test_pdf_twocolumn_extracts_both_columns PASSED [ 37%]
+resume_extraction_engine/tests/test_extraction.py::test_pdf_twocolumn_does_not_interleave_lines PASSED [ 43%]
+resume_extraction_engine/tests/test_extraction.py::test_pdf_noisy_dehyphenates PASSED [ 50%]
+resume_extraction_engine/tests/test_extraction.py::test_pdf_noisy_drops_page_number_lines PASSED [ 56%]
+resume_extraction_engine/tests/test_extraction.py::test_pdf_noisy_normalizes_bullet PASSED [ 62%]
+resume_extraction_engine/tests/test_extraction.py::test_unsupported_extension_raises PASSED [ 68%]
+resume_extraction_engine/tests/test_extraction.py::test_missing_file_raises PASSED [ 75%]
+resume_extraction_engine/tests/test_extraction.py::test_cleaner_collapses_blank_lines PASSED [ 81%]
+resume_extraction_engine/tests/test_extraction.py::test_cleaner_unifies_bullet_styles PASSED [ 87%]
+resume_extraction_engine/tests/test_extraction.py::test_cleaner_normalizes_heading_variants PASSED [ 93%]
+resume_extraction_engine/tests/test_extraction.py::test_normalizer_preserves_short_acronyms PASSED [100%]
+
+============================== warnings summary ===============================
+..\..\..\AppData\Local\Programs\Python\Python310\lib\site-packages\PyPDF2\__init__.py:21
+  C:\Users\jeffy\AppData\Local\Programs\Python\Python310\lib\site-packages\PyPDF2\__init__.py:21: DeprecationWarning: PyPDF2 is deprecated. Please move to the pypdf library instead.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 16 passed, 1 warning in 0.78s ========================
+

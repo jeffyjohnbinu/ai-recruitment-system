@@ -1,0 +1,28 @@
+{
+  "source_file": "resume_extraction_engine\\tests\\sample_resumes\\sample_resume_3_noisy.pdf",
+  "file_type": "pdf",
+  "engine_used": "pdfplumber",
+  "extracted_at": "2026-08-15T07:01:26.727464+00:00",
+  "raw_char_count": 435,
+  "cleaned_char_count": 415,
+  "sections_detected": [
+    "Summary",
+    "Experience",
+    "Education"
+  ],
+  "tables_found": 0,
+  "images_found": 0,
+  "warnings": [],
+  "cleaning_stats": {
+    "removed_control_chars": 0,
+    "normalized_bullets": 2,
+    "normalized_headings": 3,
+    "dehyphenated_words": 1,
+    "dropped_noise_lines": [
+      "1"
+    ]
+  },
+  "cleaned_text": "RAHUL VERMA\nrahul.verma@email.com | +91-9876543210\nSummary\nData Scientist with Strong Background in Machine Learning and Statistical Modeling for Fintech Products.\nExperience\nData Scientist -- FinPay (2019-Present)\n- Built fraud detection models reducing false positives by 30%\n- Deployed models on AWS SageMaker\nn Automated reporting pipeline saving 10 hrs/week\nEducation\nM.Tech in Data Science -- IIT Bombay, 2019",
+  "status": "success",
+  "error": null
+}

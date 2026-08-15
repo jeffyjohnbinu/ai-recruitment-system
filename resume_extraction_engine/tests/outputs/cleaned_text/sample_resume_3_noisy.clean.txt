@@ -1,0 +1,11 @@
+RAHUL VERMA
+rahul.verma@email.com | +91-9876543210
+Summary
+Data Scientist with Strong Background in Machine Learning and Statistical Modeling for Fintech Products.
+Experience
+Data Scientist -- FinPay (2019-Present)
+- Built fraud detection models reducing false positives by 30%
+- Deployed models on AWS SageMaker
+n Automated reporting pipeline saving 10 hrs/week
+Education
+M.Tech in Data Science -- IIT Bombay, 2019

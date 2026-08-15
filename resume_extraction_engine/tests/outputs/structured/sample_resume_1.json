@@ -1,0 +1,28 @@
+{
+  "source_file": "resume_extraction_engine\\tests\\sample_resumes\\sample_resume_1.docx",
+  "file_type": "docx",
+  "engine_used": "python-docx",
+  "extracted_at": "2026-08-15T07:01:17.244322+00:00",
+  "raw_char_count": 882,
+  "cleaned_char_count": 882,
+  "sections_detected": [
+    "Summary",
+    "Experience",
+    "Education",
+    "Skills",
+    "Certifications"
+  ],
+  "tables_found": 1,
+  "images_found": 0,
+  "warnings": [],
+  "cleaning_stats": {
+    "removed_control_chars": 0,
+    "normalized_bullets": 5,
+    "normalized_headings": 5,
+    "dehyphenated_words": 0,
+    "dropped_noise_lines": []
+  },
+  "cleaned_text": "JOHN A. DOE\nEmail: john.doe@email.com | Phone: +1-555-0142 | Location: Austin, TX\nSummary\nResults-driven Software Engineer with 6 Years of Experience Building Scalable Backend Systems. Passionate About Clean Code and Mentoring Junior Developers.\nExperience\nSenior Backend Engineer — Acme Corp (2021 – Present)\n- Led migration of monolith to microservices, cutting deploy time by 40%\n- Designed REST APIs consumed by 2M+ daily active users\n- Mentored 4 junior engineers\nSoftware Engineer — Beta Inc (2018 – 2021)\n- Built ETL pipelines processing 10TB/day using Python and Airflow\n- Reduced infra costs by 25% through AWS rightsizing\nEducation\nB.S. in Computer Science — University of Texas at Austin, 2018\nSkills\nCertifications\n- AWS Certified Solutions Architect – Associate\nLanguages | Python, Java, SQL\nCloud | AWS, GCP, Docker, Kubernetes\nOther | REST APIs, Kafka, Airflow, CI/CD",
+  "status": "success",
+  "error": null
+}
