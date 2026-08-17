@@ -1,0 +1,43 @@
+Job Description Parsing System — Automated Test Run
+Timestamp (UTC): 20260817_053734
+Command: /usr/bin/python3 -m pytest /home/claude/jd_parsing_engine/tests/test_jd_parsing.py -v --tb=short
+======================================================================
+
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/claude
+collecting ... collected 29 items
+
+jd_parsing_engine/tests/test_jd_parsing.py::test_backend_jd_parses_successfully PASSED [  3%]
+jd_parsing_engine/tests/test_jd_parsing.py::test_backend_jd_detects_role PASSED [  6%]
+jd_parsing_engine/tests/test_jd_parsing.py::test_backend_jd_detects_required_skills PASSED [ 10%]
+jd_parsing_engine/tests/test_jd_parsing.py::test_backend_jd_detects_preferred_skills PASSED [ 13%]
+jd_parsing_engine/tests/test_jd_parsing.py::test_backend_jd_detects_experience_years PASSED [ 17%]
+jd_parsing_engine/tests/test_jd_parsing.py::test_backend_jd_detects_education PASSED [ 20%]
+jd_parsing_engine/tests/test_jd_parsing.py::test_backend_jd_drops_eeo_boilerplate PASSED [ 24%]
+jd_parsing_engine/tests/test_jd_parsing.py::test_backend_jd_normalizes_bullets PASSED [ 27%]
+jd_parsing_engine/tests/test_jd_parsing.py::test_pm_jd_detects_role_from_label PASSED [ 31%]
+jd_parsing_engine/tests/test_jd_parsing.py::test_pm_jd_detects_experience_range PASSED [ 34%]
+jd_parsing_engine/tests/test_jd_parsing.py::test_pm_jd_detects_skills PASSED [ 37%]
+jd_parsing_engine/tests/test_jd_parsing.py::test_pm_jd_drops_apply_now_footer PASSED [ 41%]
+jd_parsing_engine/tests/test_jd_parsing.py::test_noisy_jd_detects_role PASSED [ 44%]
+jd_parsing_engine/tests/test_jd_parsing.py::test_noisy_jd_detects_experience PASSED [ 48%]
+jd_parsing_engine/tests/test_jd_parsing.py::test_noisy_jd_detects_ml_skills PASSED [ 51%]
+jd_parsing_engine/tests/test_jd_parsing.py::test_noisy_jd_drops_job_id_and_posted_lines PASSED [ 55%]
+jd_parsing_engine/tests/test_jd_parsing.py::test_noisy_jd_drops_bare_page_number PASSED [ 58%]
+jd_parsing_engine/tests/test_jd_parsing.py::test_noisy_jd_education_prefers_first_match PASSED [ 62%]
+jd_parsing_engine/tests/test_jd_parsing.py::test_unsupported_extension_raises PASSED [ 65%]
+jd_parsing_engine/tests/test_jd_parsing.py::test_missing_file_raises PASSED [ 68%]
+jd_parsing_engine/tests/test_jd_parsing.py::test_process_text_in_memory PASSED [ 72%]
+jd_parsing_engine/tests/test_jd_parsing.py::test_ai_profile_contains_expected_keys PASSED [ 75%]
+jd_parsing_engine/tests/test_jd_parsing.py::test_cleaner_normalizes_heading_variants PASSED [ 79%]
+jd_parsing_engine/tests/test_jd_parsing.py::test_cleaner_unifies_bullet_styles PASSED [ 82%]
+jd_parsing_engine/tests/test_jd_parsing.py::test_extract_experience_handles_range PASSED [ 86%]
+jd_parsing_engine/tests/test_jd_parsing.py::test_extract_experience_handles_plus PASSED [ 89%]
+jd_parsing_engine/tests/test_jd_parsing.py::test_extract_role_normalizes_swe_abbreviation PASSED [ 93%]
+jd_parsing_engine/tests/test_jd_parsing.py::test_extract_skills_deduplicates_across_scopes PASSED [ 96%]
+jd_parsing_engine/tests/test_jd_parsing.py::test_extract_education_detects_field_of_study PASSED [100%]
+
+============================== 29 passed in 0.08s ==============================
+

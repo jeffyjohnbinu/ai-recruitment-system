@@ -1,0 +1,48 @@
+{
+  "source_file": "jd_parsing_engine/tests/sample_jds/sample_jd_2_pm.txt",
+  "extracted_at": "2026-08-17T05:37:34.570653+00:00",
+  "raw_title": "Associate Product Manager",
+  "normalized_role": "Product Manager",
+  "seniority_level": "Manager",
+  "required_skills": [
+    "Product Management",
+    "Problem Solving",
+    "SQL"
+  ],
+  "preferred_skills": [
+    "Figma"
+  ],
+  "min_experience_years": 2.0,
+  "max_experience_years": 4.0,
+  "experience_mentions": [
+    "2-4 years"
+  ],
+  "education_level": "Master's",
+  "education_fields": [
+    "Economics"
+  ],
+  "education_mentions": [
+    "Master's"
+  ],
+  "raw_char_count": 691,
+  "cleaned_char_count": 672,
+  "sections_detected": [
+    "Role Overview",
+    "Responsibilities",
+    "Requirements",
+    "Preferred Qualifications"
+  ],
+  "warnings": [],
+  "cleaning_stats": {
+    "removed_control_chars": 0,
+    "normalized_bullets": 0,
+    "normalized_headings": 4,
+    "dehyphenated_words": 0,
+    "dropped_noise_lines": [
+      "Apply now to join our team!"
+    ]
+  },
+  "cleaned_text": "Job Title: Associate Product Manager\n\nRole Overview\nJoin our growth team to help define and ship the roadmap for our onboarding\nexperience.\n\nResponsibilities\n- Partner with engineering and design to plan quarterly roadmaps\n- Run user research and translate insights into product requirements\n- Analyze product metrics using SQL and Amplitude\n\nRequirements\n- 2-4 years of experience in product management or a related field\n- Strong analytical skills and comfort with SQL\n- Master's degree or MBA preferred, Bachelor's degree in Business\nAdministration or Economics required\n\nPreferred Qualifications\n- Experience with Figma\n- Background in fintech or marketplace products\n",
+  "status": "success",
+  "error": null
+}

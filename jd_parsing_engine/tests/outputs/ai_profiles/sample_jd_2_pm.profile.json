@@ -1,0 +1,18 @@
+{
+  "role": "Product Manager",
+  "seniority_level": "Manager",
+  "required_skills": [
+    "Product Management",
+    "Problem Solving",
+    "SQL"
+  ],
+  "preferred_skills": [
+    "Figma"
+  ],
+  "min_experience_years": 2.0,
+  "max_experience_years": 4.0,
+  "education_level": "Master's",
+  "education_fields": [
+    "Economics"
+  ]
+}

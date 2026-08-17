@@ -1,0 +1,19 @@
+{
+  "role": "Data Scientist",
+  "seniority_level": "Senior",
+  "required_skills": [
+    "Machine Learning",
+    "TensorFlow",
+    "PyTorch",
+    "Python",
+    "Pandas"
+  ],
+  "preferred_skills": [],
+  "min_experience_years": 3.0,
+  "max_experience_years": null,
+  "education_level": "PhD",
+  "education_fields": [
+    "Computer Science",
+    "Statistics"
+  ]
+}

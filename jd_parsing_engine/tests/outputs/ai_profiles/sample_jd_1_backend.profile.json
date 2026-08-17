@@ -1,0 +1,22 @@
+{
+  "role": "Backend Engineer",
+  "seniority_level": "Senior",
+  "required_skills": [
+    "Communication",
+    "Kubernetes",
+    "Python",
+    "Docker",
+    "CI/CD",
+    "SQL"
+  ],
+  "preferred_skills": [
+    "Terraform",
+    "Kafka"
+  ],
+  "min_experience_years": 5.0,
+  "max_experience_years": null,
+  "education_level": "Bachelor's",
+  "education_fields": [
+    "Computer Science"
+  ]
+}

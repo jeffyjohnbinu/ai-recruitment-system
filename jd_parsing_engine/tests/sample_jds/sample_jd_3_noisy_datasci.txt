@@ -1,0 +1,14 @@
+DATA SCIENTIST
+
+1
+we're hiring a data scientist to join our fraud team!
+
+requirements:
+n minimum of 3 years experience in machine learning
+n strong python and pandas skills
+n experience with pytorch or tensorflow a plus
+n phd or master's in statistics, computer science, or a related field
+
+Job ID: DS-2024-118
+Posted on 03/14/2026
+click here to apply

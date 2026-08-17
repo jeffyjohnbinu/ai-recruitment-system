@@ -1,0 +1,54 @@
+{
+  "source_file": "jd_parsing_engine/tests/sample_jds/sample_jd_1_backend.txt",
+  "extracted_at": "2026-08-17T05:37:34.569010+00:00",
+  "raw_title": "Senior Backend Engineer",
+  "normalized_role": "Backend Engineer",
+  "seniority_level": "Senior",
+  "required_skills": [
+    "Communication",
+    "Kubernetes",
+    "Python",
+    "Docker",
+    "CI/CD",
+    "SQL"
+  ],
+  "preferred_skills": [
+    "Terraform",
+    "Kafka"
+  ],
+  "min_experience_years": 5.0,
+  "max_experience_years": null,
+  "experience_mentions": [
+    "5+ years"
+  ],
+  "education_level": "Bachelor's",
+  "education_fields": [
+    "Computer Science"
+  ],
+  "education_mentions": [
+    "Bachelor's"
+  ],
+  "raw_char_count": 1089,
+  "cleaned_char_count": 987,
+  "sections_detected": [
+    "Role Overview",
+    "Responsibilities",
+    "Requirements",
+    "Preferred Qualifications",
+    "Benefits"
+  ],
+  "warnings": [],
+  "cleaning_stats": {
+    "removed_control_chars": 0,
+    "normalized_bullets": 9,
+    "normalized_headings": 5,
+    "dehyphenated_words": 0,
+    "dropped_noise_lines": [
+      "Equal Opportunity Employer",
+      "We are an equal opportunity employer and value diversity at our company."
+    ]
+  },
+  "cleaned_text": "Senior Backend Engineer\n\nRole Overview\nWe are looking for a Senior Backend Engineer to join our platform team and help\nscale our payments infrastructure to millions of users.\n\nResponsibilities\n- Design and build REST APIs consumed by internal and external clients\n- Own services written in Python and Go running on AWS and Kubernetes\n- Mentor junior engineers and participate in code reviews\n- Collaborate with product and design to ship features end to end\n\nRequirements\n- 5+ years of professional software engineering experience\n- Strong proficiency in Python and SQL\n- Experience with Docker, Kubernetes, and CI/CD pipelines\n- Bachelor's degree in Computer Science or related field\n- Excellent communication skills\n\nPreferred Qualifications\n- Experience with Kafka or other streaming systems\n- Familiarity with Terraform / infrastructure as code\n- Prior experience at a fintech company\n\nBenefits\nWe offer competitive compensation, remote flexibility, and a generous learning\nstipend.\n",
+  "status": "success",
+  "error": null
+}

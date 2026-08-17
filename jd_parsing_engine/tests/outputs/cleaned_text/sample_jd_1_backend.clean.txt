@@ -1,0 +1,27 @@
+Senior Backend Engineer
+
+Role Overview
+We are looking for a Senior Backend Engineer to join our platform team and help
+scale our payments infrastructure to millions of users.
+
+Responsibilities
+- Design and build REST APIs consumed by internal and external clients
+- Own services written in Python and Go running on AWS and Kubernetes
+- Mentor junior engineers and participate in code reviews
+- Collaborate with product and design to ship features end to end
+
+Requirements
+- 5+ years of professional software engineering experience
+- Strong proficiency in Python and SQL
+- Experience with Docker, Kubernetes, and CI/CD pipelines
+- Bachelor's degree in Computer Science or related field
+- Excellent communication skills
+
+Preferred Qualifications
+- Experience with Kafka or other streaming systems
+- Familiarity with Terraform / infrastructure as code
+- Prior experience at a fintech company
+
+Benefits
+We offer competitive compensation, remote flexibility, and a generous learning
+stipend.

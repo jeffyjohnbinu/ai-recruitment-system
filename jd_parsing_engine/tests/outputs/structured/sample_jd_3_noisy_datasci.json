@@ -1,0 +1,49 @@
+{
+  "source_file": "jd_parsing_engine/tests/sample_jds/sample_jd_3_noisy_datasci.txt",
+  "extracted_at": "2026-08-17T05:37:34.572308+00:00",
+  "raw_title": "DATA SCIENTIST",
+  "normalized_role": "Data Scientist",
+  "seniority_level": "Senior",
+  "required_skills": [
+    "Machine Learning",
+    "TensorFlow",
+    "PyTorch",
+    "Python",
+    "Pandas"
+  ],
+  "preferred_skills": [],
+  "min_experience_years": 3.0,
+  "max_experience_years": null,
+  "experience_mentions": [
+    "3 years experience"
+  ],
+  "education_level": "PhD",
+  "education_fields": [
+    "Computer Science",
+    "Statistics"
+  ],
+  "education_mentions": [
+    "phd"
+  ],
+  "raw_char_count": 352,
+  "cleaned_char_count": 287,
+  "sections_detected": [
+    "Requirements"
+  ],
+  "warnings": [],
+  "cleaning_stats": {
+    "removed_control_chars": 0,
+    "normalized_bullets": 0,
+    "normalized_headings": 1,
+    "dehyphenated_words": 0,
+    "dropped_noise_lines": [
+      "1",
+      "Job ID: DS-2024-118",
+      "Posted on 03/14/2026",
+      "click here to apply"
+    ]
+  },
+  "cleaned_text": "DATA SCIENTIST\n\nwe're hiring a data scientist to join our fraud team!\n\nRequirements\nn minimum of 3 years experience in machine learning\nn strong python and pandas skills\nn experience with pytorch or tensorflow a plus\nn phd or master's in statistics, computer science, or a related field\n",
+  "status": "success",
+  "error": null
+}

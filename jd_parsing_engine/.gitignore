@@ -1,0 +1,21 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+.venv/
+venv/
+
+# Generated test outputs
+tests/test_outputs/
+outputs/
+
+# Keep Day 6 deliverables
+!tests/logs/
+!tests/logs/*.log
+!tests/outputs/
+!tests/outputs/structured/
+!tests/outputs/cleaned_text/
+!tests/outputs/ai_profiles/
+!tests/outputs/structured/*.json
+!tests/outputs/cleaned_text/*.txt
+!tests/outputs/ai_profiles/*.json
