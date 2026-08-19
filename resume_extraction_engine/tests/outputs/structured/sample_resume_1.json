@@ -2,7 +2,7 @@
   "source_file": "resume_extraction_engine\\tests\\sample_resumes\\sample_resume_1.docx",
   "file_type": "docx",
   "engine_used": "python-docx",
-  "extracted_at": "2026-08-15T07:01:17.244322+00:00",
+  "extracted_at": "2026-08-15T07:08:01.354566+00:00",
   "raw_char_count": 882,
   "cleaned_char_count": 882,
   "sections_detected": [
