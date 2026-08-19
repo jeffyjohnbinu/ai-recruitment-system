@@ -1,0 +1,18 @@
+Priya Nair
+priya.nair@email.com | +91-9123456780
+
+Motivated data analyst passionate about turning raw numbers into decisions, seeking a role on a growth-focused analytics team.
+
+Data Analyst -- Northwind Retail (2022-Present)
+- Built dashboards tracking weekly revenue across 40 stores
+- Automated reporting pipeline saving 10 hrs/week
+- Partnered with merchandising to forecast demand
+
+Junior Analyst -- Northwind Retail (2020-2022)
+- Reduced reporting errors by 25% through validation scripts
+
+B.Sc. in Statistics, University of Mumbai, 2020, GPA 3.8
+
+Proficient in Python, SQL, Tableau, Excel, and Power BI. Comfortable with A/B testing and statistical modeling.
+
+Certified Tableau Desktop Specialist, issued 2023

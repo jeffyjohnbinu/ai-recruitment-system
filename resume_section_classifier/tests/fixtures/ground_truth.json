@@ -1,0 +1,41 @@
+{
+  "resume_full_headings.txt": [
+    {"contains": "Email: john.doe@email.com", "expected_label": "Header"},
+    {"contains": "Results-driven Software Engineer", "expected_label": "Summary"},
+    {"contains": "Led migration of monolith", "expected_label": "Experience"},
+    {"contains": "Built ETL pipelines", "expected_label": "Experience"},
+    {"contains": "B.S. in Computer Science", "expected_label": "Education"},
+    {"contains": "Languages | Python, Java, SQL", "expected_label": "Skills"},
+    {"contains": "AWS Certified Solutions Architect", "expected_label": "Certifications"}
+  ],
+  "resume_no_headings.txt": [
+    {"contains": "priya.nair@email.com", "expected_label": "Header"},
+    {"contains": "Motivated data analyst", "expected_label": "Summary"},
+    {"contains": "Built dashboards tracking weekly revenue", "expected_label": "Experience"},
+    {"contains": "Reduced reporting errors by 25%", "expected_label": "Experience"},
+    {"contains": "B.Sc. in Statistics", "expected_label": "Education"},
+    {"contains": "Proficient in Python, SQL, Tableau", "expected_label": "Skills"},
+    {"contains": "Certified Tableau Desktop Specialist", "expected_label": "Certifications"}
+  ],
+  "resume_partial_headings.txt": [
+    {"contains": "Owned roadmap for payments platform", "expected_label": "Experience"},
+    {"contains": "Ran user research for onboarding flow", "expected_label": "Experience"},
+    {"contains": "Roadmapping", "expected_label": "Skills"},
+    {"contains": "MBA - Stanford GSB", "expected_label": "Education"}
+  ],
+  "resume_table_skills.txt": [
+    {"contains": "Data Scientist with strong background", "expected_label": "Summary"},
+    {"contains": "Built fraud detection models", "expected_label": "Experience"},
+    {"contains": "M.Tech in Data Science", "expected_label": "Education"},
+    {"contains": "Languages | Python, R, SQL", "expected_label": "Skills"},
+    {"contains": "Other | Scikit-learn, Pandas, XGBoost", "expected_label": "Skills"},
+    {"contains": "AWS Certified Machine Learning", "expected_label": "Certifications"}
+  ],
+  "resume_noisy_ocr.txt": [
+    {"contains": "samuel.okafor@email.com", "expected_label": "Header"},
+    {"contains": "Developed  microservices", "expected_label": "Experience"},
+    {"contains": "B.Sc.  in  Computer  Engineering", "expected_label": "Education"},
+    {"contains": "Go, Python, PostgreSQL", "expected_label": "Skills"},
+    {"contains": "Certified Kubernetes Administrator", "expected_label": "Certifications"}
+  ]
+}

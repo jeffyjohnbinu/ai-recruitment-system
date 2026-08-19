@@ -1,0 +1,16 @@
+SAMUEL OKAFOR
+samuel.okafor@email.com  |  +234-802-555-0199
+
+EXPERIENCE
+Backend  Developer  --  Lagos  Tech  Hub  (2021 - Present)
+- Developed  microservices  in  Go  and  Python
+- Reduced  API  latency  by  35%   through  caching
+
+EDUCATION
+B.Sc.  in  Computer  Engineering,  University  of  Lagos,  2020
+
+SKILLS
+Go, Python, PostgreSQL, Redis, Docker, Kubernetes, proficient in cloud deployment
+
+CERTIFICATIONS
+Certified Kubernetes Administrator (CKA), issued 2022

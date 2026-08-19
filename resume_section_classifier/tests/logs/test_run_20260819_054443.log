@@ -1,0 +1,32 @@
+Resume Section Classifier — Automated Test Run
+Timestamp (UTC): 20260819_054443
+Command: /usr/bin/python3 -m pytest /home/claude/build/resume_section_classifier/tests/test_section_classifier.py -v --tb=short
+======================================================================
+
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/claude/build
+collecting ... collected 18 items
+
+resume_section_classifier/tests/test_section_classifier.py::test_match_heading_recognizes_canonical_forms PASSED [  5%]
+resume_section_classifier/tests/test_section_classifier.py::test_match_heading_rejects_body_text PASSED [ 11%]
+resume_section_classifier/tests/test_section_classifier.py::test_full_headings_detects_all_sections PASSED [ 16%]
+resume_section_classifier/tests/test_section_classifier.py::test_full_headings_uses_rule_based_method PASSED [ 22%]
+resume_section_classifier/tests/test_section_classifier.py::test_full_headings_header_block_detected PASSED [ 27%]
+resume_section_classifier/tests/test_section_classifier.py::test_no_headings_falls_back_to_nlp PASSED [ 33%]
+resume_section_classifier/tests/test_section_classifier.py::test_no_headings_still_finds_experience_and_education PASSED [ 38%]
+resume_section_classifier/tests/test_section_classifier.py::test_partial_headings_uses_both_methods PASSED [ 44%]
+resume_section_classifier/tests/test_section_classifier.py::test_partial_headings_classifies_unlabeled_experience PASSED [ 50%]
+resume_section_classifier/tests/test_section_classifier.py::test_table_linearized_skills_stay_under_skills_heading PASSED [ 55%]
+resume_section_classifier/tests/test_section_classifier.py::test_mismatched_heading_is_flagged PASSED [ 61%]
+resume_section_classifier/tests/test_section_classifier.py::test_nlp_classifier_scores_skills_block PASSED [ 66%]
+resume_section_classifier/tests/test_section_classifier.py::test_nlp_classifier_scores_education_block PASSED [ 72%]
+resume_section_classifier/tests/test_section_classifier.py::test_nlp_classifier_low_signal_is_uncategorized PASSED [ 77%]
+resume_section_classifier/tests/test_section_classifier.py::test_unsupported_extension_raises PASSED [ 83%]
+resume_section_classifier/tests/test_section_classifier.py::test_missing_file_raises PASSED [ 88%]
+resume_section_classifier/tests/test_section_classifier.py::test_empty_text_marked_failed PASSED [ 94%]
+resume_section_classifier/tests/test_section_classifier.py::test_generate_accuracy_report PASSED [100%]
+
+============================== 18 passed in 0.07s ==============================
+
