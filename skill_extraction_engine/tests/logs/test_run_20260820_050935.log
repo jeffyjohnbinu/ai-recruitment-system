@@ -1,0 +1,37 @@
+Skill Extraction Engine — Automated Test Run
+Timestamp (UTC): 20260820_050935
+Command: /usr/bin/python3 -m pytest /home/claude/skill_extraction_engine/tests/test_skill_extraction.py -v --tb=short
+======================================================================
+
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/claude
+collecting ... collected 23 items
+
+skill_extraction_engine/tests/test_skill_extraction.py::test_exact_technical_skill_detected PASSED [  4%]
+skill_extraction_engine/tests/test_skill_extraction.py::test_alias_match_resolves_to_canonical PASSED [  8%]
+skill_extraction_engine/tests/test_skill_extraction.py::test_multiword_alias_matched PASSED [ 13%]
+skill_extraction_engine/tests/test_skill_extraction.py::test_business_skill_detected PASSED [ 17%]
+skill_extraction_engine/tests/test_skill_extraction.py::test_creative_skill_detected PASSED [ 21%]
+skill_extraction_engine/tests/test_skill_extraction.py::test_stack_expands_into_constituent_skills PASSED [ 26%]
+skill_extraction_engine/tests/test_skill_extraction.py::test_stack_inferred_records_source PASSED [ 30%]
+skill_extraction_engine/tests/test_skill_extraction.py::test_stack_inferred_scores_lower_than_direct_mention PASSED [ 34%]
+skill_extraction_engine/tests/test_skill_extraction.py::test_fuzzy_matches_misspelled_kubernetes PASSED [ 39%]
+skill_extraction_engine/tests/test_skill_extraction.py::test_fuzzy_matches_misspelled_python PASSED [ 43%]
+skill_extraction_engine/tests/test_skill_extraction.py::test_fuzzy_confidence_capped_below_exact PASSED [ 47%]
+skill_extraction_engine/tests/test_skill_extraction.py::test_fuzzy_does_not_overmatch_short_random_words PASSED [ 52%]
+skill_extraction_engine/tests/test_skill_extraction.py::test_repeated_mentions_deduplicated_into_one_record PASSED [ 56%]
+skill_extraction_engine/tests/test_skill_extraction.py::test_normalize_mentions_merges_match_types PASSED [ 60%]
+skill_extraction_engine/tests/test_skill_extraction.py::test_confidence_scores_bounded PASSED [ 65%]
+skill_extraction_engine/tests/test_skill_extraction.py::test_skills_section_gives_confidence_bonus PASSED [ 69%]
+skill_extraction_engine/tests/test_skill_extraction.py::test_results_sorted_by_confidence_descending PASSED [ 73%]
+skill_extraction_engine/tests/test_skill_extraction.py::test_empty_text_returns_failed_status PASSED [ 78%]
+skill_extraction_engine/tests/test_skill_extraction.py::test_text_with_no_known_skills_returns_partial PASSED [ 82%]
+skill_extraction_engine/tests/test_skill_extraction.py::test_skills_by_category_counts_match_records PASSED [ 86%]
+skill_extraction_engine/tests/test_skill_extraction.py::test_output_json_written_to_disk PASSED [ 91%]
+skill_extraction_engine/tests/test_skill_extraction.py::test_dictionary_covers_all_three_categories PASSED [ 95%]
+skill_extraction_engine/tests/test_skill_extraction.py::test_no_duplicate_aliases_across_skills PASSED [100%]
+
+============================== 23 passed in 0.07s ==============================
+

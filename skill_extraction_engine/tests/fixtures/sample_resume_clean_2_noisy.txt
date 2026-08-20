@@ -1,0 +1,14 @@
+RAHUL VERMA
+rahul.verma@email.com | +91-9876543210
+Summary
+Full-stack developer with experience building a MERN stack e-commerce platform.
+Experience
+Full Stack Developer -- FinPay (2019-Present)
+- Built and shipped a MERN stack application serving 50k monthly users
+- Deployed containers using Kubernets and managed CI/CD pipelines
+- Wrote unit tests with Jest and used Reactjs for the frontend
+- Comfortable with Pyth0n for internal automation scripts
+Education
+B.Tech in Computer Science -- IIT Bombay, 2019
+Skills
+JavaScript, Node JS, MongoDB, Figma, UI UX Design
