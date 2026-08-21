@@ -1,0 +1,11 @@
+RAHUL VERMA
+rahul.verma@email.com | +91-9876543210
+Experience
+Data Scientist -- FinPay (Jun 2022 to Present)
+- Built fraud detection models reducing false positives by 30%
+- Deployed models on AWS SageMaker
+Data Analyst -- Delta Analytics (Jan 2019 - Mar 2021)
+- Automated reporting pipeline saving 10 hrs/week
+- Built dashboards in Tableau for exec stakeholders
+Education
+M.Tech in Data Science -- IIT Bombay, 2019

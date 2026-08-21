@@ -1,0 +1,16 @@
+JOHN A. DOE
+Email: john.doe@email.com | Phone: +1-555-0142 | Location: Austin, TX
+Summary
+Results-driven Software Engineer with 6 years of experience building scalable backend systems.
+Experience
+Senior Backend Engineer — Acme Corp (Jan 2021 – Present)
+- Led migration of monolith to microservices, cutting deploy time by 40%
+- Designed REST APIs consumed by 2M+ daily active users
+- Mentored 4 junior engineers
+Software Engineer — Beta Inc (Jun 2018 – Dec 2020)
+- Built ETL pipelines processing 10TB/day using Python and Airflow
+- Reduced infra costs by 25% through AWS rightsizing
+Education
+B.S. in Computer Science — University of Texas at Austin, 2018
+Skills
+Python, AWS, Docker, Kubernetes, Airflow

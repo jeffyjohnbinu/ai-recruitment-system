@@ -1,0 +1,42 @@
+Experience Parsing & Relevance Engine — Automated Test Run
+Timestamp (UTC): 20260821_054207
+Command: /usr/bin/python3 -m pytest /home/claude/experience_parsing_engine/tests/test_experience_engine.py -v --tb=short
+======================================================================
+
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/claude
+collecting ... collected 28 items
+
+experience_parsing_engine/tests/test_experience_engine.py::test_parse_year_only_as_start PASSED [  3%]
+experience_parsing_engine/tests/test_experience_engine.py::test_parse_year_only_as_end PASSED [  7%]
+experience_parsing_engine/tests/test_experience_engine.py::test_parse_month_year PASSED [ 10%]
+experience_parsing_engine/tests/test_experience_engine.py::test_parse_present_token_resolves_to_today PASSED [ 14%]
+experience_parsing_engine/tests/test_experience_engine.py::test_months_between_inclusive PASSED [ 17%]
+experience_parsing_engine/tests/test_experience_engine.py::test_parse_duration_full_range PASSED [ 21%]
+experience_parsing_engine/tests/test_experience_engine.py::test_parse_duration_unparseable_token PASSED [ 25%]
+experience_parsing_engine/tests/test_experience_engine.py::test_parses_expected_entry_count PASSED [ 28%]
+experience_parsing_engine/tests/test_experience_engine.py::test_extracts_title_and_company PASSED [ 32%]
+experience_parsing_engine/tests/test_experience_engine.py::test_current_role_flagged_and_dated PASSED [ 35%]
+experience_parsing_engine/tests/test_experience_engine.py::test_bullets_attached_to_correct_entry PASSED [ 39%]
+experience_parsing_engine/tests/test_experience_engine.py::test_section_found_flag PASSED [ 42%]
+experience_parsing_engine/tests/test_experience_engine.py::test_no_entries_outside_experience_section PASSED [ 46%]
+experience_parsing_engine/tests/test_experience_engine.py::test_total_experience_no_overlap PASSED [ 50%]
+experience_parsing_engine/tests/test_experience_engine.py::test_gap_detected PASSED [ 53%]
+experience_parsing_engine/tests/test_experience_engine.py::test_overlap_detected PASSED [ 57%]
+experience_parsing_engine/tests/test_experience_engine.py::test_overlap_does_not_inflate_total_months PASSED [ 60%]
+experience_parsing_engine/tests/test_experience_engine.py::test_skipped_entries_tracked PASSED [ 64%]
+experience_parsing_engine/tests/test_experience_engine.py::test_identical_titles_max_similarity PASSED [ 67%]
+experience_parsing_engine/tests/test_experience_engine.py::test_similar_seniority_different_words_partial_similarity PASSED [ 71%]
+experience_parsing_engine/tests/test_experience_engine.py::test_unrelated_titles_low_similarity PASSED [ 75%]
+experience_parsing_engine/tests/test_experience_engine.py::test_relevance_scoring_ranks_matching_role_higher PASSED [ 78%]
+experience_parsing_engine/tests/test_experience_engine.py::test_relevance_matched_keywords_present PASSED [ 82%]
+experience_parsing_engine/tests/test_experience_engine.py::test_relevance_handles_no_entries PASSED [ 85%]
+experience_parsing_engine/tests/test_experience_engine.py::test_engine_process_text_success PASSED [ 89%]
+experience_parsing_engine/tests/test_experience_engine.py::test_engine_writes_json_output PASSED [ 92%]
+experience_parsing_engine/tests/test_experience_engine.py::test_engine_score_relevance_roundtrip PASSED [ 96%]
+experience_parsing_engine/tests/test_experience_engine.py::test_engine_handles_empty_text_gracefully PASSED [100%]
+
+============================== 28 passed in 0.04s ==============================
+
