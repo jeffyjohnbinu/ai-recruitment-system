@@ -1,0 +1,37 @@
+Education & Certification Parsing Engine — Automated Test Run
+Timestamp (UTC): 20260822_045041
+Command: /usr/bin/python3 -m pytest /home/claude/education_certification_extractor/tests/test_extraction.py -v --tb=short
+======================================================================
+
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/claude
+collecting ... collected 23 items
+
+education_certification_extractor/tests/test_extraction.py::test_normalize_degree_recognizes_common_abbreviations PASSED [  4%]
+education_certification_extractor/tests/test_extraction.py::test_normalize_degree_unrecognized_returns_none PASSED [  8%]
+education_certification_extractor/tests/test_extraction.py::test_normalize_institution_strips_articles_and_punctuation PASSED [ 13%]
+education_certification_extractor/tests/test_extraction.py::test_normalize_certification_name_collapses_whitespace PASSED [ 17%]
+education_certification_extractor/tests/test_extraction.py::test_tag_relevance_cloud PASSED [ 21%]
+education_certification_extractor/tests/test_extraction.py::test_tag_relevance_project_management PASSED [ 26%]
+education_certification_extractor/tests/test_extraction.py::test_tag_relevance_security PASSED [ 30%]
+education_certification_extractor/tests/test_extraction.py::test_tag_relevance_unknown_falls_back_to_other PASSED [ 34%]
+education_certification_extractor/tests/test_extraction.py::test_degree_parser_full_line PASSED [ 39%]
+education_certification_extractor/tests/test_extraction.py::test_degree_parser_multiple_lines PASSED [ 43%]
+education_certification_extractor/tests/test_extraction.py::test_degree_parser_handles_split_across_two_lines PASSED [ 47%]
+education_certification_extractor/tests/test_extraction.py::test_degree_parser_skips_heading_line PASSED [ 52%]
+education_certification_extractor/tests/test_extraction.py::test_degree_parser_empty_section_returns_empty_list PASSED [ 56%]
+education_certification_extractor/tests/test_extraction.py::test_certification_parser_basic_line PASSED [ 60%]
+education_certification_extractor/tests/test_extraction.py::test_certification_parser_extracts_year_and_issuer PASSED [ 65%]
+education_certification_extractor/tests/test_extraction.py::test_certification_parser_multiple_lines PASSED [ 69%]
+education_certification_extractor/tests/test_extraction.py::test_certification_parser_empty_section_returns_empty_list PASSED [ 73%]
+education_certification_extractor/tests/test_extraction.py::test_extract_from_text_success PASSED [ 78%]
+education_certification_extractor/tests/test_extraction.py::test_extract_from_text_multi_degree PASSED [ 82%]
+education_certification_extractor/tests/test_extraction.py::test_extract_from_text_noisy_education PASSED [ 86%]
+education_certification_extractor/tests/test_extraction.py::test_extract_from_sections_matches_alias_headings PASSED [ 91%]
+education_certification_extractor/tests/test_extraction.py::test_extract_from_text_missing_sections_flags_warnings PASSED [ 95%]
+education_certification_extractor/tests/test_extraction.py::test_extract_writes_json_output PASSED [100%]
+
+============================== 23 passed in 0.03s ==============================
+

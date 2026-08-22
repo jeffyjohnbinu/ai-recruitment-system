@@ -1,0 +1,16 @@
+PRIYA NATARAJAN
+priya.n@email.com | +91-9000012345
+Summary
+Data engineering leader with a decade of experience across fintech and healthcare.
+Experience
+Principal Data Engineer -- HealthCorp (2019-Present)
+- Built the streaming ingestion platform serving 40+ internal teams
+Education
+M.Tech in Data Science -- IIT Bombay, 2016
+B.Tech in Computer Engineering -- VJTI Mumbai, 2013
+Skills
+Certifications
+- AWS Certified Solutions Architect -- Professional, 2023
+- Project Management Professional (PMP) -- PMI, 2021
+- Certified Scrum Master -- Scrum Alliance
+- Six Sigma Green Belt
