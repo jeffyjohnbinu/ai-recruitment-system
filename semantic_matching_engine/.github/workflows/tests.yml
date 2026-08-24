@@ -1,0 +1,46 @@
+name: Semantic Matching Engine Tests
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch: {}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run automated test suite
+        run: python tests/run_tests.py
+
+      - name: Upload test logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-logs
+          path: tests/logs/
+
+      - name: Generate matching accuracy report
+        run: python -m semantic_matching_engine.generate_accuracy_report --output-dir tests/outputs --engine hashing
+
+      - name: Upload accuracy report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: accuracy-report
+          path: tests/outputs/structured/semantic_matches/

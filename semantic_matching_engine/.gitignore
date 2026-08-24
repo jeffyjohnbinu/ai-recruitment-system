@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+.venv/
+venv/
+
+# Generated test outputs
+tests/test_outputs/
+outputs/
+
+# Keep Day 12 deliverables
+!tests/logs/
+!tests/logs/*.log
+!tests/outputs/
+!tests/outputs/structured/
+!tests/outputs/structured/semantic_matches/
+!tests/outputs/structured/semantic_matches/*.json
+!tests/outputs/structured/semantic_matches/*.md
