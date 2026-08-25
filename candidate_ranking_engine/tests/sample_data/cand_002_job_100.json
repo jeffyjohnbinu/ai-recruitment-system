@@ -1,0 +1,15 @@
+{
+  "candidate_id": "cand_002",
+  "job_id": "job_100",
+  "candidate_name": "Miguel Torres",
+  "schema_version": "1.0",
+  "model_version": "semantic_matching_engine-1.0",
+  "pipeline_version": "zecpath-pipeline-day12",
+  "overall_score": 0.62,
+  "band": "Possible Match",
+  "section_scores": {
+    "skills": 0.60,
+    "experience": 0.65,
+    "projects": 0.55
+  }
+}

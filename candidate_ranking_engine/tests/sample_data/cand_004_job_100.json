@@ -1,0 +1,12 @@
+{
+  "candidate_id": "cand_004",
+  "job_id": "job_100",
+  "candidate_name": "Ben Wu",
+  "overall_score": 0.62,
+  "band": "Possible Match",
+  "section_scores": {
+    "skills": 0.50,
+    "experience": 0.70,
+    "projects": 0.65
+  }
+}

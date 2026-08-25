@@ -1,0 +1,11 @@
+{
+  "candidateId": "cand_006",
+  "jobId": "job_100",
+  "name": "Legacy Format Candidate",
+  "match_score": 0.80,
+  "match_classification": "Strong Match",
+  "component_scores": {
+    "skills": 0.82,
+    "experience": 0.78
+  }
+}

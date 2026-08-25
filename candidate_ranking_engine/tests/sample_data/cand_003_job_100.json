@@ -1,0 +1,15 @@
+{
+  "candidate_id": "cand_003",
+  "job_id": "job_100",
+  "candidate_name": "Priya Nair",
+  "schema_version": "1.0",
+  "model_version": "semantic_matching_engine-1.0",
+  "pipeline_version": "zecpath-pipeline-day12",
+  "overall_score": 0.31,
+  "band": "Weak Match",
+  "section_scores": {
+    "skills": 0.28,
+    "experience": 0.35,
+    "projects": 0.30
+  }
+}

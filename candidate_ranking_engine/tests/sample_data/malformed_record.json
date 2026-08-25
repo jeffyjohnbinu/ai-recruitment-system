@@ -1,0 +1,4 @@
+{
+  "note": "this record is missing candidate_id/job_id/score and should be skipped",
+  "some_other_field": 42
+}

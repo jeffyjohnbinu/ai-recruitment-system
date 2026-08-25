@@ -1,0 +1,12 @@
+{
+  "candidate_id": "cand_005",
+  "job_id": "job_200",
+  "candidate_name": "Other Job Candidate",
+  "overall_score": 0.99,
+  "band": "Strong Match",
+  "section_scores": {
+    "skills": 0.99,
+    "experience": 0.99,
+    "projects": 0.99
+  }
+}

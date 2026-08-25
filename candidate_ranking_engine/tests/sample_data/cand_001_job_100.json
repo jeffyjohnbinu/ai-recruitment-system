@@ -1,0 +1,15 @@
+{
+  "candidate_id": "cand_001",
+  "job_id": "job_100",
+  "candidate_name": "Asha Rao",
+  "schema_version": "1.0",
+  "model_version": "semantic_matching_engine-1.0",
+  "pipeline_version": "zecpath-pipeline-day12",
+  "overall_score": 0.91,
+  "band": "Strong Match",
+  "section_scores": {
+    "skills": 0.95,
+    "experience": 0.88,
+    "projects": 0.85
+  }
+}

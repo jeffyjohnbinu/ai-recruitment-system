@@ -1,0 +1,43 @@
+name: Candidate Ranking Engine Tests
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch: {}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest
+
+      - name: Run automated test suite
+        run: python candidate_ranking_engine/tests/run_tests.py
+
+      - name: Upload test logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-logs
+          path: candidate_ranking_engine/tests/logs/
+
+      - name: Upload ranking outputs (sample data)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ranking-outputs
+          path: candidate_ranking_engine/tests/test_outputs/
