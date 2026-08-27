@@ -1,0 +1,10 @@
+{
+  "candidate_id": "C001",
+  "job_id": "J001",
+  "relevant_years": 4.5,
+  "required_years": 5,
+  "roles_analyzed": [
+    {"title": "Backend Engineer", "years": 3.0, "relevant": true},
+    {"title": "Software Engineer Intern", "years": 1.5, "relevant": true}
+  ]
+}

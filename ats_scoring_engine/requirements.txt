@@ -1,0 +1,5 @@
+pytest>=7.0
+
+# No third-party runtime dependencies -- the scoring formula, weight
+# system, and explainability layer are pure-Python and consume plain
+# dict/JSON output from upstream Day 9-12 modules.

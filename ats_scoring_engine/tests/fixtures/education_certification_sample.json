@@ -1,0 +1,8 @@
+{
+  "candidate_id": "C001",
+  "job_id": "J001",
+  "highest_degree": "B.S. Computer Science",
+  "meets_minimum_education": true,
+  "field_match": true,
+  "relevant_certifications": ["AWS Certified Solutions Architect"]
+}

@@ -1,0 +1,9 @@
+{
+  "candidate_id": "C002",
+  "job_id": "J001",
+  "relevant_years": 1.0,
+  "required_years": 5,
+  "roles_analyzed": [
+    {"title": "Junior Developer", "years": 1.0, "relevant": true}
+  ]
+}

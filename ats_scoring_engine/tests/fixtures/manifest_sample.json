@@ -1,0 +1,26 @@
+[
+  {
+    "candidate_id": "C001",
+    "job_id": "J001",
+    "role": "software_engineer",
+    "skill_json": "candidates/C001/skill.json",
+    "experience_json": "candidates/C001/experience.json",
+    "education_json": "candidates/C001/education.json",
+    "semantic_json": "candidates/C001/semantic.json"
+  },
+  {
+    "candidate_id": "C002",
+    "job_id": "J001",
+    "role": "software_engineer",
+    "skill_json": "candidates/C002/skill.json",
+    "experience_json": "candidates/C002/experience.json",
+    "education_json": "candidates/C002/education.json",
+    "semantic_json": "candidates/C002/semantic.json"
+  },
+  {
+    "candidate_id": "C003",
+    "job_id": "J001",
+    "role": "software_engineer",
+    "skill_json": "candidates/C003/skill.json"
+  }
+]

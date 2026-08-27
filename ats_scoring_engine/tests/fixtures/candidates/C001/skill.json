@@ -1,0 +1,7 @@
+{
+  "candidate_id": "C001",
+  "job_id": "J001",
+  "matched_skills": ["python", "fastapi", "postgresql", "docker", "aws"],
+  "required_skills": ["python", "fastapi", "postgresql", "docker", "aws", "kubernetes"],
+  "match_percentage": 83.3
+}

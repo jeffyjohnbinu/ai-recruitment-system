@@ -1,0 +1,61 @@
+ATS Scoring Engine — Automated Test Run
+Timestamp (UTC): 20260827_092815
+Command: /usr/bin/python3 -m pytest /home/claude/ats_scoring_engine/tests/test_scoring_engine.py /home/claude/ats_scoring_engine/tests/test_generator.py -v --tb=short
+======================================================================
+
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/claude
+collecting ... collected 47 items
+
+ats_scoring_engine/tests/test_scoring_engine.py::test_skill_match_direct_field PASSED [  2%]
+ats_scoring_engine/tests/test_scoring_engine.py::test_skill_match_ratio_fallback PASSED [  4%]
+ats_scoring_engine/tests/test_scoring_engine.py::test_skill_match_missing_returns_unavailable PASSED [  6%]
+ats_scoring_engine/tests/test_scoring_engine.py::test_skill_match_missing_dict_returns_unavailable PASSED [  8%]
+ats_scoring_engine/tests/test_scoring_engine.py::test_experience_relevance_ratio_fallback PASSED [ 10%]
+ats_scoring_engine/tests/test_scoring_engine.py::test_experience_relevance_direct_field PASSED [ 12%]
+ats_scoring_engine/tests/test_scoring_engine.py::test_education_alignment_boolean_composite PASSED [ 14%]
+ats_scoring_engine/tests/test_scoring_engine.py::test_education_alignment_partial_boolean PASSED [ 17%]
+ats_scoring_engine/tests/test_scoring_engine.py::test_education_alignment_missing PASSED [ 19%]
+ats_scoring_engine/tests/test_scoring_engine.py::test_semantic_similarity_direct_field PASSED [ 21%]
+ats_scoring_engine/tests/test_scoring_engine.py::test_semantic_similarity_handles_negative_cosine PASSED [ 23%]
+ats_scoring_engine/tests/test_scoring_engine.py::test_semantic_similarity_missing PASSED [ 25%]
+ats_scoring_engine/tests/test_scoring_engine.py::test_weight_profile_rejects_bad_sum PASSED [ 27%]
+ats_scoring_engine/tests/test_scoring_engine.py::test_weight_profile_rejects_missing_component PASSED [ 29%]
+ats_scoring_engine/tests/test_scoring_engine.py::test_registry_default_profile_exists PASSED [ 31%]
+ats_scoring_engine/tests/test_scoring_engine.py::test_registry_resolves_role_case_insensitively PASSED [ 34%]
+ats_scoring_engine/tests/test_scoring_engine.py::test_registry_unknown_role_falls_back_to_default PASSED [ 36%]
+ats_scoring_engine/tests/test_scoring_engine.py::test_registry_register_new_profile PASSED [ 38%]
+ats_scoring_engine/tests/test_scoring_engine.py::test_registry_roundtrips_through_json_file PASSED [ 40%]
+ats_scoring_engine/tests/test_scoring_engine.py::test_scoring_all_data_available PASSED [ 42%]
+ats_scoring_engine/tests/test_scoring_engine.py::test_scoring_uses_role_specific_profile PASSED [ 44%]
+ats_scoring_engine/tests/test_scoring_engine.py::test_scoring_overrides_bypass_extraction PASSED [ 46%]
+ats_scoring_engine/tests/test_scoring_engine.py::test_renormalize_mode_missing_one_component PASSED [ 48%]
+ats_scoring_engine/tests/test_scoring_engine.py::test_neutral_fill_mode_missing_one_component PASSED [ 51%]
+ats_scoring_engine/tests/test_scoring_engine.py::test_strict_mode_within_tolerance_still_scores PASSED [ 53%]
+ats_scoring_engine/tests/test_scoring_engine.py::test_strict_mode_exceeding_tolerance_returns_insufficient_data PASSED [ 55%]
+ats_scoring_engine/tests/test_scoring_engine.py::test_all_data_missing_renormalize_yields_zero_weight PASSED [ 57%]
+ats_scoring_engine/tests/test_scoring_engine.py::test_invalid_missing_data_mode_raises PASSED [ 59%]
+ats_scoring_engine/tests/test_scoring_engine.py::test_narrative_mentions_candidate_and_job PASSED [ 61%]
+ats_scoring_engine/tests/test_scoring_engine.py::test_narrative_flags_missing_data PASSED [ 63%]
+ats_scoring_engine/tests/test_scoring_engine.py::test_narrative_insufficient_data_status PASSED [ 65%]
+ats_scoring_engine/tests/test_scoring_engine.py::test_component_explanations_cover_all_components PASSED [ 68%]
+ats_scoring_engine/tests/test_scoring_engine.py::test_score_record_has_metadata_envelope PASSED [ 70%]
+ats_scoring_engine/tests/test_scoring_engine.py::test_result_store_writes_json_file PASSED [ 72%]
+ats_scoring_engine/tests/test_generator.py::test_generate_one_returns_scored_record PASSED [ 74%]
+ats_scoring_engine/tests/test_generator.py::test_generate_batch_preserves_order_and_scores_all PASSED [ 76%]
+ats_scoring_engine/tests/test_generator.py::test_generate_one_persists_when_store_provided PASSED [ 78%]
+ats_scoring_engine/tests/test_generator.py::test_generate_one_does_not_persist_without_store PASSED [ 80%]
+ats_scoring_engine/tests/test_generator.py::test_load_manifest_resolves_relative_json_paths PASSED [ 82%]
+ats_scoring_engine/tests/test_generator.py::test_load_manifest_handles_partial_data_entry PASSED [ 85%]
+ats_scoring_engine/tests/test_generator.py::test_load_manifest_supports_inline_data PASSED [ 87%]
+ats_scoring_engine/tests/test_generator.py::test_load_manifest_missing_file_path_yields_none PASSED [ 89%]
+ats_scoring_engine/tests/test_generator.py::test_generate_from_manifest_scores_all_candidates PASSED [ 91%]
+ats_scoring_engine/tests/test_generator.py::test_generate_from_manifest_strong_candidate_outranks_weak_candidate PASSED [ 93%]
+ats_scoring_engine/tests/test_generator.py::test_leaderboard_orders_best_first PASSED [ 95%]
+ats_scoring_engine/tests/test_generator.py::test_leaderboard_sorts_insufficient_data_last PASSED [ 97%]
+ats_scoring_engine/tests/test_generator.py::test_generate_leaderboard_convenience_method_matches_manual_flow PASSED [100%]
+
+============================== 47 passed in 0.12s ==============================
+

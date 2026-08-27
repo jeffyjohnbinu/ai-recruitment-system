@@ -1,0 +1,32 @@
+{
+  "default": {
+    "skill_match": 0.35,
+    "experience_relevance": 0.25,
+    "education_alignment": 0.15,
+    "semantic_similarity": 0.25
+  },
+  "software_engineer": {
+    "skill_match": 0.4,
+    "experience_relevance": 0.3,
+    "education_alignment": 0.1,
+    "semantic_similarity": 0.2
+  },
+  "data_scientist": {
+    "skill_match": 0.35,
+    "experience_relevance": 0.2,
+    "education_alignment": 0.2,
+    "semantic_similarity": 0.25
+  },
+  "sales": {
+    "skill_match": 0.25,
+    "experience_relevance": 0.4,
+    "education_alignment": 0.1,
+    "semantic_similarity": 0.25
+  },
+  "executive": {
+    "skill_match": 0.2,
+    "experience_relevance": 0.45,
+    "education_alignment": 0.15,
+    "semantic_similarity": 0.2
+  }
+}

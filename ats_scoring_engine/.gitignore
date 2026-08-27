@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+.venv/
+venv/
+
+# Generated run outputs (CLI --output-dir default)
+outputs/
+
+# Keep Day 13 deliverables
+!tests/logs/
+!tests/logs/*.log
+!tests/fixtures/
+!tests/fixtures/*.json
+!tests/fixtures/candidates/
+!tests/fixtures/candidates/**/*.json
+!config/
+!config/role_weight_profiles.json

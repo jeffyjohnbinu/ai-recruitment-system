@@ -1,0 +1,6 @@
+{
+  "candidate_id": "C001",
+  "job_id": "J001",
+  "similarity_score": 0.81,
+  "engine_used": "sentence-transformers"
+}
