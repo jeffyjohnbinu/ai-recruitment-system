@@ -1,0 +1,17 @@
+{
+  "cand_001": {
+    "keyword_match": [0.88, 0.6],
+    "semantic_similarity": [0.55, 0.3],
+    "experience_relevance": [0.6, 0.1]
+  },
+  "cand_002": {
+    "keyword_match": [0.92, 0.6],
+    "semantic_similarity": [0.75, 0.3],
+    "experience_relevance": [0.8, 0.1]
+  },
+  "cand_003": {
+    "keyword_match": [0.97, 0.6],
+    "semantic_similarity": [0.65, 0.3],
+    "experience_relevance": [0.7, 0.1]
+  }
+}

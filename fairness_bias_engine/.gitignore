@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+.venv/
+venv/
+
+# Generated CLI outputs
+outputs/
+
+# Keep Day 15 deliverables
+!tests/logs/
+!tests/logs/*.log
+!tests/fixtures/
+!tests/fixtures/*.json

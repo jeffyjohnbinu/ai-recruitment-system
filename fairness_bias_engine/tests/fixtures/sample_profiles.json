@@ -1,0 +1,38 @@
+[
+  {
+    "candidate_id": "cand_001",
+    "name": "Priya Nair",
+    "gender": "female",
+    "address": "45 Lake View Road, Bengaluru, Karnataka",
+    "summary": "She led backend migrations and mentored her team of five engineers.",
+    "skills": {"Languages": ["Python", "python", "SQL"], "Cloud": ["AWS", "Docker"]},
+    "total_experience_years": 4,
+    "highest_degree": "B.Tech in Computer Science",
+    "academic_profile": {"institution": "Anna University", "degree": "B.Tech"},
+    "certifications": ["AWS Certified Developer"]
+  },
+  {
+    "candidate_id": "cand_002",
+    "name": "John Smith",
+    "gender": "male",
+    "address": "12 Oak Street, Austin, TX",
+    "summary": "He designed REST APIs and shipped features across three quarters.",
+    "skills": {"Languages": ["Python", "Java"], "Cloud": ["AWS", "GCP", "Kubernetes"]},
+    "total_experience_years": 6,
+    "highest_degree": "M.S. in Computer Science",
+    "academic_profile": {"institution": "Stanford University", "degree": "M.S."},
+    "certifications": []
+  },
+  {
+    "candidate_id": "cand_003",
+    "name": "Wei Chen",
+    "gender": "male",
+    "address": "78 River Lane, Seattle, WA",
+    "summary": "Built ETL pipelines and reduced infra costs through rightsizing.",
+    "skills": ["python", "airflow", "sql", "aws", "docker", "kubernetes"],
+    "total_experience_years": 5,
+    "highest_degree": "Bachelors",
+    "academic_profile": {"institution": "University of Washington", "degree": "Bachelors"},
+    "certifications": ["AWS Certified Solutions Architect"]
+  }
+]

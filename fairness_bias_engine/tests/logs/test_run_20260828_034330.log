@@ -1,0 +1,39 @@
+Fairness, Normalization & Bias Reduction Engine — Automated Test Run
+Timestamp (UTC): 20260828_034330
+Command: /usr/bin/python3 -m pytest /home/claude/fairness_bias_engine/tests/test_fairness_bias_engine.py -v --tb=short
+======================================================================
+
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/claude
+collecting ... collected 25 items
+
+fairness_bias_engine/tests/test_fairness_bias_engine.py::test_normalizer_canonicalizes_degree_variants PASSED [  4%]
+fairness_bias_engine/tests/test_fairness_bias_engine.py::test_normalizer_flattens_categorized_skills_and_dedupes PASSED [  8%]
+fairness_bias_engine/tests/test_fairness_bias_engine.py::test_normalizer_derives_experience_from_records_when_missing PASSED [ 12%]
+fairness_bias_engine/tests/test_fairness_bias_engine.py::test_normalizer_handles_unrecognized_degree_gracefully PASSED [ 16%]
+fairness_bias_engine/tests/test_fairness_bias_engine.py::test_normalizer_defaults_missing_experience_to_zero PASSED [ 20%]
+fairness_bias_engine/tests/test_fairness_bias_engine.py::test_masker_removes_protected_fields PASSED [ 24%]
+fairness_bias_engine/tests/test_fairness_bias_engine.py::test_masker_keeps_job_relevant_fields_untouched PASSED [ 28%]
+fairness_bias_engine/tests/test_fairness_bias_engine.py::test_masker_neutralizes_gendered_pronouns_in_free_text PASSED [ 32%]
+fairness_bias_engine/tests/test_fairness_bias_engine.py::test_masker_keeps_city_region_but_drops_street_address PASSED [ 36%]
+fairness_bias_engine/tests/test_fairness_bias_engine.py::test_masker_masks_institution_name_by_default PASSED [ 40%]
+fairness_bias_engine/tests/test_fairness_bias_engine.py::test_masker_reversible_map_not_in_default_dict_output PASSED [ 44%]
+fairness_bias_engine/tests/test_fairness_bias_engine.py::test_keyword_reducer_caps_share_and_redistributes PASSED [ 48%]
+fairness_bias_engine/tests/test_fairness_bias_engine.py::test_keyword_reducer_no_op_when_already_under_cap PASSED [ 52%]
+fairness_bias_engine/tests/test_fairness_bias_engine.py::test_keyword_reducer_diminishing_returns_curve PASSED [ 56%]
+fairness_bias_engine/tests/test_fairness_bias_engine.py::test_keyword_reducer_handles_missing_component_gracefully PASSED [ 60%]
+fairness_bias_engine/tests/test_fairness_bias_engine.py::test_score_normalizer_computes_zscore_and_percentile PASSED [ 64%]
+fairness_bias_engine/tests/test_fairness_bias_engine.py::test_score_normalizer_handles_single_candidate_pool PASSED [ 68%]
+fairness_bias_engine/tests/test_fairness_bias_engine.py::test_score_normalizer_handles_zero_variance_pool PASSED [ 72%]
+fairness_bias_engine/tests/test_fairness_bias_engine.py::test_score_normalizer_empty_pool_returns_empty_list PASSED [ 76%]
+fairness_bias_engine/tests/test_fairness_bias_engine.py::test_bias_auditor_flags_four_fifths_violation PASSED [ 80%]
+fairness_bias_engine/tests/test_fairness_bias_engine.py::test_bias_auditor_no_flag_when_rates_are_close PASSED [ 84%]
+fairness_bias_engine/tests/test_fairness_bias_engine.py::test_bias_auditor_reports_insufficient_data_with_no_groups PASSED [ 88%]
+fairness_bias_engine/tests/test_fairness_bias_engine.py::test_bias_auditor_flags_low_confidence_with_tiny_groups PASSED [ 92%]
+fairness_bias_engine/tests/test_fairness_bias_engine.py::test_engine_end_to_end_pipeline PASSED [ 96%]
+fairness_bias_engine/tests/test_fairness_bias_engine.py::test_engine_handles_candidate_with_no_score_components PASSED [100%]
+
+============================== 25 passed in 0.04s ==============================
+
