@@ -1,0 +1,37 @@
+{
+  "generated_at": "2026-08-24T05:13:30.392568+00:00",
+  "total_pairs": 6,
+  "confusion_matrix": {
+    "true_positives": 3,
+    "false_positives": 0,
+    "true_negatives": 3,
+    "false_negatives": 0
+  },
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1_score": 1.0,
+  "accuracy": 1.0,
+  "by_job_type": {
+    "data_science": {
+      "total_pairs": 2,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "accuracy": 1.0
+    },
+    "engineering": {
+      "total_pairs": 2,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "accuracy": 1.0
+    },
+    "product": {
+      "total_pairs": 2,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "accuracy": 1.0
+    }
+  }
+}

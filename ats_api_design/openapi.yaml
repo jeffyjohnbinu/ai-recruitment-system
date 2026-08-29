@@ -1,0 +1,596 @@
+openapi: 3.0.3
+info:
+  title: Zecpath ATS API
+  description: >
+    Public REST surface over the Zecpath AI Job Portal pipeline (resume extraction,
+    JD parsing, skill/experience/education parsing, semantic matching, ATS scoring,
+    and candidate ranking — Days 5-14). Compute-heavy stages are exposed as async
+    Tasks; a single Task model is reused across every long-running operation.
+  version: "1.0.0"
+servers:
+  - url: https://api.zecpath.example.com/api/v1
+
+tags:
+  - name: Resumes
+  - name: Job Descriptions
+  - name: Matching
+  - name: Shortlisting
+  - name: Tasks
+
+paths:
+  # ---------------------------------------------------------------- Resumes
+  /resumes:
+    post:
+      tags: [Resumes]
+      summary: Upload a resume (PDF/DOCX) for extraction + downstream parsing
+      description: >
+        Accepts a single resume file. The full extraction pipeline (Day 5 text
+        extraction -> Day 8 section classification -> Day 9 skills -> Day 10
+        experience -> Day 11 education) runs asynchronously.
+      operationId: uploadResume
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [file]
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: .pdf or .docx resume file (max 10 MB)
+                candidate_reference:
+                  type: string
+                  description: Optional caller-supplied external ID (ATS/CRM record id)
+                callback_url:
+                  type: string
+                  format: uri
+                  description: Optional webhook to POST the Task result to on completion
+      responses:
+        '202':
+          description: Accepted for async processing
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/TaskAccepted' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '415': { $ref: '#/components/responses/UnsupportedMediaType' }
+        '413': { $ref: '#/components/responses/PayloadTooLarge' }
+
+  /resumes/{resumeId}:
+    get:
+      tags: [Resumes]
+      summary: Retrieve a parsed resume record
+      operationId: getResume
+      parameters:
+        - $ref: '#/components/parameters/ResumeId'
+      responses:
+        '200':
+          description: Resume record (fields populate as each pipeline stage completes)
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ResumeRecord' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  # ------------------------------------------------------------ Job Descriptions
+  /job-descriptions:
+    post:
+      tags: [Job Descriptions]
+      summary: Submit a job description for parsing (Day 6 JD Parsing Engine)
+      operationId: createJobDescription
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/JobDescriptionCreateRequest' }
+      responses:
+        '201':
+          description: >
+            JD parsing is lightweight (text, not files) and typically completes
+            synchronously; a JobRequirementRecord is returned directly.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/JobRequirementRecord' }
+        '202':
+          description: Accepted for async processing (large/batched JD text)
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/TaskAccepted' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+
+  /job-descriptions/{jobDescriptionId}:
+    get:
+      tags: [Job Descriptions]
+      summary: Retrieve a parsed job description
+      operationId: getJobDescription
+      parameters:
+        - $ref: '#/components/parameters/JobDescriptionId'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/JobRequirementRecord' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  # --------------------------------------------------------------------- Matching
+  /matches:
+    post:
+      tags: [Matching]
+      summary: Score one resume against one job description (Day 12 + Day 13)
+      description: >
+        Runs semantic matching and ATS multi-component scoring for a single
+        resume/JD pair. Always async: semantic matching (sentence-transformers,
+        with offline hashing fallback) is the most compute-heavy stage in the
+        pipeline.
+      operationId: createMatch
+      parameters:
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/MatchCreateRequest' }
+      responses:
+        '202':
+          description: Accepted for async processing
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/TaskAccepted' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /matches/{matchId}:
+    get:
+      tags: [Matching]
+      summary: Retrieve a match result (score, components, explainability)
+      operationId: getMatch
+      parameters:
+        - $ref: '#/components/parameters/MatchId'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/MatchResult' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  # ----------------------------------------------------------------- Shortlisting
+  /job-descriptions/{jobDescriptionId}/shortlist:
+    post:
+      tags: [Shortlisting]
+      summary: Score + rank a batch of resumes against one JD (Day 13 + Day 14)
+      description: >
+        Fans out matching across all supplied resumes, then applies the Day 14
+        zone-based ranking (shortlist / review / auto-reject) with deterministic
+        tie-breaking. Always async and returns a batch Task.
+      operationId: createShortlist
+      parameters:
+        - $ref: '#/components/parameters/JobDescriptionId'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ShortlistCreateRequest' }
+      responses:
+        '202':
+          description: Accepted for async processing
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/TaskAccepted' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /shortlists/{shortlistId}:
+    get:
+      tags: [Shortlisting]
+      summary: Retrieve ranked shortlist results
+      operationId: getShortlist
+      parameters:
+        - $ref: '#/components/parameters/ShortlistId'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ShortlistResult' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /shortlists/{shortlistId}/export:
+    get:
+      tags: [Shortlisting]
+      summary: Export the shortlist as the Day 14 recruiter-facing CSV
+      operationId: exportShortlist
+      parameters:
+        - $ref: '#/components/parameters/ShortlistId'
+      responses:
+        '200':
+          description: CSV file
+          content:
+            text/csv:
+              schema: { type: string, format: binary }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  # -------------------------------------------------------------------------- Tasks
+  /tasks/{taskId}:
+    get:
+      tags: [Tasks]
+      summary: Poll the status/result of any async operation
+      description: >
+        Single generic status endpoint reused by resume upload, JD parsing,
+        matching, and shortlisting. Clients should poll no more often than the
+        `Retry-After` header suggests, or register `callback_url` for a webhook
+        instead.
+      operationId: getTask
+      parameters:
+        - $ref: '#/components/parameters/TaskId'
+      responses:
+        '200':
+          description: OK
+          headers:
+            Retry-After:
+              description: Suggested seconds before the next poll (present while queued/processing)
+              schema: { type: integer }
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Task' }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+components:
+  parameters:
+    ResumeId:
+      name: resumeId
+      in: path
+      required: true
+      schema: { type: string, format: uuid }
+    JobDescriptionId:
+      name: jobDescriptionId
+      in: path
+      required: true
+      schema: { type: string, format: uuid }
+    MatchId:
+      name: matchId
+      in: path
+      required: true
+      schema: { type: string, format: uuid }
+    ShortlistId:
+      name: shortlistId
+      in: path
+      required: true
+      schema: { type: string, format: uuid }
+    TaskId:
+      name: taskId
+      in: path
+      required: true
+      schema: { type: string, format: uuid }
+    IdempotencyKey:
+      name: Idempotency-Key
+      in: header
+      required: false
+      description: >
+        Client-generated key. Retried requests with the same key within 24h
+        return the original Task instead of re-running the pipeline.
+      schema: { type: string }
+
+  responses:
+    BadRequest:
+      description: Validation error
+      content:
+        application/problem+json:
+          schema: { $ref: '#/components/schemas/ErrorResponse' }
+    NotFound:
+      description: Resource not found
+      content:
+        application/problem+json:
+          schema: { $ref: '#/components/schemas/ErrorResponse' }
+    UnsupportedMediaType:
+      description: File type not supported (only .pdf / .docx)
+      content:
+        application/problem+json:
+          schema: { $ref: '#/components/schemas/ErrorResponse' }
+    PayloadTooLarge:
+      description: File exceeds the maximum allowed size
+      content:
+        application/problem+json:
+          schema: { $ref: '#/components/schemas/ErrorResponse' }
+
+  schemas:
+    # ---------------------------------------------------------------- Envelope
+    MetadataEnvelope:
+      type: object
+      description: Day 7 metadata envelope standard, applied to every stored record.
+      properties:
+        schema_version: { type: string, example: "1.3.0" }
+        model_version: { type: string, example: "semantic-matcher-2.1" }
+        pipeline_version: { type: string, example: "2026.08.15" }
+
+    # ------------------------------------------------------------------- Tasks
+    TaskStatus:
+      type: string
+      enum: [queued, processing, completed, partial, failed]
+    TaskType:
+      type: string
+      enum: [resume_extraction, jd_parsing, match, shortlist]
+    Task:
+      type: object
+      required: [task_id, type, status, created_at, updated_at]
+      properties:
+        task_id: { type: string, format: uuid }
+        type: { $ref: '#/components/schemas/TaskType' }
+        status: { $ref: '#/components/schemas/TaskStatus' }
+        progress:
+          type: integer
+          minimum: 0
+          maximum: 100
+          nullable: true
+          description: Optional coarse progress indicator; null when not tracked
+        created_at: { type: string, format: date-time }
+        updated_at: { type: string, format: date-time }
+        result_url:
+          type: string
+          format: uri
+          nullable: true
+          description: Set once status is completed/partial — GET this for the result
+        error:
+          allOf: [{ $ref: '#/components/schemas/ErrorResponse' }]
+          nullable: true
+          description: Set only when status is failed
+    TaskAccepted:
+      type: object
+      required: [task_id, status, poll_url]
+      properties:
+        task_id: { type: string, format: uuid }
+        status: { $ref: '#/components/schemas/TaskStatus' }
+        poll_url: { type: string, format: uri }
+
+    # ----------------------------------------------------------------- Errors
+    ErrorCode:
+      type: string
+      enum:
+        - VALIDATION_ERROR
+        - UNSUPPORTED_FILE_TYPE
+        - PAYLOAD_TOO_LARGE
+        - RESOURCE_NOT_FOUND
+        - PARSING_FAILED
+        - DEPENDENCY_UNAVAILABLE
+        - RATE_LIMITED
+        - IDEMPOTENCY_KEY_REUSED
+        - INTERNAL_ERROR
+    ErrorResponse:
+      type: object
+      description: RFC 7807 problem+json, extended with a stable machine-readable `code` and `trace_id`.
+      required: [type, title, status, code, trace_id]
+      properties:
+        type: { type: string, format: uri, example: "https://api.zecpath.example.com/errors/validation-error" }
+        title: { type: string, example: "Validation failed" }
+        status: { type: integer, example: 400 }
+        detail: { type: string, example: "field 'file' is required" }
+        instance: { type: string, format: uri }
+        code: { $ref: '#/components/schemas/ErrorCode' }
+        trace_id:
+          type: string
+          description: Correlates to the X-Request-ID propagated through logs
+        errors:
+          type: array
+          description: Optional per-field validation details
+          items:
+            type: object
+            properties:
+              field: { type: string }
+              message: { type: string }
+
+    # ---------------------------------------------------------------- Resumes
+    ResumeStatus:
+      type: string
+      enum: [success, partial, failed]
+    ResumeRecord:
+      type: object
+      description: >
+        Aggregates Day 5 extraction output plus downstream Day 8-11 enrichment
+        as each stage completes. Fields from stages not yet finished are null.
+      required: [resume_id, status, source_file, file_type]
+      properties:
+        resume_id: { type: string, format: uuid }
+        candidate_reference: { type: string, nullable: true }
+        status: { $ref: '#/components/schemas/ResumeStatus' }
+        source_file: { type: string }
+        file_type: { type: string, enum: [pdf, docx] }
+        engine_used: { type: string, example: pdfplumber }
+        sections_detected:
+          type: array
+          items: { type: string }
+        cleaned_text: { type: string }
+        skills:
+          type: array
+          nullable: true
+          description: Day 9 Skill Extraction Engine output
+          items: { $ref: '#/components/schemas/SkillMatch' }
+        experience_entries:
+          type: array
+          nullable: true
+          description: Day 10 Experience Parsing & Relevance Engine output
+          items: { $ref: '#/components/schemas/ExperienceEntry' }
+        academic_profile:
+          nullable: true
+          description: Day 11 AcademicProfileRecord
+          $ref: '#/components/schemas/AcademicProfileRecord'
+        warnings:
+          type: array
+          items: { type: string }
+        metadata: { $ref: '#/components/schemas/MetadataEnvelope' }
+        extracted_at: { type: string, format: date-time }
+
+    SkillMatch:
+      type: object
+      properties:
+        skill: { type: string, example: "Kubernetes" }
+        matched_alias: { type: string, example: "k8s" }
+        confidence: { type: number, minimum: 0, maximum: 1 }
+
+    ExperienceEntry:
+      type: object
+      properties:
+        title: { type: string }
+        normalized_seniority: { type: string, enum: [junior, mid, senior, lead, executive] }
+        company: { type: string }
+        start_date: { type: string, format: date, nullable: true }
+        end_date: { type: string, format: date, nullable: true }
+        is_current: { type: boolean }
+        relevance_score: { type: number, minimum: 0, maximum: 1 }
+        overlap_flag: { type: boolean }
+        gap_days: { type: integer, nullable: true }
+
+    AcademicProfileRecord:
+      type: object
+      properties:
+        degrees:
+          type: array
+          items:
+            type: object
+            properties:
+              degree_normalized: { type: string, example: "Master of Technology" }
+              field_of_study: { type: string }
+              institution: { type: string }
+              year: { type: integer, nullable: true }
+              relevance_tag: { type: string, enum: [highly_relevant, relevant, unrelated] }
+        certifications:
+          type: array
+          items: { type: string }
+
+    # --------------------------------------------------------- Job Descriptions
+    JobDescriptionCreateRequest:
+      type: object
+      required: [raw_text]
+      properties:
+        raw_text: { type: string }
+        role_title: { type: string, nullable: true }
+        weight_profile_id:
+          type: string
+          nullable: true
+          description: Optional named Day 13 WeightProfile to associate with this JD by default
+
+    JobRequirementRecord:
+      type: object
+      description: Day 6 JD Parsing Engine output.
+      required: [job_description_id, role_title]
+      properties:
+        job_description_id: { type: string, format: uuid }
+        role_title: { type: string }
+        required_skills:
+          type: array
+          items: { type: string }
+        preferred_skills:
+          type: array
+          items: { type: string }
+        min_experience_years: { type: number, nullable: true }
+        education_requirements:
+          type: array
+          items: { type: string }
+        seniority_level: { type: string, nullable: true }
+        metadata: { $ref: '#/components/schemas/MetadataEnvelope' }
+
+    # ------------------------------------------------------------------- Matching
+    WeightProfileInput:
+      type: object
+      description: >
+        Optional override of the Day 13 configurable WeightProfile for this call
+        only. Weights must sum to 1.0; validated server-side.
+      properties:
+        skills_weight: { type: number, minimum: 0, maximum: 1 }
+        experience_weight: { type: number, minimum: 0, maximum: 1 }
+        education_weight: { type: number, minimum: 0, maximum: 1 }
+        semantic_weight: { type: number, minimum: 0, maximum: 1 }
+
+    MissingDataMode:
+      type: string
+      enum: [strict, lenient, impute_median]
+      description: Mirrors the three missing-data modes from the Day 13 ATS Scoring Engine.
+
+    MatchCreateRequest:
+      type: object
+      required: [resume_id, job_description_id]
+      properties:
+        resume_id: { type: string, format: uuid }
+        job_description_id: { type: string, format: uuid }
+        weight_profile: { $ref: '#/components/schemas/WeightProfileInput' }
+        missing_data_mode: { $ref: '#/components/schemas/MissingDataMode' }
+
+    ScoreComponent:
+      type: object
+      properties:
+        name: { type: string, example: "skills" }
+        raw_score: { type: number, minimum: 0, maximum: 1 }
+        weighted_contribution: { type: number, minimum: 0, maximum: 1 }
+
+    MatchResult:
+      type: object
+      required: [match_id, resume_id, job_description_id, overall_score]
+      properties:
+        match_id: { type: string, format: uuid }
+        resume_id: { type: string, format: uuid }
+        job_description_id: { type: string, format: uuid }
+        overall_score: { type: number, minimum: 0, maximum: 1 }
+        components:
+          type: array
+          items: { $ref: '#/components/schemas/ScoreComponent' }
+        weakest_component:
+          type: string
+          description: >
+            Name of the component with the lowest raw_score (Day 13 fix: ranked
+            by raw score, not weighted contribution).
+        narrative_explanation:
+          type: string
+          description: Human-readable explainability narrative
+        missing_data_mode: { $ref: '#/components/schemas/MissingDataMode' }
+        metadata: { $ref: '#/components/schemas/MetadataEnvelope' }
+        computed_at: { type: string, format: date-time }
+
+    # --------------------------------------------------------------- Shortlisting
+    ShortlistCreateRequest:
+      type: object
+      required: [resume_ids]
+      properties:
+        resume_ids:
+          type: array
+          items: { type: string, format: uuid }
+          minItems: 1
+        weight_profile: { $ref: '#/components/schemas/WeightProfileInput' }
+        missing_data_mode: { $ref: '#/components/schemas/MissingDataMode' }
+        top_n:
+          type: integer
+          nullable: true
+          description: Optional cap on the number of "shortlist" zone candidates returned
+
+    ShortlistZone:
+      type: string
+      enum: [shortlist, review, auto_reject]
+
+    RankedCandidate:
+      type: object
+      properties:
+        resume_id: { type: string, format: uuid }
+        rank: { type: integer }
+        zone: { $ref: '#/components/schemas/ShortlistZone' }
+        overall_score: { type: number, minimum: 0, maximum: 1 }
+        tie_break_reason:
+          type: string
+          nullable: true
+          description: Populated only when deterministic tie-breaking was applied
+
+    ShortlistResult:
+      type: object
+      required: [shortlist_id, job_description_id, candidates]
+      properties:
+        shortlist_id: { type: string, format: uuid }
+        job_description_id: { type: string, format: uuid }
+        candidates:
+          type: array
+          items: { $ref: '#/components/schemas/RankedCandidate' }
+        csv_export_url: { type: string, format: uri }
+        metadata: { $ref: '#/components/schemas/MetadataEnvelope' }
+        computed_at: { type: string, format: date-time }

@@ -1,0 +1,62 @@
+{
+  "type": "object",
+  "required": [
+    "resume_id",
+    "job_description_id"
+  ],
+  "properties": {
+    "resume_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "job_description_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "weight_profile": {
+      "$ref": "#/$defs/WeightProfileInput"
+    },
+    "missing_data_mode": {
+      "$ref": "#/$defs/MissingDataMode"
+    }
+  },
+  "$defs": {
+    "WeightProfileInput": {
+      "type": "object",
+      "description": "Optional override of the Day 13 configurable WeightProfile for this call only. Weights must sum to 1.0; validated server-side.\n",
+      "properties": {
+        "skills_weight": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "experience_weight": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "education_weight": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "semantic_weight": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "MissingDataMode": {
+      "type": "string",
+      "enum": [
+        "strict",
+        "lenient",
+        "impute_median"
+      ],
+      "description": "Mirrors the three missing-data modes from the Day 13 ATS Scoring Engine."
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MatchCreateRequest"
+}

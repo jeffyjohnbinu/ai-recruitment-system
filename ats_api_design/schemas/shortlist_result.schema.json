@@ -1,0 +1,92 @@
+{
+  "type": "object",
+  "required": [
+    "shortlist_id",
+    "job_description_id",
+    "candidates"
+  ],
+  "properties": {
+    "shortlist_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "job_description_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/RankedCandidate"
+      }
+    },
+    "csv_export_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "metadata": {
+      "$ref": "#/$defs/MetadataEnvelope"
+    },
+    "computed_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "$defs": {
+    "RankedCandidate": {
+      "type": "object",
+      "properties": {
+        "resume_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "rank": {
+          "type": "integer"
+        },
+        "zone": {
+          "$ref": "#/$defs/ShortlistZone"
+        },
+        "overall_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "tie_break_reason": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Populated only when deterministic tie-breaking was applied"
+        }
+      }
+    },
+    "ShortlistZone": {
+      "type": "string",
+      "enum": [
+        "shortlist",
+        "review",
+        "auto_reject"
+      ]
+    },
+    "MetadataEnvelope": {
+      "type": "object",
+      "description": "Day 7 metadata envelope standard, applied to every stored record.",
+      "properties": {
+        "schema_version": {
+          "type": "string",
+          "example": "1.3.0"
+        },
+        "model_version": {
+          "type": "string",
+          "example": "semantic-matcher-2.1"
+        },
+        "pipeline_version": {
+          "type": "string",
+          "example": "2026.08.15"
+        }
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ShortlistResult"
+}

@@ -45,7 +45,9 @@ def compute_final_score(ats_score: float, ai_recommendation: str) -> FinalScore:
 
     logger.info(
         "Final score computed: ats=%.2f ai_rec=%s -> final=%.2f",
-        ats_score, ai_recommendation, final,
+        ats_score,
+        ai_recommendation,
+        final,
     )
     return FinalScore(ats_score=ats_score, ai_recommendation=ai_recommendation, final_score=final)
 

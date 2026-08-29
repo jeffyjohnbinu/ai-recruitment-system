@@ -1,0 +1,9 @@
+{
+  "type": "https://api.zecpath.example.com/errors/unsupported-file-type",
+  "title": "Unsupported file type",
+  "status": 415,
+  "detail": "File extension '.rtf' is not supported. Supported types: .pdf, .docx",
+  "instance": "/api/v1/resumes",
+  "code": "UNSUPPORTED_FILE_TYPE",
+  "trace_id": "req_9f1c2e7a4b3d"
+}

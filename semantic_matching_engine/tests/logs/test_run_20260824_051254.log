@@ -1,0 +1,43 @@
+Semantic Matching Engine — Automated Test Run
+Timestamp (UTC): 20260824_051254
+Command: /usr/bin/python3 -m pytest /home/claude/build/semantic_matching_engine/tests/test_matching.py -v --tb=short
+======================================================================
+
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/claude/build
+collecting ... collected 29 items
+
+semantic_matching_engine/tests/test_matching.py::test_hashing_embedder_produces_normalized_vectors PASSED [  3%]
+semantic_matching_engine/tests/test_matching.py::test_get_embedder_auto_falls_back_without_network PASSED [  6%]
+semantic_matching_engine/tests/test_matching.py::test_get_embedder_forced_hashing PASSED [ 10%]
+semantic_matching_engine/tests/test_matching.py::test_cosine_similarity_identical_vectors PASSED [ 13%]
+semantic_matching_engine/tests/test_matching.py::test_cosine_similarity_orthogonal_vectors PASSED [ 17%]
+semantic_matching_engine/tests/test_matching.py::test_cosine_similarity_zero_vector_returns_zero PASSED [ 20%]
+semantic_matching_engine/tests/test_matching.py::test_compute_similarity_strong_match_scores_higher_than_weak PASSED [ 24%]
+semantic_matching_engine/tests/test_matching.py::test_compute_similarity_missing_section_scores_zero_not_excluded PASSED [ 27%]
+semantic_matching_engine/tests/test_matching.py::test_compute_similarity_respects_custom_weights PASSED [ 31%]
+semantic_matching_engine/tests/test_matching.py::test_compute_similarity_weights_must_be_positive PASSED [ 34%]
+semantic_matching_engine/tests/test_matching.py::test_adapter_accepts_flat_target_dict PASSED [ 37%]
+semantic_matching_engine/tests/test_matching.py::test_adapter_accepts_day8_section_map PASSED [ 41%]
+semantic_matching_engine/tests/test_matching.py::test_adapter_accepts_day9_skill_records PASSED [ 44%]
+semantic_matching_engine/tests/test_matching.py::test_adapter_accepts_day10_experience_records PASSED [ 48%]
+semantic_matching_engine/tests/test_matching.py::test_adapter_accepts_flat_text_with_warning PASSED [ 51%]
+semantic_matching_engine/tests/test_matching.py::test_adapter_job_accepts_day6_job_requirement_record PASSED [ 55%]
+semantic_matching_engine/tests/test_matching.py::test_adapter_unrecognized_type_warns PASSED [ 58%]
+semantic_matching_engine/tests/test_matching.py::test_threshold_classify_bands PASSED [ 62%]
+semantic_matching_engine/tests/test_matching.py::test_threshold_config_rejects_invalid_ordering PASSED [ 65%]
+semantic_matching_engine/tests/test_matching.py::test_tune_match_threshold_finds_separating_value PASSED [ 68%]
+semantic_matching_engine/tests/test_matching.py::test_tune_match_threshold_rejects_mismatched_lengths PASSED [ 72%]
+semantic_matching_engine/tests/test_matching.py::test_engine_matches_strong_backend_pair PASSED [ 75%]
+semantic_matching_engine/tests/test_matching.py::test_engine_scores_weak_pair_lower_than_strong_pair PASSED [ 79%]
+semantic_matching_engine/tests/test_matching.py::test_engine_cross_job_type_scores_lower_than_matching_type PASSED [ 82%]
+semantic_matching_engine/tests/test_matching.py::test_engine_persists_json_output PASSED [ 86%]
+semantic_matching_engine/tests/test_matching.py::test_engine_handles_completely_empty_input_gracefully PASSED [ 89%]
+semantic_matching_engine/tests/test_matching.py::test_accuracy_report_across_multiple_job_types PASSED [ 93%]
+semantic_matching_engine/tests/test_matching.py::test_accuracy_report_rejects_empty_validation_set PASSED [ 96%]
+semantic_matching_engine/tests/test_matching.py::test_accuracy_report_markdown_contains_key_sections PASSED [100%]
+
+============================== 29 passed in 1.10s ==============================
+

@@ -20,8 +20,23 @@ logger = get_logger("ats_engine.matcher")
 
 _WORD_RE = re.compile(r"[a-zA-Z][a-zA-Z0-9+#.]{1,}")
 _STOPWORDS = {
-    "the", "and", "for", "with", "you", "your", "are", "our", "will",
-    "have", "this", "that", "from", "role", "team", "work", "job",
+    "the",
+    "and",
+    "for",
+    "with",
+    "you",
+    "your",
+    "are",
+    "our",
+    "will",
+    "have",
+    "this",
+    "that",
+    "from",
+    "role",
+    "team",
+    "work",
+    "job",
 }
 
 
@@ -56,7 +71,10 @@ def match_resume_to_job(resume_text: str, job_description: str) -> MatchResult:
     is_shortlisted = score >= settings.ats_min_match_score
     logger.info(
         "Match score=%.2f (%d/%d keywords) shortlisted=%s",
-        score, len(matched), len(job_tokens), is_shortlisted,
+        score,
+        len(matched),
+        len(job_tokens),
+        is_shortlisted,
     )
 
     return MatchResult(score=score, matched_keywords=matched, is_shortlisted=is_shortlisted)

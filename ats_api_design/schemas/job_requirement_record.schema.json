@@ -1,0 +1,72 @@
+{
+  "type": "object",
+  "description": "Day 6 JD Parsing Engine output.",
+  "required": [
+    "job_description_id",
+    "role_title"
+  ],
+  "properties": {
+    "job_description_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "role_title": {
+      "type": "string"
+    },
+    "required_skills": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "preferred_skills": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "min_experience_years": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "education_requirements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "seniority_level": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "metadata": {
+      "$ref": "#/$defs/MetadataEnvelope"
+    }
+  },
+  "$defs": {
+    "MetadataEnvelope": {
+      "type": "object",
+      "description": "Day 7 metadata envelope standard, applied to every stored record.",
+      "properties": {
+        "schema_version": {
+          "type": "string",
+          "example": "1.3.0"
+        },
+        "model_version": {
+          "type": "string",
+          "example": "semantic-matcher-2.1"
+        },
+        "pipeline_version": {
+          "type": "string",
+          "example": "2026.08.15"
+        }
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "JobRequirementRecord"
+}

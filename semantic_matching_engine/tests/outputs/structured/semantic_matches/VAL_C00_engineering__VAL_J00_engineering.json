@@ -1,0 +1,34 @@
+{
+  "candidate_id": "VAL_C00_engineering",
+  "job_id": "VAL_J00_engineering",
+  "schema_version": "1.0.0",
+  "matched_at": "2026-08-24T05:13:30.387636+00:00",
+  "engine_used": "hashing-bow-fallback",
+  "overall_score": 0.424345,
+  "match_band": "strong_match",
+  "is_match": true,
+  "section_scores": {
+    "skills": {
+      "similarity": 0.7171,
+      "weight": 0.45,
+      "empty": false
+    },
+    "experience": {
+      "similarity": 0.2904,
+      "weight": 0.35,
+      "empty": false
+    },
+    "projects": {
+      "similarity": 0.0,
+      "weight": 0.2,
+      "empty": false
+    }
+  },
+  "thresholds": {
+    "match_threshold": 0.13,
+    "strong_match_threshold": 0.33
+  },
+  "warnings": [],
+  "status": "success",
+  "error": null
+}

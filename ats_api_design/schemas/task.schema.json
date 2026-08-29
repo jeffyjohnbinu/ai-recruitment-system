@@ -1,0 +1,155 @@
+{
+  "type": "object",
+  "required": [
+    "task_id",
+    "type",
+    "status",
+    "created_at",
+    "updated_at"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "type": {
+      "$ref": "#/$defs/TaskType"
+    },
+    "status": {
+      "$ref": "#/$defs/TaskStatus"
+    },
+    "progress": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Optional coarse progress indicator; null when not tracked"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "result_url": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uri",
+      "description": "Set once status is completed/partial \u2014 GET this for the result"
+    },
+    "error": {
+      "anyOf": [
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/ErrorResponse"
+            }
+          ],
+          "description": "Set only when status is failed"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "$defs": {
+    "TaskType": {
+      "type": "string",
+      "enum": [
+        "resume_extraction",
+        "jd_parsing",
+        "match",
+        "shortlist"
+      ]
+    },
+    "TaskStatus": {
+      "type": "string",
+      "enum": [
+        "queued",
+        "processing",
+        "completed",
+        "partial",
+        "failed"
+      ]
+    },
+    "ErrorResponse": {
+      "type": "object",
+      "description": "RFC 7807 problem+json, extended with a stable machine-readable `code` and `trace_id`.",
+      "required": [
+        "type",
+        "title",
+        "status",
+        "code",
+        "trace_id"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "format": "uri",
+          "example": "https://api.zecpath.example.com/errors/validation-error"
+        },
+        "title": {
+          "type": "string",
+          "example": "Validation failed"
+        },
+        "status": {
+          "type": "integer",
+          "example": 400
+        },
+        "detail": {
+          "type": "string",
+          "example": "field 'file' is required"
+        },
+        "instance": {
+          "type": "string",
+          "format": "uri"
+        },
+        "code": {
+          "$ref": "#/$defs/ErrorCode"
+        },
+        "trace_id": {
+          "type": "string",
+          "description": "Correlates to the X-Request-ID propagated through logs"
+        },
+        "errors": {
+          "type": "array",
+          "description": "Optional per-field validation details",
+          "items": {
+            "type": "object",
+            "properties": {
+              "field": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "ErrorCode": {
+      "type": "string",
+      "enum": [
+        "VALIDATION_ERROR",
+        "UNSUPPORTED_FILE_TYPE",
+        "PAYLOAD_TOO_LARGE",
+        "RESOURCE_NOT_FOUND",
+        "PARSING_FAILED",
+        "DEPENDENCY_UNAVAILABLE",
+        "RATE_LIMITED",
+        "IDEMPOTENCY_KEY_REUSED",
+        "INTERNAL_ERROR"
+      ]
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Task"
+}

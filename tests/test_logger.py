@@ -16,6 +16,7 @@ def test_logger_writes_to_log_file(tmp_path, monkeypatch):
 
     logging.getLogger("ai_recruitment_system").handlers.clear()
     import utils.logger as logger_module
+
     logger_module._configured = False
 
     logger = get_logger("tests.file_write")

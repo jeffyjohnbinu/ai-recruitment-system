@@ -47,9 +47,15 @@ def run_pipeline(resume_path: Path, job_path: Path) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Run the AI recruitment pipeline on one candidate.")
-    parser.add_argument("--resume", type=Path, required=True, help="Path to a plain-text resume file.")
-    parser.add_argument("--job", type=Path, required=True, help="Path to a plain-text job description file.")
+    parser = argparse.ArgumentParser(
+        description="Run the AI recruitment pipeline on one candidate."
+    )
+    parser.add_argument(
+        "--resume", type=Path, required=True, help="Path to a plain-text resume file."
+    )
+    parser.add_argument(
+        "--job", type=Path, required=True, help="Path to a plain-text job description file."
+    )
     args = parser.parse_args()
 
     run_pipeline(args.resume, args.job)

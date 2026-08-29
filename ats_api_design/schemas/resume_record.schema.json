@@ -1,0 +1,227 @@
+{
+  "type": "object",
+  "description": "Aggregates Day 5 extraction output plus downstream Day 8-11 enrichment as each stage completes. Fields from stages not yet finished are null.\n",
+  "required": [
+    "resume_id",
+    "status",
+    "source_file",
+    "file_type"
+  ],
+  "properties": {
+    "resume_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "candidate_reference": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "status": {
+      "$ref": "#/$defs/ResumeStatus"
+    },
+    "source_file": {
+      "type": "string"
+    },
+    "file_type": {
+      "type": "string",
+      "enum": [
+        "pdf",
+        "docx"
+      ]
+    },
+    "engine_used": {
+      "type": "string",
+      "example": "pdfplumber"
+    },
+    "sections_detected": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "cleaned_text": {
+      "type": "string"
+    },
+    "skills": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "description": "Day 9 Skill Extraction Engine output",
+      "items": {
+        "$ref": "#/$defs/SkillMatch"
+      }
+    },
+    "experience_entries": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "description": "Day 10 Experience Parsing & Relevance Engine output",
+      "items": {
+        "$ref": "#/$defs/ExperienceEntry"
+      }
+    },
+    "academic_profile": {
+      "$ref": "#/$defs/AcademicProfileRecord"
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "metadata": {
+      "$ref": "#/$defs/MetadataEnvelope"
+    },
+    "extracted_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "$defs": {
+    "ResumeStatus": {
+      "type": "string",
+      "enum": [
+        "success",
+        "partial",
+        "failed"
+      ]
+    },
+    "SkillMatch": {
+      "type": "object",
+      "properties": {
+        "skill": {
+          "type": "string",
+          "example": "Kubernetes"
+        },
+        "matched_alias": {
+          "type": "string",
+          "example": "k8s"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "ExperienceEntry": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "normalized_seniority": {
+          "type": "string",
+          "enum": [
+            "junior",
+            "mid",
+            "senior",
+            "lead",
+            "executive"
+          ]
+        },
+        "company": {
+          "type": "string"
+        },
+        "start_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "end_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "is_current": {
+          "type": "boolean"
+        },
+        "relevance_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "overlap_flag": {
+          "type": "boolean"
+        },
+        "gap_days": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      }
+    },
+    "AcademicProfileRecord": {
+      "type": "object",
+      "properties": {
+        "degrees": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "degree_normalized": {
+                "type": "string",
+                "example": "Master of Technology"
+              },
+              "field_of_study": {
+                "type": "string"
+              },
+              "institution": {
+                "type": "string"
+              },
+              "year": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "relevance_tag": {
+                "type": "string",
+                "enum": [
+                  "highly_relevant",
+                  "relevant",
+                  "unrelated"
+                ]
+              }
+            }
+          }
+        },
+        "certifications": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "MetadataEnvelope": {
+      "type": "object",
+      "description": "Day 7 metadata envelope standard, applied to every stored record.",
+      "properties": {
+        "schema_version": {
+          "type": "string",
+          "example": "1.3.0"
+        },
+        "model_version": {
+          "type": "string",
+          "example": "semantic-matcher-2.1"
+        },
+        "pipeline_version": {
+          "type": "string",
+          "example": "2026.08.15"
+        }
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ResumeRecord"
+}
