@@ -1,0 +1,7 @@
+pytest>=7.0
+
+# Optional accelerators — the engine degrades gracefully (with a logged
+# warning) to slower stdlib fallbacks when these are absent:
+rapidfuzz>=3.0     # fuzzy entity dedup (falls back to difflib)
+psutil>=5.9        # RSS memory measurement (falls back to tracemalloc / no-op)
+# wordfreq>=3.0    # dictionary-confirmed OCR-repair (falls back to heuristic-only)

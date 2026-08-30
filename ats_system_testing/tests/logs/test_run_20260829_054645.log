@@ -1,0 +1,33 @@
+ATS System Testing (Day 17) — Automated Test Run
+Timestamp (UTC): 20260829_054645
+Command: /usr/bin/python3 -m pytest /home/claude/ats_system_testing/ats_system_testing/tests/test_ats_system_testing.py -v --tb=short
+======================================================================
+
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/claude/ats_system_testing
+collecting ... collected 19 items
+
+ats_system_testing/tests/test_ats_system_testing.py::test_fixture_set_covers_all_four_segments PASSED [  5%]
+ats_system_testing/tests/test_ats_system_testing.py::test_fixture_set_has_both_match_and_mismatch_per_segment PASSED [ 10%]
+ats_system_testing/tests/test_ats_system_testing.py::test_get_test_cases_filters_by_role_type PASSED [ 15%]
+ats_system_testing/tests/test_ats_system_testing.py::test_get_test_cases_filters_by_seniority PASSED [ 21%]
+ats_system_testing/tests/test_ats_system_testing.py::test_case_ids_are_unique PASSED [ 26%]
+ats_system_testing/tests/test_ats_system_testing.py::test_pipeline_adapter_returns_output_for_any_pair PASSED [ 31%]
+ats_system_testing/tests/test_ats_system_testing.py::test_pipeline_adapter_handles_empty_job_description PASSED [ 36%]
+ats_system_testing/tests/test_ats_system_testing.py::test_pipeline_adapter_records_which_engine_was_used PASSED [ 42%]
+ats_system_testing/tests/test_ats_system_testing.py::test_harness_runs_full_fixture_set_without_error PASSED [ 47%]
+ats_system_testing/tests/test_ats_system_testing.py::test_harness_respects_custom_case_subset PASSED [ 52%]
+ats_system_testing/tests/test_ats_system_testing.py::test_metrics_perfect_agreement_gives_full_scores PASSED [ 57%]
+ats_system_testing/tests/test_ats_system_testing.py::test_metrics_detects_false_positive PASSED [ 63%]
+ats_system_testing/tests/test_ats_system_testing.py::test_metrics_detects_false_negative PASSED [ 68%]
+ats_system_testing/tests/test_ats_system_testing.py::test_metrics_precision_recall_known_values PASSED [ 73%]
+ats_system_testing/tests/test_ats_system_testing.py::test_metrics_segment_breakdown_present PASSED [ 78%]
+ats_system_testing/tests/test_ats_system_testing.py::test_backlog_flags_false_positive_as_p0 PASSED [ 84%]
+ats_system_testing/tests/test_ats_system_testing.py::test_backlog_flags_false_negative_as_p0 PASSED [ 89%]
+ats_system_testing/tests/test_ats_system_testing.py::test_backlog_non_empty_even_with_perfect_agreement PASSED [ 94%]
+ats_system_testing/tests/test_ats_system_testing.py::test_backlog_items_reference_real_case_ids PASSED [100%]
+
+============================== 19 passed in 0.03s ==============================
+

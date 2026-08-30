@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+.venv/
+venv/
+
+# Generated test outputs
+tests/test_outputs/
+
+# Keep Day 18 deliverables
+!tests/logs/
+!tests/logs/*.log
+!tests/outputs/
+!tests/outputs/performance_report.json

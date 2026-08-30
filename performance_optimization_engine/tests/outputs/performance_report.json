@@ -1,0 +1,137 @@
+{
+  "metadata": {
+    "schema_version": "1.0.0",
+    "model_version": "day18-benchmark-1.0.0",
+    "pipeline_version": "day18-performance-optimization-1.0.0",
+    "candidate_id": null,
+    "job_id": null,
+    "generated_at": "2026-08-29T13:36:27.567998+00:00",
+    "request_id": "45dd20fb-5ee5-4da9-8f6e-c916a1947dc9"
+  },
+  "benchmark": {
+    "upstream_pipeline_importable": false,
+    "fallback_note": "Upstream Day 5-17 packages were not importable in this isolated run (same condition noted in the Day 17 improvement backlog). Benchmarks below exercise this package's own extraction-cache, parallel-processing, entity-refinement, and noisy-text-repair logic against representative fixture text, not the live upstream engines. Re-run inside the full integrated repository for pipeline-accurate numbers.",
+    "results": [
+      {
+        "benchmark": "extraction_cache",
+        "cold_miss": {
+          "operation": "extraction_cache_cold_miss",
+          "duration_seconds": 0.000148,
+          "peak_memory_mb": 25.098,
+          "memory_source": "psutil",
+          "records_processed": 0,
+          "throughput_per_sec": 0.0,
+          "extra": {}
+        },
+        "warm_hit": {
+          "operation": "extraction_cache_warm_hit",
+          "duration_seconds": 0.000101,
+          "peak_memory_mb": 25.098,
+          "memory_source": "psutil",
+          "records_processed": 0,
+          "throughput_per_sec": 0.0,
+          "extra": {}
+        },
+        "cache_stats": {
+          "size": 1,
+          "max_size": 512,
+          "hits": 1,
+          "misses": 1,
+          "hit_rate": 0.5
+        },
+        "hit_returned_expected": true
+      },
+      {
+        "benchmark": "parallel_processing",
+        "sequential": {
+          "operation": "sequential_processing",
+          "duration_seconds": 0.01117,
+          "peak_memory_mb": 25.098,
+          "memory_source": "psutil",
+          "records_processed": 12,
+          "throughput_per_sec": 1074.348,
+          "extra": {}
+        },
+        "parallel": {
+          "operation": "parallel_processing",
+          "duration_seconds": 0.016265,
+          "peak_memory_mb": 25.301,
+          "memory_source": "psutil",
+          "records_processed": 12,
+          "throughput_per_sec": 737.76,
+          "extra": {}
+        },
+        "speedup_factor": 0.69,
+        "errors": 0
+      },
+      {
+        "benchmark": "entity_refinement",
+        "timing": {
+          "operation": "entity_refinement",
+          "duration_seconds": 0.000466,
+          "peak_memory_mb": 25.719,
+          "memory_source": "psutil",
+          "records_processed": 6,
+          "throughput_per_sec": 12874.238,
+          "extra": {}
+        },
+        "input_count": 6,
+        "output_count": 4,
+        "merged_duplicates": 2,
+        "dropped_low_confidence": 0,
+        "similarity_backend": "rapidfuzz"
+      },
+      {
+        "benchmark": "noisy_resume_repair",
+        "timing": {
+          "operation": "noisy_resume_repair",
+          "duration_seconds": 0.000145,
+          "peak_memory_mb": 25.719,
+          "memory_source": "psutil",
+          "records_processed": 0,
+          "throughput_per_sec": 0.0,
+          "extra": {}
+        },
+        "repairs": {
+          "repeated_punct_collapsed": 0,
+          "orphan_lines_removed": 0,
+          "ocr_substitutions_applied": 0,
+          "boilerplate_lines_removed": [],
+          "dictionary_backend": "heuristic-only"
+        }
+      },
+      {
+        "benchmark": "embedding_cache",
+        "hit": {
+          "operation": "embedding_cache_hit",
+          "duration_seconds": 2.4e-05,
+          "peak_memory_mb": 25.719,
+          "memory_source": "psutil",
+          "records_processed": 0,
+          "throughput_per_sec": 0.0,
+          "extra": {}
+        },
+        "cache_stats": {
+          "size": 1,
+          "max_size": 2048,
+          "hits": 1,
+          "misses": 1,
+          "hit_rate": 0.5
+        },
+        "hit_returned_expected": true
+      }
+    ]
+  },
+  "improvement_backlog": [
+    {
+      "id": "PERF-001",
+      "description": "Re-run this benchmark suite inside the fully integrated repository once Day 5-17 packages are importable in isolation, mirroring the same open item from the Day 17 backlog, to get pipeline-accurate (not fixture-based) throughput numbers.",
+      "status": "open"
+    },
+    {
+      "id": "PERF-002",
+      "description": "Install optional accelerators (rapidfuzz, wordfreq, psutil) in the production environment; several optimizations here silently degrade to slower stdlib fallbacks without them.",
+      "status": "open"
+    }
+  ]
+}
