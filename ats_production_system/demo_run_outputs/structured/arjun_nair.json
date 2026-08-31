@@ -1,0 +1,27 @@
+{
+  "source_file": "demo_datasets/resumes/arjun_nair.docx",
+  "file_type": "docx",
+  "engine_used": "python-docx",
+  "extracted_at": "2026-08-31T10:01:49.930250+00:00",
+  "raw_char_count": 572,
+  "cleaned_char_count": 572,
+  "sections_detected": [
+    "Summary",
+    "Experience",
+    "Education",
+    "Skills"
+  ],
+  "tables_found": 0,
+  "images_found": 0,
+  "warnings": [],
+  "cleaning_stats": {
+    "removed_control_chars": 0,
+    "normalized_bullets": 0,
+    "normalized_headings": 4,
+    "dehyphenated_words": 0,
+    "dropped_noise_lines": []
+  },
+  "cleaned_text": "ARJUN NAIR\nEmail: arjun.nair@email.com | Phone: +91-9845567890 | Location: Chennai, India\nSummary\nRecent graduate with internship experience in SQL reporting and data visualization for operations analytics.\nExperience\nData Analyst Intern — Southgate Logistics (2024 - Present)\n- Wrote SQL queries to build weekly operations dashboards\n- Created Tableau visualizations for warehouse throughput\n- Automated Excel reporting for the operations team\nEducation\nB.Sc. in Statistics — Loyola College Chennai, 2024\nSkills\nSQL, Excel, Python, Tableau, Data Visualization, Statistics",
+  "status": "success",
+  "error": null
+}

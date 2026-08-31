@@ -1,0 +1,73 @@
+ATS Production System — Automated End-to-End Test Run
+Timestamp (UTC): 20260831_133851
+Command: C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\.venv\Scripts\python.exe -m pytest C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\ats_production_system\tests\test_integration.py -v --tb=short
+======================================================================
+
+============================= test session starts =============================
+platform win32 -- Python 3.12.7, pytest-8.3.2, pluggy-1.6.0 -- C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system
+configfile: pytest.ini
+plugins: anyio-4.14.2, Faker-26.3.0, cov-5.0.0, mock-3.14.0
+collecting ... collected 12 items
+
+ats_production_system/tests/test_integration.py::test_all_core_engines_available FAILED [  8%]
+ats_production_system/tests/test_integration.py::test_job_parsing_extracts_required_skills PASSED [ 16%]
+ats_production_system/tests/test_integration.py::test_strong_candidate_all_components_available FAILED [ 25%]
+ats_production_system/tests/test_integration.py::test_strong_candidate_scores_high FAILED [ 33%]
+ats_production_system/tests/test_integration.py::test_weak_candidate_scores_lower_than_strong_candidate PASSED [ 41%]
+ats_production_system/tests/test_integration.py::test_scores_are_bounded_0_to_1 PASSED [ 50%]
+ats_production_system/tests/test_integration.py::test_component_adapter_fixes_field_name_mismatch PASSED [ 58%]
+ats_production_system/tests/test_integration.py::test_batch_produces_ranked_zones FAILED [ 66%]
+ats_production_system/tests/test_integration.py::test_batch_runs_fairness_audit PASSED [ 75%]
+ats_production_system/tests/test_integration.py::test_batch_ranking_differs_by_job PASSED [ 83%]
+ats_production_system/tests/test_integration.py::test_missing_engine_degrades_gracefully PASSED [ 91%]
+ats_production_system/tests/test_integration.py::test_unsupported_resume_extension_does_not_crash_batch PASSED [100%]
+
+================================== FAILURES ===================================
+_______________________ test_all_core_engines_available _______________________
+ats_production_system\tests\test_integration.py:73: in test_all_core_engines_available
+    assert not missing, f"Expected all core engines available, missing: {missing}"
+E   AssertionError: Expected all core engines available, missing: ['skill_extraction']
+E   assert not ['skill_extraction']
+----------------------------- Captured log setup ------------------------------
+WARNING  ats_production_system.pipeline:pipeline.py:73 Engine unavailable: skill_extraction (No module named 'rapidfuzz')
+WARNING  performance_optimization_engine.entity_refinement:entity_refinement.py:36 rapidfuzz not installed — entity_refinement falling back to stdlib difflib for fuzzy matching (slower, slightly less accurate).
+WARNING  performance_optimization_engine.noisy_resume_handler:noisy_resume_handler.py:40 wordfreq not installed — noisy_resume_handler falling back to heuristic-only repair without dictionary confirmation.
+WARNING  ats_production_system.pipeline:pipeline.py:150 Degraded (unavailable) engines: ['skill_extraction']
+_______________ test_strong_candidate_all_components_available ________________
+ats_production_system\tests\test_integration.py:97: in test_strong_candidate_all_components_available
+    assert run.status == "success"
+E   AssertionError: assert 'partial' == 'success'
+E     
+E     - success
+E     + partial
+______________________ test_strong_candidate_scores_high ______________________
+ats_production_system\tests\test_integration.py:115: in test_strong_candidate_scores_high
+    assert run.final_score >= 0.5, "Strong-fit candidate should score well above a weak fit"
+E   AssertionError: Strong-fit candidate should score well above a weak fit
+E   assert 0.307475 >= 0.5
+E    +  where 0.307475 = PipelineRunRecord(schema_version='1.0.0', model_version='ats-production-system-1.0.0', pipeline_version='zecpath-day20', candidate_id='priya_sharma', job_id='job_senior_backend_test', generated_at='2026-08-31T13:40:20.087242+00:00', request_id='4a07f8b6-755d-49dc-b1fd-b9cad473800f', resume_source_file='C:\\Users\\jeffy\\Desktop\\ai-recruitment-system\\ai-recruitment-system\\demo_datasets\\resumes\\priya_sharma.docx', job_source_file='C:\\Users\\jeffy\\Desktop\\ai-recruitment-system\\ai-recruitment-system\\demo_datasets\\job_descriptions\\senior_backend_engineer.txt', stages_completed=['resume_extraction', 'performance_optimizer.repair_noisy_text', 'section_classifier', 'experience_parsing', 'education_extraction', 'semantic_matching', 'ats_scoring'], stages_failed=['skill_extraction'], engines_used={'resume_extraction': 'python-docx', 'semantic_matching': 'hashing-bow-fallback'}, final_score=0.307475, match_band='no_match', recommendation=None, zone=None, component_breakdown=[{'name': 'skill_match', 'available': True, 'raw_score': 0.0, 'weight_original': 0.35, 'weight_applied': 0.35, 'weighted_contribution': 0.0, 'notes': []}, {'name': 'experience_relevance', 'available': True, 'raw_score': 0.6299, 'weight_original': 0.25, 'weight_applied': 0.25, 'weighted_contribution': 0.157475, 'notes': []}, {'name': 'education_alignment', 'available': True, 'raw_score': 1.0, 'weight_original': 0.15, 'weight_applied': 0.15, 'weighted_contribution': 0.15, 'notes': []}, {'name': 'semantic_similarity', 'available': True, 'raw_score': 0.0, 'weight_original': 0.25, 'weight_applied': 0.25, 'weighted_contribution': 0.0, 'notes': []}], narrative_explanation='Candidate priya_sharma scored 31% overall against job job_senior_backend_test (role profile: default), driven primarily by strong education alignment (100%), while semantic similarity was comparatively weaker (0%).', warnings=[], status='partial', error=None, candidate_profile={'candidate_id': 'priya_sharma', 'source_file': 'C:\\Users\\jeffy\\Desktop\\ai-recruitment-system\\ai-recruitment-system\\demo_datasets\\resumes\\priya_sharma.docx', 'skills': [], 'total_experience_years': 10.67, 'highest_degree': 'Bachelor of Technology', 'certifications': [{'raw_line': 'AWS Certified Solutions Architect – Professional', 'name': 'AWS Certified Solutions Architect', 'issuer': 'Professional', 'year': None, 'relevance_category': 'Cloud', 'confidence': 0.85}]}).final_score
+______________________ test_batch_produces_ranked_zones _______________________
+ats_production_system\tests\test_integration.py:184: in test_batch_produces_ranked_zones
+    assert zones["priya_sharma"] != "Auto-Reject"
+E   AssertionError: assert 'Auto-Reject' != 'Auto-Reject'
+============================== warnings summary ===============================
+ats_production_system/tests/test_integration.py::test_all_core_engines_available
+  C:\Users\jeffy\Desktop\ai-recruitment-system\ai-recruitment-system\.venv\Lib\site-packages\PyPDF2\__init__.py:21: DeprecationWarning: PyPDF2 is deprecated. Please move to the pypdf library instead.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED ats_production_system/tests/test_integration.py::test_all_core_engines_available - AssertionError: Expected all core engines available, missing: ['skill_extraction']
+assert not ['skill_extraction']
+FAILED ats_production_system/tests/test_integration.py::test_strong_candidate_all_components_available - AssertionError: assert 'partial' == 'success'
+  
+  - success
+  + partial
+FAILED ats_production_system/tests/test_integration.py::test_strong_candidate_scores_high - AssertionError: Strong-fit candidate should score well above a weak fit
+assert 0.307475 >= 0.5
+ +  where 0.307475 = PipelineRunRecord(schema_version='1.0.0', model_version='ats-production-system-1.0.0', pipeline_version='zecpath-day20', candidate_id='priya_sharma', job_id='job_senior_backend_test', generated_at='2026-08-31T13:40:20.087242+00:00', request_id='4a07f8b6-755d-49dc-b1fd-b9cad473800f', resume_source_file='C:\\Users\\jeffy\\Desktop\\ai-recruitment-system\\ai-recruitment-system\\demo_datasets\\resumes\\priya_sharma.docx', job_source_file='C:\\Users\\jeffy\\Desktop\\ai-recruitment-system\\ai-recruitment-system\\demo_datasets\\job_descriptions\\senior_backend_engineer.txt', stages_completed=['resume_extraction', 'performance_optimizer.repair_noisy_text', 'section_classifier', 'experience_parsing', 'education_extraction', 'semantic_matching', 'ats_scoring'], stages_failed=['skill_extraction'], engines_used={'resume_extraction': 'python-docx', 'semantic_matching': 'hashing-bow-fallback'}, final_score=0.307475, match_band='no_match', recommendation=None, zone=None, component_breakdown=[{'name': 'skill_match', 'available': True, 'raw_score': 0.0, 'weight_original': 0.35, 'weight_applied': 0.35, 'weighted_contribution': 0.0, 'notes': []}, {'name': 'experience_relevance', 'available': True, 'raw_score': 0.6299, 'weight_original': 0.25, 'weight_applied': 0.25, 'weighted_contribution': 0.157475, 'notes': []}, {'name': 'education_alignment', 'available': True, 'raw_score': 1.0, 'weight_original': 0.15, 'weight_applied': 0.15, 'weighted_contribution': 0.15, 'notes': []}, {'name': 'semantic_similarity', 'available': True, 'raw_score': 0.0, 'weight_original': 0.25, 'weight_applied': 0.25, 'weighted_contribution': 0.0, 'notes': []}], narrative_explanation='Candidate priya_sharma scored 31% overall against job job_senior_backend_test (role profile: default), driven primarily by strong education alignment (100%), while semantic similarity was comparatively weaker (0%).', warnings=[], status='partial', error=None, candidate_profile={'candidate_id': 'priya_sharma', 'source_file': 'C:\\Users\\jeffy\\Desktop\\ai-recruitment-system\\ai-recruitment-system\\demo_datasets\\resumes\\priya_sharma.docx', 'skills': [], 'total_experience_years': 10.67, 'highest_degree': 'Bachelor of Technology', 'certifications': [{'raw_line': 'AWS Certified Solutions Architect – Professional', 'name': 'AWS Certified Solutions Architect', 'issuer': 'Professional', 'year': None, 'relevance_category': 'Cloud', 'confidence': 0.85}]}).final_score
+FAILED ats_production_system/tests/test_integration.py::test_batch_produces_ranked_zones - AssertionError: assert 'Auto-Reject' != 'Auto-Reject'
+============== 4 failed, 8 passed, 1 warning in 86.54s (0:01:26) ==============
+

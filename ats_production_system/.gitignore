@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+.venv/
+venv/
+uploads/
+
+# Generated test/demo outputs
+tests/test_outputs/
+outputs/
+
+# Keep Day 20 deliverables
+!tests/logs/
+!tests/logs/*.log

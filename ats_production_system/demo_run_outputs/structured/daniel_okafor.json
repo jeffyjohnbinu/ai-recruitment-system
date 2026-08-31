@@ -1,0 +1,27 @@
+{
+  "source_file": "demo_datasets/resumes/daniel_okafor.docx",
+  "file_type": "docx",
+  "engine_used": "python-docx",
+  "extracted_at": "2026-08-31T10:01:50.127182+00:00",
+  "raw_char_count": 506,
+  "cleaned_char_count": 506,
+  "sections_detected": [
+    "Summary",
+    "Experience",
+    "Education",
+    "Skills"
+  ],
+  "tables_found": 0,
+  "images_found": 0,
+  "warnings": [],
+  "cleaning_stats": {
+    "removed_control_chars": 0,
+    "normalized_bullets": 0,
+    "normalized_headings": 4,
+    "dehyphenated_words": 0,
+    "dropped_noise_lines": []
+  },
+  "cleaned_text": "DANIEL OKAFOR\nEmail: daniel.okafor@email.com | Phone: +234-803-555-0148 | Location: Lagos, Nigeria\nSummary\nBackend developer with 2 years of experience building REST APIs and working with relational databases.\nExperience\nBackend Developer — Lagoon Software (2022 - Present)\n- Built REST APIs in Python for an internal inventory system\n- Wrote PostgreSQL queries and basic Docker configuration\nEducation\nB.Sc. in Computer Science — University of Lagos, 2022\nSkills\nPython, PostgreSQL, Docker, REST APIs, Git",
+  "status": "success",
+  "error": null
+}

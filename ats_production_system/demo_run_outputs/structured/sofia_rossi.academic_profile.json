@@ -1,0 +1,25 @@
+{
+  "source_file": "demo_datasets/resumes/sofia_rossi.docx",
+  "schema_version": "1.0.0",
+  "extracted_at": "2026-08-31T10:01:50.186318+00:00",
+  "degrees": [
+    {
+      "raw_line": "B.A. in Business Administration — Bocconi University, 2023",
+      "degree_type_raw": "B.A.",
+      "degree_type_normalized": "Bachelor of Arts",
+      "field_of_study": "Business Administration",
+      "institution": "Bocconi University",
+      "graduation_year": 2023,
+      "confidence": 0.95
+    }
+  ],
+  "certifications": [],
+  "degrees_found": 1,
+  "certifications_found": 0,
+  "highest_degree": "Bachelor of Arts",
+  "warnings": [
+    "No Certifications section content found."
+  ],
+  "status": "partial",
+  "error": null
+}

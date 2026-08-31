@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0.0",
+  "model_version": "ats-production-system-1.0.0",
+  "pipeline_version": "zecpath-day20",
+  "candidate_id": "megan_ho",
+  "job_id": "job_junior_analyst",
+  "generated_at": "2026-08-31T10:01:50.157329+00:00",
+  "request_id": "ccd30cf7-2919-4ad8-9134-811ad73d568c",
+  "resume_source_file": "demo_datasets/resumes/megan_ho.docx",
+  "job_source_file": "demo_datasets/job_descriptions/junior_data_analyst.txt",
+  "stages_completed": [
+    "resume_extraction",
+    "performance_optimizer.repair_noisy_text",
+    "section_classifier",
+    "skill_extraction",
+    "experience_parsing",
+    "education_extraction",
+    "semantic_matching",
+    "ats_scoring"
+  ],
+  "stages_failed": [],
+  "engines_used": {
+    "resume_extraction": "python-docx",
+    "semantic_matching": "hashing-bow-fallback"
+  },
+  "final_score": 0.2225,
+  "match_band": "no_match",
+  "recommendation": null,
+  "zone": null,
+  "component_breakdown": [
+    {
+      "name": "skill_match",
+      "available": true,
+      "raw_score": 0.2,
+      "weight_original": 0.35,
+      "weight_applied": 0.35,
+      "weighted_contribution": 0.06999999999999999,
+      "notes": []
+    },
+    {
+      "name": "experience_relevance",
+      "available": true,
+      "raw_score": 0.25,
+      "weight_original": 0.25,
+      "weight_applied": 0.25,
+      "weighted_contribution": 0.0625,
+      "notes": []
+    },
+    {
+      "name": "education_alignment",
+      "available": true,
+      "raw_score": 0.6,
+      "weight_original": 0.15,
+      "weight_applied": 0.15,
+      "weighted_contribution": 0.09,
+      "notes": []
+    },
+    {
+      "name": "semantic_similarity",
+      "available": true,
+      "raw_score": 0.0,
+      "weight_original": 0.25,
+      "weight_applied": 0.25,
+      "weighted_contribution": 0.0,
+      "notes": []
+    }
+  ],
+  "narrative_explanation": "Candidate megan_ho scored 22% overall against job job_junior_analyst (role profile: default), driven primarily by strong education alignment (60%), while semantic similarity was comparatively weaker (0%).",
+  "warnings": [],
+  "status": "success",
+  "error": null,
+  "candidate_profile": {
+    "candidate_id": "megan_ho",
+    "source_file": "demo_datasets/resumes/megan_ho.docx",
+    "skills": [
+      "Excel",
+      "Communication"
+    ],
+    "total_experience_years": 5.67,
+    "highest_degree": "Bachelor of Arts",
+    "certifications": []
+  }
+}

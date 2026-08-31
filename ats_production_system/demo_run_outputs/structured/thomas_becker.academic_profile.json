@@ -1,0 +1,25 @@
+{
+  "source_file": "demo_datasets/resumes/thomas_becker.docx",
+  "schema_version": "1.0.0",
+  "extracted_at": "2026-08-31T10:01:50.198574+00:00",
+  "degrees": [
+    {
+      "raw_line": "M.Sc. in Statistics — Humboldt University of Berlin, 2016",
+      "degree_type_raw": "M.Sc.",
+      "degree_type_normalized": "Master of Science",
+      "field_of_study": "Statistics",
+      "institution": "Humboldt University of Berlin",
+      "graduation_year": 2016,
+      "confidence": 0.95
+    }
+  ],
+  "certifications": [],
+  "degrees_found": 1,
+  "certifications_found": 0,
+  "highest_degree": "Master of Science",
+  "warnings": [
+    "No Certifications section content found."
+  ],
+  "status": "partial",
+  "error": null
+}

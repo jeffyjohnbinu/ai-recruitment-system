@@ -1,0 +1,10 @@
+Junior Data Analyst
+
+We are hiring a Junior Data Analyst to support reporting and dashboarding for our operations team.
+
+Required Skills: SQL, Excel, Python, Data Visualization
+Preferred Skills: Tableau, Power BI, Statistics
+
+Experience: 0-2 years of experience in an analytics or reporting role.
+
+Education: Bachelor's degree in Statistics, Economics, Mathematics, or a related field preferred.

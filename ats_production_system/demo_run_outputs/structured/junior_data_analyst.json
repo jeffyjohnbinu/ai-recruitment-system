@@ -1,0 +1,43 @@
+{
+  "source_file": "demo_datasets/job_descriptions/junior_data_analyst.txt",
+  "extracted_at": "2026-08-31T10:01:49.920515+00:00",
+  "raw_title": "Junior Data Analyst",
+  "normalized_role": "Data Analyst",
+  "seniority_level": "Entry-Level",
+  "required_skills": [
+    "Power BI",
+    "Tableau",
+    "Python",
+    "Excel",
+    "SQL"
+  ],
+  "preferred_skills": [],
+  "min_experience_years": 0.0,
+  "max_experience_years": 2.0,
+  "experience_mentions": [
+    "0-2 years"
+  ],
+  "education_level": "Bachelor's",
+  "education_fields": [
+    "Statistics",
+    "Mathematics",
+    "Economics"
+  ],
+  "education_mentions": [
+    "Bachelor's"
+  ],
+  "raw_char_count": 396,
+  "cleaned_char_count": 396,
+  "sections_detected": [],
+  "warnings": [],
+  "cleaning_stats": {
+    "removed_control_chars": 0,
+    "normalized_bullets": 0,
+    "normalized_headings": 0,
+    "dehyphenated_words": 0,
+    "dropped_noise_lines": []
+  },
+  "cleaned_text": "Junior Data Analyst\n\nWe are hiring a Junior Data Analyst to support reporting and dashboarding for our operations team.\n\nRequired Skills: SQL, Excel, Python, Data Visualization\nPreferred Skills: Tableau, Power BI, Statistics\n\nExperience: 0-2 years of experience in an analytics or reporting role.\n\nEducation: Bachelor's degree in Statistics, Economics, Mathematics, or a related field preferred.\n",
+  "status": "success",
+  "error": null
+}

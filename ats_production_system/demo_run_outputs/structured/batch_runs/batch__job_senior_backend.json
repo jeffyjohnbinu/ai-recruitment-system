@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-08-31T10:01:43.916956+00:00",
+  "job_id": "job_senior_backend",
+  "total_candidates": 6,
+  "shortlist_count": 0,
+  "review_count": 1,
+  "auto_reject_count": 5,
+  "candidates": [
+    {
+      "candidate_id": "arjun_nair",
+      "final_score": 0.15638888888888888,
+      "match_band": "no_match",
+      "zone": "Auto-Reject",
+      "status": "success",
+      "stages_failed": []
+    },
+    {
+      "candidate_id": "daniel_okafor",
+      "final_score": 0.4138805555555556,
+      "match_band": "no_match",
+      "zone": "Auto-Reject",
+      "status": "success",
+      "stages_failed": []
+    },
+    {
+      "candidate_id": "megan_ho",
+      "final_score": 0.1275,
+      "match_band": "no_match",
+      "zone": "Auto-Reject",
+      "status": "success",
+      "stages_failed": []
+    },
+    {
+      "candidate_id": "priya_sharma",
+      "final_score": 0.657475,
+      "match_band": "no_match",
+      "zone": "Review",
+      "status": "success",
+      "stages_failed": []
+    },
+    {
+      "candidate_id": "sofia_rossi",
+      "final_score": 0.1275,
+      "match_band": "no_match",
+      "zone": "Auto-Reject",
+      "status": "success",
+      "stages_failed": []
+    },
+    {
+      "candidate_id": "thomas_becker",
+      "final_score": 0.17528888888888888,
+      "match_band": "no_match",
+      "zone": "Auto-Reject",
+      "status": "success",
+      "stages_failed": []
+    }
+  ]
+}

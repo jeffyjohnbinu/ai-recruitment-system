@@ -1,0 +1,28 @@
+{
+  "source_file": "demo_datasets/resumes/priya_sharma.docx",
+  "file_type": "docx",
+  "engine_used": "python-docx",
+  "extracted_at": "2026-08-31T10:01:50.164228+00:00",
+  "raw_char_count": 965,
+  "cleaned_char_count": 965,
+  "sections_detected": [
+    "Summary",
+    "Experience",
+    "Education",
+    "Skills",
+    "Certifications"
+  ],
+  "tables_found": 0,
+  "images_found": 0,
+  "warnings": [],
+  "cleaning_stats": {
+    "removed_control_chars": 0,
+    "normalized_bullets": 0,
+    "normalized_headings": 5,
+    "dehyphenated_words": 0,
+    "dropped_noise_lines": []
+  },
+  "cleaned_text": "PRIYA SHARMA\nEmail: priya.sharma@email.com | Phone: +91-9820011223 | Location: Bengaluru, India\nSummary\nSenior Backend Engineer with 7 years of experience building scalable microservices and leading engineering teams.\nExperience\nSenior Backend Engineer — Nimbus Payments (2020 - Present)\n- Led migration of a monolithic payments platform to Python microservices on AWS\n- Mentored a team of 5 backend engineers\n- Designed REST APIs and Kafka event pipelines processing 50M+ transactions/month\n- Managed Kubernetes and Docker deployments across staging and production\nBackend Engineer — Fintra Labs (2017 - 2020)\n- Built PostgreSQL-backed services and CI/CD pipelines\n- Implemented Terraform-based infrastructure automation\nEducation\nB.Tech in Computer Science — Indian Institute of Technology, 2017\nSkills\nPython, AWS, Microservices, PostgreSQL, Docker, Kubernetes, REST APIs, Kafka, CI/CD, Terraform\nCertifications\n- AWS Certified Solutions Architect – Professional",
+  "status": "success",
+  "error": null
+}

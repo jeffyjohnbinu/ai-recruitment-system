@@ -1,0 +1,25 @@
+{
+  "source_file": "demo_datasets/resumes/megan_ho.docx",
+  "schema_version": "1.0.0",
+  "extracted_at": "2026-08-31T10:01:50.150881+00:00",
+  "degrees": [
+    {
+      "raw_line": "B.A. in Communications — San Francisco State University, 2021",
+      "degree_type_raw": "B.A.",
+      "degree_type_normalized": "Bachelor of Arts",
+      "field_of_study": "Communications",
+      "institution": "San Francisco State University",
+      "graduation_year": 2021,
+      "confidence": 0.95
+    }
+  ],
+  "certifications": [],
+  "degrees_found": 1,
+  "certifications_found": 0,
+  "highest_degree": "Bachelor of Arts",
+  "warnings": [
+    "No Certifications section content found."
+  ],
+  "status": "partial",
+  "error": null
+}

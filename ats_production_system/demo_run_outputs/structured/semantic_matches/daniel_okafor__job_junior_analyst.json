@@ -1,0 +1,38 @@
+{
+  "candidate_id": "daniel_okafor",
+  "job_id": "job_junior_analyst",
+  "schema_version": "1.0.0",
+  "matched_at": "2026-08-31T10:01:50.132596+00:00",
+  "engine_used": "hashing-bow-fallback",
+  "overall_score": 0.0,
+  "match_band": "no_match",
+  "is_match": false,
+  "section_scores": {
+    "skills": {
+      "similarity": 0.0,
+      "weight": 0.45,
+      "empty": true
+    },
+    "experience": {
+      "similarity": 0.0,
+      "weight": 0.35,
+      "empty": true
+    },
+    "projects": {
+      "similarity": 0.0,
+      "weight": 0.2,
+      "empty": true
+    }
+  },
+  "thresholds": {
+    "match_threshold": 0.55,
+    "strong_match_threshold": 0.75
+  },
+  "warnings": [
+    "Sections not found in resume input: projects",
+    "Job input dict did not match any known schema; no sections extracted.",
+    "No comparable text found on either the resume or job side."
+  ],
+  "status": "failed",
+  "error": null
+}

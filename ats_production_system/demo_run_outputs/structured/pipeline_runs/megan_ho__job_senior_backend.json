@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0.0",
+  "model_version": "ats-production-system-1.0.0",
+  "pipeline_version": "zecpath-day20",
+  "candidate_id": "megan_ho",
+  "job_id": "job_senior_backend",
+  "generated_at": "2026-08-31T10:01:43.867974+00:00",
+  "request_id": "96b32809-785c-43e7-9e4f-b9f92152dab5",
+  "resume_source_file": "demo_datasets/resumes/megan_ho.docx",
+  "job_source_file": "demo_datasets/job_descriptions/senior_backend_engineer.txt",
+  "stages_completed": [
+    "resume_extraction",
+    "performance_optimizer.repair_noisy_text",
+    "section_classifier",
+    "skill_extraction",
+    "experience_parsing",
+    "education_extraction",
+    "semantic_matching",
+    "ats_scoring"
+  ],
+  "stages_failed": [],
+  "engines_used": {
+    "resume_extraction": "python-docx",
+    "semantic_matching": "hashing-bow-fallback"
+  },
+  "final_score": 0.1275,
+  "match_band": "no_match",
+  "recommendation": null,
+  "zone": null,
+  "component_breakdown": [
+    {
+      "name": "skill_match",
+      "available": true,
+      "raw_score": 0.0,
+      "weight_original": 0.35,
+      "weight_applied": 0.35,
+      "weighted_contribution": 0.0,
+      "notes": []
+    },
+    {
+      "name": "experience_relevance",
+      "available": true,
+      "raw_score": 0.15,
+      "weight_original": 0.25,
+      "weight_applied": 0.25,
+      "weighted_contribution": 0.0375,
+      "notes": []
+    },
+    {
+      "name": "education_alignment",
+      "available": true,
+      "raw_score": 0.6,
+      "weight_original": 0.15,
+      "weight_applied": 0.15,
+      "weighted_contribution": 0.09,
+      "notes": []
+    },
+    {
+      "name": "semantic_similarity",
+      "available": true,
+      "raw_score": 0.0,
+      "weight_original": 0.25,
+      "weight_applied": 0.25,
+      "weighted_contribution": 0.0,
+      "notes": []
+    }
+  ],
+  "narrative_explanation": "Candidate megan_ho scored 13% overall against job job_senior_backend (role profile: default), driven primarily by strong education alignment (60%), while semantic similarity was comparatively weaker (0%).",
+  "warnings": [],
+  "status": "success",
+  "error": null,
+  "candidate_profile": {
+    "candidate_id": "megan_ho",
+    "source_file": "demo_datasets/resumes/megan_ho.docx",
+    "skills": [
+      "Excel",
+      "Communication"
+    ],
+    "total_experience_years": 5.67,
+    "highest_degree": "Bachelor of Arts",
+    "certifications": []
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "source_file": "sofia_rossi.docx",
+  "extracted_at": "2026-08-31T10:01:50.182640+00:00",
+  "input_char_count": 497,
+  "total_skills_found": 2,
+  "skills_by_category": {
+    "technical": 1,
+    "business": 1
+  },
+  "skills": [
+    {
+      "skill": "Excel",
+      "category": "technical",
+      "subcategory": "data",
+      "confidence": 1.0,
+      "match_type": "exact",
+      "mention_count": 3,
+      "matched_variants": [
+        "Excel"
+      ],
+      "source_sections": [
+        "Experience",
+        "Skills",
+        "Summary"
+      ],
+      "stack_sources": []
+    },
+    {
+      "skill": "Human Resources",
+      "category": "business",
+      "subcategory": "hr",
+      "confidence": 0.8326,
+      "match_type": "fuzzy",
+      "mention_count": 1,
+      "matched_variants": [
+        "Management"
+      ],
+      "source_sections": [
+        "Skills"
+      ],
+      "stack_sources": []
+    }
+  ],
+  "status": "success",
+  "warnings": [],
+  "error": null
+}

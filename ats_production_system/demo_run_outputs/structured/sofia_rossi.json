@@ -1,0 +1,27 @@
+{
+  "source_file": "demo_datasets/resumes/sofia_rossi.docx",
+  "file_type": "docx",
+  "engine_used": "python-docx",
+  "extracted_at": "2026-08-31T10:01:50.178989+00:00",
+  "raw_char_count": 497,
+  "cleaned_char_count": 497,
+  "sections_detected": [
+    "Summary",
+    "Experience",
+    "Education",
+    "Skills"
+  ],
+  "tables_found": 0,
+  "images_found": 0,
+  "warnings": [],
+  "cleaning_stats": {
+    "removed_control_chars": 0,
+    "normalized_bullets": 0,
+    "normalized_headings": 4,
+    "dehyphenated_words": 0,
+    "dropped_noise_lines": []
+  },
+  "cleaned_text": "SOFIA ROSSI\nEmail: sofia.rossi@email.com | Phone: +39-345-555-0123 | Location: Milan, Italy\nSummary\nOperations assistant with 1 year of experience producing Excel reports for a retail supply chain team.\nExperience\nOperations Assistant — Verona Retail Group (2023 - Present)\n- Built Excel pivot-table reports for inventory tracking\n- Assisted with vendor performance summaries\nEducation\nB.A. in Business Administration — Bocconi University, 2023\nSkills\nExcel, Inventory Management, Vendor Relations",
+  "status": "success",
+  "error": null
+}

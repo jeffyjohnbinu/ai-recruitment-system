@@ -1,0 +1,10 @@
+Senior Backend Engineer
+
+We are hiring a Senior Backend Engineer to lead development of our payments microservices platform.
+
+Required Skills: Python, AWS, Microservices, PostgreSQL, Docker, Kubernetes, REST APIs
+Preferred Skills: Kafka, CI/CD, Terraform
+
+Experience: 5+ years of backend engineering experience, including at least 2 years leading or mentoring engineers.
+
+Education: Bachelor's degree in Computer Science or related field required.

@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0.0",
+  "model_version": "ats-production-system-1.0.0",
+  "pipeline_version": "zecpath-day20",
+  "candidate_id": "arjun_nair",
+  "job_id": "job_junior_analyst",
+  "generated_at": "2026-08-31T10:01:50.119888+00:00",
+  "request_id": "e4b8de9e-6b42-40a4-95f1-52e7ef75b6b7",
+  "resume_source_file": "demo_datasets/resumes/arjun_nair.docx",
+  "job_source_file": "demo_datasets/job_descriptions/junior_data_analyst.txt",
+  "stages_completed": [
+    "resume_extraction",
+    "performance_optimizer.repair_noisy_text",
+    "section_classifier",
+    "skill_extraction",
+    "experience_parsing",
+    "education_extraction",
+    "semantic_matching",
+    "ats_scoring"
+  ],
+  "stages_failed": [],
+  "engines_used": {
+    "resume_extraction": "python-docx",
+    "semantic_matching": "hashing-bow-fallback"
+  },
+  "final_score": 0.5908249999999999,
+  "match_band": "no_match",
+  "recommendation": null,
+  "zone": null,
+  "component_breakdown": [
+    {
+      "name": "skill_match",
+      "available": true,
+      "raw_score": 0.8,
+      "weight_original": 0.35,
+      "weight_applied": 0.35,
+      "weighted_contribution": 0.27999999999999997,
+      "notes": []
+    },
+    {
+      "name": "experience_relevance",
+      "available": true,
+      "raw_score": 0.6433,
+      "weight_original": 0.25,
+      "weight_applied": 0.25,
+      "weighted_contribution": 0.160825,
+      "notes": []
+    },
+    {
+      "name": "education_alignment",
+      "available": true,
+      "raw_score": 1.0,
+      "weight_original": 0.15,
+      "weight_applied": 0.15,
+      "weighted_contribution": 0.15,
+      "notes": []
+    },
+    {
+      "name": "semantic_similarity",
+      "available": true,
+      "raw_score": 0.0,
+      "weight_original": 0.25,
+      "weight_applied": 0.25,
+      "weighted_contribution": 0.0,
+      "notes": []
+    }
+  ],
+  "narrative_explanation": "Candidate arjun_nair scored 59% overall against job job_junior_analyst (role profile: default), driven primarily by strong education alignment (100%), while semantic similarity was comparatively weaker (0%).",
+  "warnings": [],
+  "status": "success",
+  "error": null,
+  "candidate_profile": {
+    "candidate_id": "arjun_nair",
+    "source_file": "demo_datasets/resumes/arjun_nair.docx",
+    "skills": [
+      "Excel",
+      "Python",
+      "SQL",
+      "Tableau",
+      "Data Analysis"
+    ],
+    "total_experience_years": 2.67,
+    "highest_degree": "Bachelor of Science",
+    "certifications": []
+  }
+}

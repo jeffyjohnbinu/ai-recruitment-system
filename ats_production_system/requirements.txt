@@ -1,0 +1,8 @@
+# ats_production_system additions on top of the repo root requirements.txt.
+# (fastapi/uvicorn/pydantic/pytest are already pinned there; listed here too
+# so this package's Dockerfile/CI can install it standalone if needed.)
+fastapi>=0.112
+uvicorn[standard]>=0.30
+pydantic>=2.8
+python-multipart>=0.0.9
+httpx>=0.27

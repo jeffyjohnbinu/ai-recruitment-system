@@ -1,0 +1,94 @@
+{
+  "source_file": "daniel_okafor.docx",
+  "extracted_at": "2026-08-31T10:01:50.130790+00:00",
+  "input_char_count": 506,
+  "total_skills_found": 5,
+  "skills_by_category": {
+    "technical": 5
+  },
+  "skills": [
+    {
+      "skill": "Docker",
+      "category": "technical",
+      "subcategory": "devops",
+      "confidence": 1.0,
+      "match_type": "exact",
+      "mention_count": 2,
+      "matched_variants": [
+        "Docker"
+      ],
+      "source_sections": [
+        "Experience",
+        "Skills"
+      ],
+      "stack_sources": []
+    },
+    {
+      "skill": "Git",
+      "category": "technical",
+      "subcategory": "devops",
+      "confidence": 1.0,
+      "match_type": "exact",
+      "mention_count": 1,
+      "matched_variants": [
+        "Git"
+      ],
+      "source_sections": [
+        "Skills"
+      ],
+      "stack_sources": []
+    },
+    {
+      "skill": "PostgreSQL",
+      "category": "technical",
+      "subcategory": "database",
+      "confidence": 1.0,
+      "match_type": "exact",
+      "mention_count": 2,
+      "matched_variants": [
+        "PostgreSQL"
+      ],
+      "source_sections": [
+        "Experience",
+        "Skills"
+      ],
+      "stack_sources": []
+    },
+    {
+      "skill": "Python",
+      "category": "technical",
+      "subcategory": "language",
+      "confidence": 1.0,
+      "match_type": "exact",
+      "mention_count": 2,
+      "matched_variants": [
+        "Python"
+      ],
+      "source_sections": [
+        "Experience",
+        "Skills"
+      ],
+      "stack_sources": []
+    },
+    {
+      "skill": "REST APIs",
+      "category": "technical",
+      "subcategory": "api",
+      "confidence": 1.0,
+      "match_type": "exact",
+      "mention_count": 3,
+      "matched_variants": [
+        "REST APIs"
+      ],
+      "source_sections": [
+        "Experience",
+        "Skills",
+        "Summary"
+      ],
+      "stack_sources": []
+    }
+  ],
+  "status": "success",
+  "warnings": [],
+  "error": null
+}

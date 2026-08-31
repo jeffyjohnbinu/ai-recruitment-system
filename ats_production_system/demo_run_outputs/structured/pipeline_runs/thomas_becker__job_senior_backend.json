@@ -1,0 +1,88 @@
+{
+  "schema_version": "1.0.0",
+  "model_version": "ats-production-system-1.0.0",
+  "pipeline_version": "zecpath-day20",
+  "candidate_id": "thomas_becker",
+  "job_id": "job_senior_backend",
+  "generated_at": "2026-08-31T10:01:43.916059+00:00",
+  "request_id": "a6109c00-a665-4693-a0a3-71ca9a8885cb",
+  "resume_source_file": "demo_datasets/resumes/thomas_becker.docx",
+  "job_source_file": "demo_datasets/job_descriptions/senior_backend_engineer.txt",
+  "stages_completed": [
+    "resume_extraction",
+    "performance_optimizer.repair_noisy_text",
+    "section_classifier",
+    "skill_extraction",
+    "experience_parsing",
+    "education_extraction",
+    "semantic_matching",
+    "ats_scoring"
+  ],
+  "stages_failed": [],
+  "engines_used": {
+    "resume_extraction": "python-docx",
+    "semantic_matching": "hashing-bow-fallback"
+  },
+  "final_score": 0.17528888888888888,
+  "match_band": "no_match",
+  "recommendation": null,
+  "zone": null,
+  "component_breakdown": [
+    {
+      "name": "skill_match",
+      "available": true,
+      "raw_score": 0.1111111111111111,
+      "weight_original": 0.35,
+      "weight_applied": 0.35,
+      "weighted_contribution": 0.03888888888888888,
+      "notes": []
+    },
+    {
+      "name": "experience_relevance",
+      "available": true,
+      "raw_score": 0.1856,
+      "weight_original": 0.25,
+      "weight_applied": 0.25,
+      "weighted_contribution": 0.0464,
+      "notes": []
+    },
+    {
+      "name": "education_alignment",
+      "available": true,
+      "raw_score": 0.6,
+      "weight_original": 0.15,
+      "weight_applied": 0.15,
+      "weighted_contribution": 0.09,
+      "notes": []
+    },
+    {
+      "name": "semantic_similarity",
+      "available": true,
+      "raw_score": 0.0,
+      "weight_original": 0.25,
+      "weight_applied": 0.25,
+      "weighted_contribution": 0.0,
+      "notes": []
+    }
+  ],
+  "narrative_explanation": "Candidate thomas_becker scored 18% overall against job job_senior_backend (role profile: default), driven primarily by strong education alignment (60%), while semantic similarity was comparatively weaker (0%).",
+  "warnings": [],
+  "status": "success",
+  "error": null,
+  "candidate_profile": {
+    "candidate_id": "thomas_becker",
+    "source_file": "demo_datasets/resumes/thomas_becker.docx",
+    "skills": [
+      "Excel",
+      "Power BI",
+      "Python",
+      "SQL",
+      "Data Analysis",
+      "3D Modeling",
+      "Forecasting"
+    ],
+    "total_experience_years": 8.67,
+    "highest_degree": "Master of Science",
+    "certifications": []
+  }
+}

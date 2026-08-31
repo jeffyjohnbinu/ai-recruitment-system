@@ -1,0 +1,159 @@
+{
+  "source_file": "priya_sharma.docx",
+  "extracted_at": "2026-08-31T10:01:50.170229+00:00",
+  "input_char_count": 965,
+  "total_skills_found": 9,
+  "skills_by_category": {
+    "technical": 9
+  },
+  "skills": [
+    {
+      "skill": "AWS",
+      "category": "technical",
+      "subcategory": "cloud",
+      "confidence": 1.0,
+      "match_type": "exact",
+      "mention_count": 3,
+      "matched_variants": [
+        "AWS"
+      ],
+      "source_sections": [
+        "Certifications",
+        "Experience",
+        "Skills"
+      ],
+      "stack_sources": []
+    },
+    {
+      "skill": "CI/CD",
+      "category": "technical",
+      "subcategory": "devops",
+      "confidence": 1.0,
+      "match_type": "exact",
+      "mention_count": 2,
+      "matched_variants": [
+        "CI/CD"
+      ],
+      "source_sections": [
+        "Experience",
+        "Skills"
+      ],
+      "stack_sources": []
+    },
+    {
+      "skill": "Docker",
+      "category": "technical",
+      "subcategory": "devops",
+      "confidence": 1.0,
+      "match_type": "exact",
+      "mention_count": 2,
+      "matched_variants": [
+        "Docker"
+      ],
+      "source_sections": [
+        "Experience",
+        "Skills"
+      ],
+      "stack_sources": []
+    },
+    {
+      "skill": "Kafka",
+      "category": "technical",
+      "subcategory": "data",
+      "confidence": 1.0,
+      "match_type": "exact",
+      "mention_count": 2,
+      "matched_variants": [
+        "Kafka"
+      ],
+      "source_sections": [
+        "Experience",
+        "Skills"
+      ],
+      "stack_sources": []
+    },
+    {
+      "skill": "Kubernetes",
+      "category": "technical",
+      "subcategory": "devops",
+      "confidence": 1.0,
+      "match_type": "exact",
+      "mention_count": 2,
+      "matched_variants": [
+        "Kubernetes"
+      ],
+      "source_sections": [
+        "Experience",
+        "Skills"
+      ],
+      "stack_sources": []
+    },
+    {
+      "skill": "PostgreSQL",
+      "category": "technical",
+      "subcategory": "database",
+      "confidence": 1.0,
+      "match_type": "exact",
+      "mention_count": 2,
+      "matched_variants": [
+        "PostgreSQL"
+      ],
+      "source_sections": [
+        "Experience",
+        "Skills"
+      ],
+      "stack_sources": []
+    },
+    {
+      "skill": "Python",
+      "category": "technical",
+      "subcategory": "language",
+      "confidence": 1.0,
+      "match_type": "exact",
+      "mention_count": 2,
+      "matched_variants": [
+        "Python"
+      ],
+      "source_sections": [
+        "Experience",
+        "Skills"
+      ],
+      "stack_sources": []
+    },
+    {
+      "skill": "REST APIs",
+      "category": "technical",
+      "subcategory": "api",
+      "confidence": 1.0,
+      "match_type": "exact",
+      "mention_count": 2,
+      "matched_variants": [
+        "REST APIs"
+      ],
+      "source_sections": [
+        "Experience",
+        "Skills"
+      ],
+      "stack_sources": []
+    },
+    {
+      "skill": "Terraform",
+      "category": "technical",
+      "subcategory": "devops",
+      "confidence": 1.0,
+      "match_type": "exact",
+      "mention_count": 2,
+      "matched_variants": [
+        "Terraform"
+      ],
+      "source_sections": [
+        "Experience",
+        "Skills"
+      ],
+      "stack_sources": []
+    }
+  ],
+  "status": "success",
+  "warnings": [],
+  "error": null
+}

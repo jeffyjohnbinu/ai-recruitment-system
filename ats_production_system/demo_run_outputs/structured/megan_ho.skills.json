@@ -1,0 +1,46 @@
+{
+  "source_file": "megan_ho.docx",
+  "extracted_at": "2026-08-31T10:01:50.150034+00:00",
+  "input_char_count": 530,
+  "total_skills_found": 2,
+  "skills_by_category": {
+    "technical": 1,
+    "business": 1
+  },
+  "skills": [
+    {
+      "skill": "Excel",
+      "category": "technical",
+      "subcategory": "data",
+      "confidence": 1.0,
+      "match_type": "exact",
+      "mention_count": 2,
+      "matched_variants": [
+        "Excel"
+      ],
+      "source_sections": [
+        "Experience",
+        "Skills"
+      ],
+      "stack_sources": []
+    },
+    {
+      "skill": "Communication",
+      "category": "business",
+      "subcategory": "communication",
+      "confidence": 0.8667,
+      "match_type": "fuzzy",
+      "mention_count": 1,
+      "matched_variants": [
+        "Communications"
+      ],
+      "source_sections": [
+        "Education"
+      ],
+      "stack_sources": []
+    }
+  ],
+  "status": "success",
+  "warnings": [],
+  "error": null
+}

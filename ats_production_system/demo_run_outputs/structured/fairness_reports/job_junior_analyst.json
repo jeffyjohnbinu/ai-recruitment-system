@@ -1,0 +1,584 @@
+{
+  "generated_at": "2026-08-31T10:01:50.200597+00:00",
+  "role_id": null,
+  "candidate_count": 6,
+  "masked_profiles": [
+    {
+      "candidate_id": "arjun_nair",
+      "masked_profile": {
+        "candidate_id": "arjun_nair",
+        "source_file": "demo_datasets/resumes/arjun_nair.docx",
+        "skills": [
+          "Excel",
+          "Python",
+          "SQL",
+          "Tableau",
+          "Data Analysis"
+        ],
+        "total_experience_years": 2.67,
+        "highest_degree": "Bachelor of Science",
+        "certifications": []
+      },
+      "removed_fields": [],
+      "neutralized_text_fields": [],
+      "institution_masked": false,
+      "schema_version": "1.0.0",
+      "canonical_profile": {
+        "candidate_id": "arjun_nair",
+        "standardized_skills": [
+          "data analysis",
+          "excel",
+          "python",
+          "sql",
+          "tableau"
+        ],
+        "total_experience_years": 2.67,
+        "education_level": "Other",
+        "certifications": [],
+        "normalized_titles": [],
+        "source_field_count": 6,
+        "normalization_notes": [
+          "unrecognized degree text left as 'Other': 'bachelor of science'"
+        ],
+        "schema_version": "1.0.0",
+        "model_version": "fairness-normalizer-1.0",
+        "pipeline_version": "day15"
+      }
+    },
+    {
+      "candidate_id": "daniel_okafor",
+      "masked_profile": {
+        "candidate_id": "daniel_okafor",
+        "source_file": "demo_datasets/resumes/daniel_okafor.docx",
+        "skills": [
+          "Docker",
+          "Git",
+          "PostgreSQL",
+          "Python",
+          "REST APIs"
+        ],
+        "total_experience_years": 4.67,
+        "highest_degree": "Bachelor of Science",
+        "certifications": []
+      },
+      "removed_fields": [],
+      "neutralized_text_fields": [],
+      "institution_masked": false,
+      "schema_version": "1.0.0",
+      "canonical_profile": {
+        "candidate_id": "daniel_okafor",
+        "standardized_skills": [
+          "docker",
+          "git",
+          "postgresql",
+          "python",
+          "rest apis"
+        ],
+        "total_experience_years": 4.67,
+        "education_level": "Other",
+        "certifications": [],
+        "normalized_titles": [],
+        "source_field_count": 6,
+        "normalization_notes": [
+          "unrecognized degree text left as 'Other': 'bachelor of science'"
+        ],
+        "schema_version": "1.0.0",
+        "model_version": "fairness-normalizer-1.0",
+        "pipeline_version": "day15"
+      }
+    },
+    {
+      "candidate_id": "megan_ho",
+      "masked_profile": {
+        "candidate_id": "megan_ho",
+        "source_file": "demo_datasets/resumes/megan_ho.docx",
+        "skills": [
+          "Excel",
+          "Communication"
+        ],
+        "total_experience_years": 5.67,
+        "highest_degree": "Bachelor of Arts",
+        "certifications": []
+      },
+      "removed_fields": [],
+      "neutralized_text_fields": [],
+      "institution_masked": false,
+      "schema_version": "1.0.0",
+      "canonical_profile": {
+        "candidate_id": "megan_ho",
+        "standardized_skills": [
+          "communication",
+          "excel"
+        ],
+        "total_experience_years": 5.67,
+        "education_level": "Other",
+        "certifications": [],
+        "normalized_titles": [],
+        "source_field_count": 6,
+        "normalization_notes": [
+          "unrecognized degree text left as 'Other': 'bachelor of arts'"
+        ],
+        "schema_version": "1.0.0",
+        "model_version": "fairness-normalizer-1.0",
+        "pipeline_version": "day15"
+      }
+    },
+    {
+      "candidate_id": "priya_sharma",
+      "masked_profile": {
+        "candidate_id": "priya_sharma",
+        "source_file": "demo_datasets/resumes/priya_sharma.docx",
+        "skills": [
+          "AWS",
+          "CI/CD",
+          "Docker",
+          "Kafka",
+          "Kubernetes",
+          "PostgreSQL",
+          "Python",
+          "REST APIs",
+          "Terraform"
+        ],
+        "total_experience_years": 10.67,
+        "highest_degree": "Bachelor of Technology",
+        "certifications": [
+          {
+            "raw_line": "AWS Certified Solutions Architect – Professional",
+            "name": "AWS Certified Solutions Architect",
+            "issuer": "Professional",
+            "year": null,
+            "relevance_category": "Cloud",
+            "confidence": 0.85
+          }
+        ]
+      },
+      "removed_fields": [],
+      "neutralized_text_fields": [],
+      "institution_masked": false,
+      "schema_version": "1.0.0",
+      "canonical_profile": {
+        "candidate_id": "priya_sharma",
+        "standardized_skills": [
+          "aws",
+          "ci/cd",
+          "docker",
+          "kafka",
+          "kubernetes",
+          "postgresql",
+          "python",
+          "rest apis",
+          "terraform"
+        ],
+        "total_experience_years": 10.67,
+        "education_level": "Other",
+        "certifications": [
+          "AWS Certified Solutions Architect"
+        ],
+        "normalized_titles": [],
+        "source_field_count": 6,
+        "normalization_notes": [
+          "unrecognized degree text left as 'Other': 'bachelor of technology'"
+        ],
+        "schema_version": "1.0.0",
+        "model_version": "fairness-normalizer-1.0",
+        "pipeline_version": "day15"
+      }
+    },
+    {
+      "candidate_id": "sofia_rossi",
+      "masked_profile": {
+        "candidate_id": "sofia_rossi",
+        "source_file": "demo_datasets/resumes/sofia_rossi.docx",
+        "skills": [
+          "Excel",
+          "Human Resources"
+        ],
+        "total_experience_years": 3.67,
+        "highest_degree": "Bachelor of Arts",
+        "certifications": []
+      },
+      "removed_fields": [],
+      "neutralized_text_fields": [],
+      "institution_masked": false,
+      "schema_version": "1.0.0",
+      "canonical_profile": {
+        "candidate_id": "sofia_rossi",
+        "standardized_skills": [
+          "excel",
+          "human resources"
+        ],
+        "total_experience_years": 3.67,
+        "education_level": "Other",
+        "certifications": [],
+        "normalized_titles": [],
+        "source_field_count": 6,
+        "normalization_notes": [
+          "unrecognized degree text left as 'Other': 'bachelor of arts'"
+        ],
+        "schema_version": "1.0.0",
+        "model_version": "fairness-normalizer-1.0",
+        "pipeline_version": "day15"
+      }
+    },
+    {
+      "candidate_id": "thomas_becker",
+      "masked_profile": {
+        "candidate_id": "thomas_becker",
+        "source_file": "demo_datasets/resumes/thomas_becker.docx",
+        "skills": [
+          "Excel",
+          "Power BI",
+          "Python",
+          "SQL",
+          "Data Analysis",
+          "3D Modeling",
+          "Forecasting"
+        ],
+        "total_experience_years": 8.67,
+        "highest_degree": "Master of Science",
+        "certifications": []
+      },
+      "removed_fields": [],
+      "neutralized_text_fields": [],
+      "institution_masked": false,
+      "schema_version": "1.0.0",
+      "canonical_profile": {
+        "candidate_id": "thomas_becker",
+        "standardized_skills": [
+          "3d modeling",
+          "data analysis",
+          "excel",
+          "forecasting",
+          "power bi",
+          "python",
+          "sql"
+        ],
+        "total_experience_years": 8.67,
+        "education_level": "Other",
+        "certifications": [],
+        "normalized_titles": [],
+        "source_field_count": 6,
+        "normalization_notes": [
+          "unrecognized degree text left as 'Other': 'master of science'"
+        ],
+        "schema_version": "1.0.0",
+        "model_version": "fairness-normalizer-1.0",
+        "pipeline_version": "day15"
+      }
+    }
+  ],
+  "keyword_balance_reports": {
+    "arjun_nair": {
+      "original_components": {
+        "skill_match": [
+          0.8,
+          0.35
+        ],
+        "experience_relevance": [
+          0.6433,
+          0.25
+        ],
+        "education_alignment": [
+          1.0,
+          0.15
+        ],
+        "semantic_similarity": [
+          0.0,
+          0.25
+        ]
+      },
+      "adjusted_components": {
+        "skill_match": [
+          0.8,
+          0.35
+        ],
+        "experience_relevance": [
+          0.6433,
+          0.25
+        ],
+        "education_alignment": [
+          1.0,
+          0.15
+        ],
+        "semantic_similarity": [
+          0.0,
+          0.25
+        ]
+      },
+      "keyword_component_name": null,
+      "dampening_applied": false,
+      "weight_redistributed": 0.0,
+      "notes": [
+        "no keyword-matching component found; nothing to rebalance"
+      ]
+    },
+    "daniel_okafor": {
+      "original_components": {
+        "skill_match": [
+          0.2,
+          0.35
+        ],
+        "experience_relevance": [
+          0.25,
+          0.25
+        ],
+        "education_alignment": [
+          0.6,
+          0.15
+        ],
+        "semantic_similarity": [
+          0.0,
+          0.25
+        ]
+      },
+      "adjusted_components": {
+        "skill_match": [
+          0.2,
+          0.35
+        ],
+        "experience_relevance": [
+          0.25,
+          0.25
+        ],
+        "education_alignment": [
+          0.6,
+          0.15
+        ],
+        "semantic_similarity": [
+          0.0,
+          0.25
+        ]
+      },
+      "keyword_component_name": null,
+      "dampening_applied": false,
+      "weight_redistributed": 0.0,
+      "notes": [
+        "no keyword-matching component found; nothing to rebalance"
+      ]
+    },
+    "megan_ho": {
+      "original_components": {
+        "skill_match": [
+          0.2,
+          0.35
+        ],
+        "experience_relevance": [
+          0.25,
+          0.25
+        ],
+        "education_alignment": [
+          0.6,
+          0.15
+        ],
+        "semantic_similarity": [
+          0.0,
+          0.25
+        ]
+      },
+      "adjusted_components": {
+        "skill_match": [
+          0.2,
+          0.35
+        ],
+        "experience_relevance": [
+          0.25,
+          0.25
+        ],
+        "education_alignment": [
+          0.6,
+          0.15
+        ],
+        "semantic_similarity": [
+          0.0,
+          0.25
+        ]
+      },
+      "keyword_component_name": null,
+      "dampening_applied": false,
+      "weight_redistributed": 0.0,
+      "notes": [
+        "no keyword-matching component found; nothing to rebalance"
+      ]
+    },
+    "priya_sharma": {
+      "original_components": {
+        "skill_match": [
+          0.2,
+          0.35
+        ],
+        "experience_relevance": [
+          0.2,
+          0.25
+        ],
+        "education_alignment": [
+          0.7,
+          0.15
+        ],
+        "semantic_similarity": [
+          0.0,
+          0.25
+        ]
+      },
+      "adjusted_components": {
+        "skill_match": [
+          0.2,
+          0.35
+        ],
+        "experience_relevance": [
+          0.2,
+          0.25
+        ],
+        "education_alignment": [
+          0.7,
+          0.15
+        ],
+        "semantic_similarity": [
+          0.0,
+          0.25
+        ]
+      },
+      "keyword_component_name": null,
+      "dampening_applied": false,
+      "weight_redistributed": 0.0,
+      "notes": [
+        "no keyword-matching component found; nothing to rebalance"
+      ]
+    },
+    "sofia_rossi": {
+      "original_components": {
+        "skill_match": [
+          0.2,
+          0.35
+        ],
+        "experience_relevance": [
+          0.25,
+          0.25
+        ],
+        "education_alignment": [
+          0.6,
+          0.15
+        ],
+        "semantic_similarity": [
+          0.0,
+          0.25
+        ]
+      },
+      "adjusted_components": {
+        "skill_match": [
+          0.2,
+          0.35
+        ],
+        "experience_relevance": [
+          0.25,
+          0.25
+        ],
+        "education_alignment": [
+          0.6,
+          0.15
+        ],
+        "semantic_similarity": [
+          0.0,
+          0.25
+        ]
+      },
+      "keyword_component_name": null,
+      "dampening_applied": false,
+      "weight_redistributed": 0.0,
+      "notes": [
+        "no keyword-matching component found; nothing to rebalance"
+      ]
+    },
+    "thomas_becker": {
+      "original_components": {
+        "skill_match": [
+          0.8,
+          0.35
+        ],
+        "experience_relevance": [
+          0.5634,
+          0.25
+        ],
+        "education_alignment": [
+          1.0,
+          0.15
+        ],
+        "semantic_similarity": [
+          0.0,
+          0.25
+        ]
+      },
+      "adjusted_components": {
+        "skill_match": [
+          0.8,
+          0.35
+        ],
+        "experience_relevance": [
+          0.5634,
+          0.25
+        ],
+        "education_alignment": [
+          1.0,
+          0.15
+        ],
+        "semantic_similarity": [
+          0.0,
+          0.25
+        ]
+      },
+      "keyword_component_name": null,
+      "dampening_applied": false,
+      "weight_redistributed": 0.0,
+      "notes": [
+        "no keyword-matching component found; nothing to rebalance"
+      ]
+    }
+  },
+  "normalized_scores": [
+    {
+      "candidate_id": "arjun_nair",
+      "raw_score": 0.5908249999999999,
+      "z_score": 1.4726,
+      "percentile": 1.0,
+      "robust_normalized": 0.8024
+    },
+    {
+      "candidate_id": "daniel_okafor",
+      "raw_score": 0.22249999999999998,
+      "z_score": -0.7104,
+      "percentile": 0.5,
+      "robust_normalized": 0.4988
+    },
+    {
+      "candidate_id": "megan_ho",
+      "raw_score": 0.22249999999999998,
+      "z_score": -0.7104,
+      "percentile": 0.5,
+      "robust_normalized": 0.4988
+    },
+    {
+      "candidate_id": "priya_sharma",
+      "raw_score": 0.22499999999999998,
+      "z_score": -0.6956,
+      "percentile": 0.6667,
+      "robust_normalized": 0.5012
+    },
+    {
+      "candidate_id": "sofia_rossi",
+      "raw_score": 0.22249999999999998,
+      "z_score": -0.7104,
+      "percentile": 0.5,
+      "robust_normalized": 0.4988
+    },
+    {
+      "candidate_id": "thomas_becker",
+      "raw_score": 0.57085,
+      "z_score": 1.3542,
+      "percentile": 0.8333,
+      "robust_normalized": 0.7901
+    }
+  ],
+  "bias_reports": [],
+  "schema_version": "1.0.0",
+  "model_version": "fairness-bias-engine-1.0",
+  "pipeline_version": "day15"
+}

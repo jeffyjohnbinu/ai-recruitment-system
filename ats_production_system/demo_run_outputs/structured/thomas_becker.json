@@ -1,0 +1,27 @@
+{
+  "source_file": "demo_datasets/resumes/thomas_becker.docx",
+  "file_type": "docx",
+  "engine_used": "python-docx",
+  "extracted_at": "2026-08-31T10:01:50.193784+00:00",
+  "raw_char_count": 587,
+  "cleaned_char_count": 587,
+  "sections_detected": [
+    "Summary",
+    "Experience",
+    "Education",
+    "Skills"
+  ],
+  "tables_found": 0,
+  "images_found": 0,
+  "warnings": [],
+  "cleaning_stats": {
+    "removed_control_chars": 0,
+    "normalized_bullets": 0,
+    "normalized_headings": 4,
+    "dehyphenated_words": 0,
+    "dropped_noise_lines": []
+  },
+  "cleaned_text": "THOMAS BECKER\nEmail: thomas.becker@email.com | Phone: +49-176-5550199 | Location: Berlin, Germany\nSummary\nSenior data analyst with 8 years of experience in SQL reporting, Python-based analysis, and Power BI dashboarding.\nExperience\nSenior Data Analyst — Nordkreuz Analytics (2018 - Present)\n- Led SQL-based reporting for a 40-person operations org\n- Built Python data pipelines and Power BI dashboards\n- Applied statistical modeling to forecast demand\nEducation\nM.Sc. in Statistics — Humboldt University of Berlin, 2016\nSkills\nSQL, Python, Power BI, Statistics, Data Visualization, Excel",
+  "status": "success",
+  "error": null
+}

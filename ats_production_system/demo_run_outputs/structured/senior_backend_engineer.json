@@ -1,0 +1,45 @@
+{
+  "source_file": "demo_datasets/job_descriptions/senior_backend_engineer.txt",
+  "extracted_at": "2026-08-31T10:01:43.574266+00:00",
+  "raw_title": "Senior Backend Engineer",
+  "normalized_role": "Backend Engineer",
+  "seniority_level": "Senior",
+  "required_skills": [
+    "Kubernetes",
+    "PostgreSQL",
+    "Terraform",
+    "REST APIs",
+    "Python",
+    "Docker",
+    "CI/CD",
+    "Kafka",
+    "AWS"
+  ],
+  "preferred_skills": [],
+  "min_experience_years": 5.0,
+  "max_experience_years": null,
+  "experience_mentions": [
+    "5+ years"
+  ],
+  "education_level": "Bachelor's",
+  "education_fields": [
+    "Computer Science"
+  ],
+  "education_mentions": [
+    "Bachelor's"
+  ],
+  "raw_char_count": 448,
+  "cleaned_char_count": 448,
+  "sections_detected": [],
+  "warnings": [],
+  "cleaning_stats": {
+    "removed_control_chars": 0,
+    "normalized_bullets": 0,
+    "normalized_headings": 0,
+    "dehyphenated_words": 0,
+    "dropped_noise_lines": []
+  },
+  "cleaned_text": "Senior Backend Engineer\n\nWe are hiring a Senior Backend Engineer to lead development of our payments microservices platform.\n\nRequired Skills: Python, AWS, Microservices, PostgreSQL, Docker, Kubernetes, REST APIs\nPreferred Skills: Kafka, CI/CD, Terraform\n\nExperience: 5+ years of backend engineering experience, including at least 2 years leading or mentoring engineers.\n\nEducation: Bachelor's degree in Computer Science or related field required.\n",
+  "status": "success",
+  "error": null
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-08-31T10:01:50.200378+00:00",
+  "job_id": "job_junior_analyst",
+  "total_candidates": 6,
+  "shortlist_count": 0,
+  "review_count": 2,
+  "auto_reject_count": 4,
+  "candidates": [
+    {
+      "candidate_id": "arjun_nair",
+      "final_score": 0.5908249999999999,
+      "match_band": "no_match",
+      "zone": "Review",
+      "status": "success",
+      "stages_failed": []
+    },
+    {
+      "candidate_id": "daniel_okafor",
+      "final_score": 0.2225,
+      "match_band": "no_match",
+      "zone": "Auto-Reject",
+      "status": "success",
+      "stages_failed": []
+    },
+    {
+      "candidate_id": "megan_ho",
+      "final_score": 0.2225,
+      "match_band": "no_match",
+      "zone": "Auto-Reject",
+      "status": "success",
+      "stages_failed": []
+    },
+    {
+      "candidate_id": "priya_sharma",
+      "final_score": 0.22499999999999998,
+      "match_band": "no_match",
+      "zone": "Auto-Reject",
+      "status": "success",
+      "stages_failed": []
+    },
+    {
+      "candidate_id": "sofia_rossi",
+      "final_score": 0.2225,
+      "match_band": "no_match",
+      "zone": "Auto-Reject",
+      "status": "success",
+      "stages_failed": []
+    },
+    {
+      "candidate_id": "thomas_becker",
+      "final_score": 0.57085,
+      "match_band": "no_match",
+      "zone": "Review",
+      "status": "success",
+      "stages_failed": []
+    }
+  ]
+}

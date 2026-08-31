@@ -1,0 +1,32 @@
+{
+  "source_file": "demo_datasets/resumes/priya_sharma.docx",
+  "schema_version": "1.0.0",
+  "extracted_at": "2026-08-31T10:01:50.171463+00:00",
+  "degrees": [
+    {
+      "raw_line": "B.Tech in Computer Science — Indian Institute of Technology, 2017",
+      "degree_type_raw": "B.Tech",
+      "degree_type_normalized": "Bachelor of Technology",
+      "field_of_study": "Computer Science",
+      "institution": "Indian Institute of Technology",
+      "graduation_year": 2017,
+      "confidence": 0.95
+    }
+  ],
+  "certifications": [
+    {
+      "raw_line": "AWS Certified Solutions Architect – Professional",
+      "name": "AWS Certified Solutions Architect",
+      "issuer": "Professional",
+      "year": null,
+      "relevance_category": "Cloud",
+      "confidence": 0.85
+    }
+  ],
+  "degrees_found": 1,
+  "certifications_found": 1,
+  "highest_degree": "Bachelor of Technology",
+  "warnings": [],
+  "status": "success",
+  "error": null
+}

@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.0.0",
+  "model_version": "ats-production-system-1.0.0",
+  "pipeline_version": "zecpath-day20",
+  "candidate_id": "priya_sharma",
+  "job_id": "job_senior_backend",
+  "generated_at": "2026-08-31T10:01:43.884756+00:00",
+  "request_id": "4267be8e-1774-4bd7-9101-dc454b655bc5",
+  "resume_source_file": "demo_datasets/resumes/priya_sharma.docx",
+  "job_source_file": "demo_datasets/job_descriptions/senior_backend_engineer.txt",
+  "stages_completed": [
+    "resume_extraction",
+    "performance_optimizer.repair_noisy_text",
+    "section_classifier",
+    "skill_extraction",
+    "experience_parsing",
+    "education_extraction",
+    "semantic_matching",
+    "ats_scoring"
+  ],
+  "stages_failed": [],
+  "engines_used": {
+    "resume_extraction": "python-docx",
+    "semantic_matching": "hashing-bow-fallback"
+  },
+  "final_score": 0.657475,
+  "match_band": "no_match",
+  "recommendation": null,
+  "zone": null,
+  "component_breakdown": [
+    {
+      "name": "skill_match",
+      "available": true,
+      "raw_score": 1.0,
+      "weight_original": 0.35,
+      "weight_applied": 0.35,
+      "weighted_contribution": 0.35,
+      "notes": []
+    },
+    {
+      "name": "experience_relevance",
+      "available": true,
+      "raw_score": 0.6299,
+      "weight_original": 0.25,
+      "weight_applied": 0.25,
+      "weighted_contribution": 0.157475,
+      "notes": []
+    },
+    {
+      "name": "education_alignment",
+      "available": true,
+      "raw_score": 1.0,
+      "weight_original": 0.15,
+      "weight_applied": 0.15,
+      "weighted_contribution": 0.15,
+      "notes": []
+    },
+    {
+      "name": "semantic_similarity",
+      "available": true,
+      "raw_score": 0.0,
+      "weight_original": 0.25,
+      "weight_applied": 0.25,
+      "weighted_contribution": 0.0,
+      "notes": []
+    }
+  ],
+  "narrative_explanation": "Candidate priya_sharma scored 66% overall against job job_senior_backend (role profile: default), driven primarily by strong skill match (100%), while semantic similarity was comparatively weaker (0%).",
+  "warnings": [],
+  "status": "success",
+  "error": null,
+  "candidate_profile": {
+    "candidate_id": "priya_sharma",
+    "source_file": "demo_datasets/resumes/priya_sharma.docx",
+    "skills": [
+      "AWS",
+      "CI/CD",
+      "Docker",
+      "Kafka",
+      "Kubernetes",
+      "PostgreSQL",
+      "Python",
+      "REST APIs",
+      "Terraform"
+    ],
+    "total_experience_years": 10.67,
+    "highest_degree": "Bachelor of Technology",
+    "certifications": [
+      {
+        "raw_line": "AWS Certified Solutions Architect – Professional",
+        "name": "AWS Certified Solutions Architect",
+        "issuer": "Professional",
+        "year": null,
+        "relevance_category": "Cloud",
+        "confidence": 0.85
+      }
+    ]
+  }
+}

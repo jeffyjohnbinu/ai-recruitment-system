@@ -1,0 +1,27 @@
+{
+  "source_file": "demo_datasets/resumes/megan_ho.docx",
+  "file_type": "docx",
+  "engine_used": "python-docx",
+  "extracted_at": "2026-08-31T10:01:50.146006+00:00",
+  "raw_char_count": 530,
+  "cleaned_char_count": 530,
+  "sections_detected": [
+    "Summary",
+    "Experience",
+    "Education",
+    "Skills"
+  ],
+  "tables_found": 0,
+  "images_found": 0,
+  "warnings": [],
+  "cleaning_stats": {
+    "removed_control_chars": 0,
+    "normalized_bullets": 0,
+    "normalized_headings": 4,
+    "dehyphenated_words": 0,
+    "dropped_noise_lines": []
+  },
+  "cleaned_text": "MEGAN HO\nEmail: megan.ho@email.com | Phone: +1-415-555-0199 | Location: San Francisco, CA\nSummary\nMarketing coordinator with 3 years of experience running digital campaigns and social media content calendars.\nExperience\nMarketing Coordinator — Brightline Media (2021 - Present)\n- Ran paid social campaigns across Instagram and TikTok\n- Built monthly performance reports in Excel and Google Sheets\nEducation\nB.A. in Communications — San Francisco State University, 2021\nSkills\nExcel, Social Media Marketing, Content Strategy, Canva",
+  "status": "success",
+  "error": null
+}

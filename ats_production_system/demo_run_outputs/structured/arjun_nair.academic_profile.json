@@ -1,0 +1,25 @@
+{
+  "source_file": "demo_datasets/resumes/arjun_nair.docx",
+  "schema_version": "1.0.0",
+  "extracted_at": "2026-08-31T10:01:50.118092+00:00",
+  "degrees": [
+    {
+      "raw_line": "B.Sc. in Statistics — Loyola College Chennai, 2024",
+      "degree_type_raw": "B.Sc.",
+      "degree_type_normalized": "Bachelor of Science",
+      "field_of_study": "Statistics",
+      "institution": "Loyola College Chennai",
+      "graduation_year": 2024,
+      "confidence": 0.95
+    }
+  ],
+  "certifications": [],
+  "degrees_found": 1,
+  "certifications_found": 0,
+  "highest_degree": "Bachelor of Science",
+  "warnings": [
+    "No Certifications section content found."
+  ],
+  "status": "partial",
+  "error": null
+}

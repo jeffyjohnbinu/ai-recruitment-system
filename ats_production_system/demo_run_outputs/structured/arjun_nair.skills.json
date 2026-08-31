@@ -1,0 +1,94 @@
+{
+  "source_file": "arjun_nair.docx",
+  "extracted_at": "2026-08-31T10:01:50.116819+00:00",
+  "input_char_count": 572,
+  "total_skills_found": 5,
+  "skills_by_category": {
+    "technical": 4,
+    "business": 1
+  },
+  "skills": [
+    {
+      "skill": "Excel",
+      "category": "technical",
+      "subcategory": "data",
+      "confidence": 1.0,
+      "match_type": "exact",
+      "mention_count": 2,
+      "matched_variants": [
+        "Excel"
+      ],
+      "source_sections": [
+        "Experience",
+        "Skills"
+      ],
+      "stack_sources": []
+    },
+    {
+      "skill": "Python",
+      "category": "technical",
+      "subcategory": "language",
+      "confidence": 1.0,
+      "match_type": "exact",
+      "mention_count": 1,
+      "matched_variants": [
+        "Python"
+      ],
+      "source_sections": [
+        "Skills"
+      ],
+      "stack_sources": []
+    },
+    {
+      "skill": "SQL",
+      "category": "technical",
+      "subcategory": "language",
+      "confidence": 1.0,
+      "match_type": "exact",
+      "mention_count": 3,
+      "matched_variants": [
+        "SQL"
+      ],
+      "source_sections": [
+        "Experience",
+        "Skills",
+        "Summary"
+      ],
+      "stack_sources": []
+    },
+    {
+      "skill": "Tableau",
+      "category": "technical",
+      "subcategory": "data",
+      "confidence": 1.0,
+      "match_type": "exact",
+      "mention_count": 2,
+      "matched_variants": [
+        "Tableau"
+      ],
+      "source_sections": [
+        "Experience",
+        "Skills"
+      ],
+      "stack_sources": []
+    },
+    {
+      "skill": "Data Analysis",
+      "category": "business",
+      "subcategory": "analysis",
+      "confidence": 0.792,
+      "match_type": "fuzzy",
+      "mention_count": 1,
+      "matched_variants": [
+        "Data Analyst"
+      ],
+      "source_sections": [
+        "Experience"
+      ],
+      "stack_sources": []
+    }
+  ],
+  "status": "success",
+  "warnings": [],
+  "error": null
+}
