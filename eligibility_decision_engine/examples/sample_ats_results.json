@@ -1,0 +1,34 @@
+{
+  "candidates": [
+    {
+      "candidate_id": "C001",
+      "job_role": "backend_engineer",
+      "ats_score": 88,
+      "skills": ["python", "django", "postgresql"],
+      "experience_years": 4,
+      "location": "Bengaluru",
+      "remote_ok": false,
+      "availability": "immediate"
+    },
+    {
+      "candidateId": "C002",
+      "jobRole": "backend_engineer",
+      "matchScore": 71,
+      "skills": ["python", "flask"],
+      "experienceYears": 2,
+      "location": "Remote",
+      "remoteOk": true,
+      "availability": "2_weeks"
+    },
+    {
+      "candidate_id": "C003",
+      "job_role": "backend_engineer",
+      "ats_score": 55,
+      "skills": ["java"],
+      "experience_years": 6,
+      "location": "Chennai",
+      "remote_ok": false,
+      "availability": "immediate"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "rules": [
+    {
+      "job_role": "backend_engineer",
+      "min_ats_score": 75,
+      "review_band": 10,
+      "mandatory_skills": ["python"],
+      "min_experience_years": 2,
+      "max_experience_years": 8,
+      "allowed_locations": ["Bengaluru", "Chennai", "Hyderabad"],
+      "allow_remote": true,
+      "required_availability": null
+    }
+  ]
+}
