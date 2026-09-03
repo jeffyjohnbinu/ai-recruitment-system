@@ -1,0 +1,40 @@
+Voice Screening Transcript Data Architecture — Automated Test Run
+Timestamp (UTC): 20260903_101652
+Command: /usr/bin/python3 -m pytest /home/claude/voice_screening_engine/tests/test_voice_screening.py -v --tb=short
+======================================================================
+
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/claude
+collecting ... collected 26 items
+
+voice_screening_engine/tests/test_voice_screening.py::test_normalizer_strips_standalone_filler_tokens PASSED [  3%]
+voice_screening_engine/tests/test_voice_screening.py::test_normalizer_does_not_strip_real_word_like PASSED [  7%]
+voice_screening_engine/tests/test_voice_screening.py::test_normalizer_strips_filler_phrases PASSED [ 11%]
+voice_screening_engine/tests/test_voice_screening.py::test_normalizer_inserts_break_on_long_pause PASSED [ 15%]
+voice_screening_engine/tests/test_voice_screening.py::test_normalizer_no_break_without_timestamps PASSED [ 19%]
+voice_screening_engine/tests/test_voice_screening.py::test_normalizer_capitalizes_sentence_start PASSED [ 23%]
+voice_screening_engine/tests/test_voice_screening.py::test_normalizer_canonicalizes_known_terms PASSED [ 26%]
+voice_screening_engine/tests/test_voice_screening.py::test_normalizer_without_term_lookup_still_works PASSED [ 30%]
+voice_screening_engine/tests/test_voice_screening.py::test_normalizer_collapses_immediate_repeats PASSED [ 34%]
+voice_screening_engine/tests/test_voice_screening.py::test_normalizer_empty_input_returns_empty PASSED [ 38%]
+voice_screening_engine/tests/test_voice_screening.py::test_normalizer_adds_terminal_punctuation PASSED [ 42%]
+voice_screening_engine/tests/test_voice_screening.py::test_segment_flags_low_confidence_below_threshold PASSED [ 46%]
+voice_screening_engine/tests/test_voice_screening.py::test_segment_does_not_flag_confidence_at_threshold PASSED [ 50%]
+voice_screening_engine/tests/test_voice_screening.py::test_segment_never_drops_low_confidence_text PASSED [ 53%]
+voice_screening_engine/tests/test_voice_screening.py::test_question_candidate_text_excludes_interviewer_segments PASSED [ 57%]
+voice_screening_engine/tests/test_voice_screening.py::test_question_average_confidence_over_candidate_segments_only PASSED [ 61%]
+voice_screening_engine/tests/test_voice_screening.py::test_question_average_confidence_no_candidate_segments_is_zero PASSED [ 65%]
+voice_screening_engine/tests/test_voice_screening.py::test_transcript_record_carries_metadata_envelope PASSED [ 69%]
+voice_screening_engine/tests/test_voice_screening.py::test_transcript_record_low_confidence_segment_count PASSED [ 73%]
+voice_screening_engine/tests/test_voice_screening.py::test_transcript_record_to_dict_serializable PASSED [ 76%]
+voice_screening_engine/tests/test_voice_screening.py::test_screening_record_to_dict_serializable PASSED [ 80%]
+voice_screening_engine/tests/test_voice_screening.py::test_store_saves_transcript_json PASSED [ 84%]
+voice_screening_engine/tests/test_voice_screening.py::test_store_saves_screening_json PASSED [ 88%]
+voice_screening_engine/tests/test_voice_screening.py::test_store_save_pair_writes_both_files PASSED [ 92%]
+voice_screening_engine/tests/test_voice_screening.py::test_store_creates_output_directories PASSED [ 96%]
+voice_screening_engine/tests/test_voice_screening.py::test_store_request_id_unique PASSED [100%]
+
+============================== 26 passed in 0.04s ==============================
+

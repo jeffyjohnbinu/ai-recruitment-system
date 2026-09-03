@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "model_version": "voice-screening-engine-1.0.0",
+  "pipeline_version": "zecpath-day23",
+  "candidate_id": "cand_b",
+  "job_id": "job_b",
+  "session_id": "sess_b",
+  "generated_at": "2026-09-03T17:52:07.011072+00:00",
+  "request_id": "8a1c50c0-ecdc-4b88-8fc9-74463b6ce319",
+  "per_question": [
+    {
+      "question_id": "q1",
+      "answer_text": "A",
+      "relevance_score": 0.5,
+      "confidence_avg": 0.5,
+      "keywords_matched": [],
+      "flags": []
+    }
+  ],
+  "overall_communication_score": 0.0,
+  "warnings": [],
+  "status": "success",
+  "error": null
+}

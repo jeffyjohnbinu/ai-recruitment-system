@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "model_version": "voice-screening-engine-1.0.0",
+  "pipeline_version": "zecpath-day23",
+  "candidate_id": "cand_c",
+  "job_id": "job_c",
+  "session_id": "sess_c",
+  "generated_at": "2026-09-03T17:52:07.016923+00:00",
+  "request_id": "ec73f580-1552-4758-8ec0-cedde3656701",
+  "questions": [
+    {
+      "question_id": "q1",
+      "question_text": "Q",
+      "asked_at": "t",
+      "segments": [
+        {
+          "segment_id": "q1_s1",
+          "question_id": "q1",
+          "speaker": "candidate",
+          "text_raw": "raw text",
+          "text_normalized": "Raw text.",
+          "timestamp_start": "2026-09-03T10:00:00+00:00",
+          "timestamp_end": "2026-09-03T10:00:05+00:00",
+          "confidence": 0.9,
+          "asr_engine": "whisper-large-v3",
+          "language": "en",
+          "low_confidence": false,
+          "normalization_notes": []
+        }
+      ],
+      "answer_duration_seconds": null
+    }
+  ],
+  "warnings": [],
+  "status": "success",
+  "error": null
+}
