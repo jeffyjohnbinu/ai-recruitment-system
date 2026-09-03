@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0",
+  "description": "Conversation-ready object schema for an AI screening agent, plus a worked example flow for a Software Engineer candidate. Each object represents one turn: the question the AI should ask next, how to validate the answer, and where to go on success/failure.",
+  "object_schema": {
+    "session_id": "string — unique per screening call",
+    "candidate_id": "string",
+    "role_id": "string — matches role_id in the question dataset",
+    "language": "string — BCP-47 code, e.g. en, hi, es",
+    "question_id": "string — matches question_id in the dataset",
+    "category": "string",
+    "resolved_text": "string — template with all {placeholders} filled in for this candidate/role",
+    "expected_answer_type": "text | number | boolean | enum | date | duration",
+    "mandatory": "boolean",
+    "scoring_weight": "integer 1-5",
+    "validation": {
+      "rule": "string — how to validate the raw answer (e.g. numeric range, regex, enum match)",
+      "on_invalid": "reprompt | skip | escalate_to_human"
+    },
+    "routing": {
+      "on_answer": "next_question_id, or a rule such as 'if answer==false -> end_call'",
+      "on_no_response": "reprompt_once | end_call | escalate_to_human"
+    },
+    "state": "pending | awaiting_answer | answered | skipped | invalid"
+  },
+  "example_flow_software_engineer": [
+    {
+      "session_id": "sess_0001",
+      "candidate_id": "cand_1042",
+      "role_id": "software_engineer",
+      "language": "en",
+      "question_id": "Q-SE-001",
+      "category": "introduction",
+      "resolved_text": "Hi Arjun, this is an automated screening call from Acme Corp for the Software Engineer position. Is this a good time to talk for about 10 minutes?",
+      "expected_answer_type": "boolean",
+      "mandatory": true,
+      "scoring_weight": 1,
+      "validation": { "rule": "must resolve to yes/no", "on_invalid": "reprompt" },
+      "routing": { "on_answer": "if true -> Q-SE-002; if false -> offer_reschedule_then_end_call", "on_no_response": "reprompt_once" },
+      "state": "pending"
+    },
+    {
+      "session_id": "sess_0001",
+      "candidate_id": "cand_1042",
+      "role_id": "software_engineer",
+      "language": "en",
+      "question_id": "Q-SE-004",
+      "category": "education",
+      "resolved_text": "Do you hold a B.Tech/B.E. in Computer Science or related field, as required for this role?",
+      "expected_answer_type": "boolean",
+      "mandatory": true,
+      "scoring_weight": 5,
+      "validation": { "rule": "must resolve to yes/no", "on_invalid": "reprompt" },
+      "routing": { "on_answer": "if true -> Q-SE-005; if false -> escalate_to_human (hard filter)", "on_no_response": "reprompt_once" },
+      "state": "pending"
+    },
+    {
+      "session_id": "sess_0001",
+      "candidate_id": "cand_1042",
+      "role_id": "software_engineer",
+      "language": "en",
+      "question_id": "Q-SE-006",
+      "category": "experience",
+      "resolved_text": "How many years of experience do you have specifically in software development?",
+      "expected_answer_type": "number",
+      "mandatory": true,
+      "scoring_weight": 5,
+      "validation": { "rule": "numeric, range 0-50", "on_invalid": "reprompt" },
+      "routing": { "on_answer": "Q-SE-009", "on_no_response": "reprompt_once" },
+      "state": "pending"
+    },
+    {
+      "session_id": "sess_0001",
+      "candidate_id": "cand_1042",
+      "role_id": "software_engineer",
+      "language": "en",
+      "question_id": "Q-SE-014",
+      "category": "location",
+      "resolved_text": "This role is based in Bengaluru. Are you willing to relocate?",
+      "expected_answer_type": "boolean",
+      "mandatory": true,
+      "scoring_weight": 4,
+      "validation": { "rule": "must resolve to yes/no", "on_invalid": "reprompt" },
+      "routing": { "on_answer": "Q-SE-016", "on_no_response": "reprompt_once" },
+      "state": "pending"
+    },
+    {
+      "session_id": "sess_0001",
+      "candidate_id": "cand_1042",
+      "role_id": "software_engineer",
+      "language": "en",
+      "question_id": "Q-SE-021",
+      "category": "notice_period",
+      "resolved_text": "By what date would you realistically be able to join if selected?",
+      "expected_answer_type": "date",
+      "mandatory": true,
+      "scoring_weight": 3,
+      "validation": { "rule": "valid future date", "on_invalid": "reprompt" },
+      "routing": { "on_answer": "end_call_summary", "on_no_response": "reprompt_once" },
+      "state": "pending"
+    }
+  ],
+  "session_summary_object_example": {
+    "session_id": "sess_0001",
+    "candidate_id": "cand_1042",
+    "role_id": "software_engineer",
+    "total_questions_asked": 5,
+    "mandatory_unanswered": 0,
+    "hard_filters_failed": [],
+    "computed_score": {
+      "sum_of_weights_answered": 18,
+      "max_possible_weight": 18,
+      "normalized_score_pct": 100
+    },
+    "recommendation": "proceed_to_next_round"
+  }
+}

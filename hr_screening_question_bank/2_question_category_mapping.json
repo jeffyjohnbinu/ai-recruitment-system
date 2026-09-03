@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "description": "Maps every category to its purpose, ordering position in the screening flow, and the question_ids that belong to it (from hr_screening_question_dataset.json).",
+  "category_order": ["introduction", "education", "experience", "skills", "location", "salary", "notice_period"],
+  "categories": {
+    "introduction": {
+      "name": "Introduction",
+      "purpose": "Confirm candidate identity, basic rapport-building, and consent to proceed with screening.",
+      "flow_position": 1,
+      "question_ids": ["Q-SE-001", "Q-SE-002", "Q-SL-001", "Q-SL-002", "Q-CS-001", "Q-MK-001"]
+    },
+    "education": {
+      "name": "Education",
+      "purpose": "Verify qualifications relevant to the role.",
+      "flow_position": 2,
+      "question_ids": ["Q-SE-003", "Q-SE-004", "Q-SL-003", "Q-SL-004", "Q-CS-002", "Q-MK-002"]
+    },
+    "experience": {
+      "name": "Experience",
+      "purpose": "Assess relevant work history, tenure, and role fit.",
+      "flow_position": 3,
+      "question_ids": ["Q-SE-005", "Q-SE-006", "Q-SE-007", "Q-SE-008", "Q-SL-005", "Q-SL-006", "Q-SL-007", "Q-CS-003", "Q-MK-003"]
+    },
+    "skills": {
+      "name": "Skills",
+      "purpose": "Validate technical/functional skills required for the role.",
+      "flow_position": 4,
+      "question_ids": ["Q-SE-009", "Q-SE-010", "Q-SE-011", "Q-SE-012", "Q-SL-008", "Q-SL-009", "Q-CS-004", "Q-CS-005", "Q-MK-004", "Q-MK-005"]
+    },
+    "location": {
+      "name": "Location",
+      "purpose": "Confirm current location, relocation willingness, and work-mode compatibility.",
+      "flow_position": 5,
+      "question_ids": ["Q-SE-013", "Q-SE-014", "Q-SE-015", "Q-SL-010", "Q-SL-011", "Q-CS-006", "Q-MK-006"]
+    },
+    "salary": {
+      "name": "Salary",
+      "purpose": "Capture compensation expectations and negotiability.",
+      "flow_position": 6,
+      "question_ids": ["Q-SE-016", "Q-SE-017", "Q-SE-018", "Q-SL-012", "Q-SL-013", "Q-CS-007", "Q-MK-007"]
+    },
+    "notice_period": {
+      "name": "Notice Period",
+      "purpose": "Determine availability and joining timeline.",
+      "flow_position": 7,
+      "question_ids": ["Q-SE-019", "Q-SE-020", "Q-SE-021", "Q-SL-014", "Q-SL-015", "Q-CS-008", "Q-MK-008"]
+    }
+  },
+  "scoring_scale": {
+    "1": "Informational only, no scoring impact",
+    "2": "Minor influence on candidate ranking",
+    "3": "Moderate influence, used in shortlisting",
+    "4": "Strong influence, near-disqualifying if unmet",
+    "5": "Critical/hard filter — auto-reject if criteria unmet"
+  },
+  "answer_types": ["text", "number", "boolean", "enum", "date", "duration"]
+}
