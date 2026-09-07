@@ -4,9 +4,7 @@ answer_understanding_engine/cli.py
 Simple command-line entry point for testing the Answer Understanding Engine.
 
 Run with:
-    python -m answer_understanding_engine.cli <answer>
-    --question-id Q-SE-006
-    --expected-slot years_experience
+    python -m answer_understanding_engine.cli <answer> --question-id Q-SE-006 --expected-slot years_experience
 
 Expected output (example):
     {
@@ -43,7 +41,9 @@ Expected output (example):
 """
 
 import argparse
+import json
 import sys
+from pathlib import Path
 
 from utils.logger import get_logger
 
@@ -54,7 +54,7 @@ logger = get_logger("answer_understanding_engine.cli")
 
 def main():
     parser = argparse.ArgumentParser(
-        description=("Process a candidate screening answer " "with intent understanding.")
+        description="Process a candidate screening answer with intent understanding."
     )
     parser.add_argument(
         "answer",

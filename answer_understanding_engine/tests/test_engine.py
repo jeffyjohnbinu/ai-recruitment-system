@@ -9,7 +9,14 @@ Run with:
 
 from __future__ import annotations
 
-from answer_understanding_engine.engine import AnswerUnderstandingEngine
+import pytest
+
+from answer_understanding_engine.engine import (
+    AnswerUnderstandingEngine,
+    IntentResult,
+    Slot,
+    StructuredAnswer,
+)
 from answer_understanding_engine.engine import _normalize_duration as normalize_duration
 from answer_understanding_engine.engine import _normalize_money_to_lakhs as normalize_money_to_lakhs
 
